@@ -1,3 +1,4 @@
+/* For desktop: */
 * {
   margin: 0;
   padding: 0;
@@ -30,26 +31,43 @@ nav ul li a {
 
 .contenedor {
   display: grid;
+  height: 800px;
   grid-gap: 20px;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 60px 100px 4fr ;
   grid-template-areas:
     "header header header header"
-    "buscador  pokemon-encontrado pokemon-encontrado pokemon-encontrado"
-    "buscador  pokemon-encontrado pokemon-encontrado pokemon-encontrado"
+    "buscador  filtros filtros filtros"
     "buscador  pokemon-encontrado pokemon-encontrado pokemon-encontrado";
 }
 
 .contenedor .header {
   grid-area: header;
-  /* background-color: red; */
+  background-color: greenyellow;
 }
 
 .contenedor .buscador {
   grid-area: buscador;
   background-color: blue;
 }
-
+.filtros{
+    grid-area: filtros;
+    background-color: hotpink;
+}
 .contenedor .pokemon-encontrado {
   grid-area: pokemon-encontrado;
   background-color: red;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(200px , 1fr));
+  grid-auto-rows: 250px;
+  gap: 20px;
+}
+.item{
+    background-color: ivory;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-radius: 4px;
 }
