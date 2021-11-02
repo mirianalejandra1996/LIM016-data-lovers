@@ -1,10 +1,10 @@
-import { traerPokemon } from './data.js';
+import { traerPokemones } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 
-console.log(traerPokemon,data);
+console.log(traerPokemones,data);
 
-traerPokemon();
+traerPokemones();
 
 
 // let pokemon = [{name:"lucero"},{name:"mirian"},{name:"diosito"}];

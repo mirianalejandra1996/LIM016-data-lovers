@@ -38,7 +38,7 @@ nav ul li a {
   grid-template-areas:
     "header header header header"
     "buscador  filtros filtros filtros"
-    "buscador  pokemon-encontrado pokemon-encontrado pokemon-encontrado";
+    "buscador  pokemones-filtrados pokemones-filtrados pokemones-filtrados";
 }
 
 .contenedor .header {
@@ -54,8 +54,8 @@ nav ul li a {
   grid-area: filtros;
   background-color: rgb(141, 29, 85);
 }
-.contenedor .pokemon-encontrado {
-  grid-area: pokemon-encontrado;
+.contenedor .pokemones-filtrados {
+  grid-area: pokemones-filtrados;
   background-color: red;
   padding: 20px;
   display: grid;
@@ -63,11 +63,22 @@ nav ul li a {
   grid-auto-rows: 250px;
   gap: 20px;
 }
+
 .item {
-  background-color: ivory;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
   border-radius: 4px;
+  flex-direction: column;
+}
+
+.item > h3 {
+  font-size: 30px;
+}
+
+.item > h2 {
+  font-size: 30px;
+  color: #757575;
 }

@@ -1,38 +1,49 @@
 // estas funciones son de ejemplo
 
-export const traerPokemones = (id) => {
+let contenedorPokemon = document.getElementById('pokemones-filtrados');
 
-  fetch("./data/pokemon/pokemon.json")
+export const traerPokemones = () => {
+
+  fetch("https://pokeapi.co/api/v2/pokemon/snorlax/")
     .then(function (response) {
       return response.json();
     })
     .then(function (data){
 
-      // console.log(data.pokemon[id]);
-      data.pokemon.forEach(pokemon => console.log(pokemon.name))
-      // document.getElementById("llenar").innerHTML = data.pokemon[0].name;
-      // document.getElementById("llenar2").innerHTML = data.pokemon[1].name;
-
-      
+      // data.pokemon.forEach(pokemon => console.log(pokemon.name))
+      console.log(data.name)
+      createPokemon(data);
     });
-    // return example;
 };
 
 
+function createPokemon (pokemon) {
 
-// let imprimirPokemon = () => {
-  
-// }
-
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
-
-function createPokemon () {
-
-  let div = document.createElement('div');
-  div.innerHTML = 'Si';
-
-  document.getElementById('pokemones-filtrados').appendChild(div);
+contenedorPokemon.innerHTML = `
+<div class="item">
+    <h2>N° ${pokemon.id}</h2>
+    <img src="${pokemon.sprites.front_default}" alt="" />
+    <h3>${pokemon.name}</h3>
+</div>`
 
 }
+
+
+// function createPokemon (pokemon) {
+
+//   const img = document.createElement('img');
+//   img.src = pokemon.sprites.front_default;
+
+//   const tarjeta = document.createElement('div');
+//   tarjeta.classList.add('item');
+//   tarjeta.innerHTML = pokemon.name;
+//   tarjeta.innerHTML = pokemon.id;
+
+//   tarjeta.prepend(img);
+
+//   contenedorPokemon.prepend(tarjeta);
+
+//   // document.getElementById('pokemones-filtrados').prepend(tarjeta);
+  
+//   // document.getElementById('pokemones-filtrados').appendChild(tarjeta)
+// }
