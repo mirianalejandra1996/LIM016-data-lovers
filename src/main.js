@@ -1,9 +1,11 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
+import { traerPokemon } from './data.js';
 import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(example, data);
+
+console.log(traerPokemon,data);
+
+traerPokemon();
+
 
 // let pokemon = [{name:"lucero"},{name:"mirian"},{name:"diosito"}];
 // console.log(pokemon[0].name);

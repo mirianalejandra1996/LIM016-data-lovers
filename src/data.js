@@ -1,32 +1,38 @@
 // estas funciones son de ejemplo
 
-export const example = () => {
+export const traerPokemones = (id) => {
 
-  let pokemon;
-  // return 'Este es el example';
   fetch("./data/pokemon/pokemon.json")
     .then(function (response) {
       return response.json();
     })
     .then(function (data){
 
-      // console.log(data.pokemon[0].name);
-      pokemon = JSON.stringify(data.pokemon[0].name);
-      // console.log(data.pokemon[1].name);
-
-      // let item1 = document.getElementById("item1").innerHTML = data.pokemon[0].name;
+      // console.log(data.pokemon[id]);
+      data.pokemon.forEach(pokemon => console.log(pokemon.name))
+      // document.getElementById("llenar").innerHTML = data.pokemon[0].name;
+      // document.getElementById("llenar2").innerHTML = data.pokemon[1].name;
 
       
     });
     // return example;
-    // console.log(pokemon.stringify);
-    console.log(typeof pokemon);
-    // console.log("final del pokemon " + pokemon)
-    return pokemon;
-};
-
-export const anotherExample = () => {
-  return 'OMG';
 };
 
 
+
+// let imprimirPokemon = () => {
+  
+// }
+
+// export const anotherExample = () => {
+//   return 'OMG';
+// };
+
+function createPokemon () {
+
+  let div = document.createElement('div');
+  div.innerHTML = 'Si';
+
+  document.getElementById('pokemones-filtrados').appendChild(div);
+
+}
