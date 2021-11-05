@@ -2,6 +2,8 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
   /* background-color: black; */
 }
 
@@ -34,48 +36,117 @@ nav ul li a {
   height: 800px;
   grid-gap: 20px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 60px 100px 4fr;
+  grid-template-rows: 60px 4fr;
   grid-template-areas:
     "header header header header"
-    "buscador  filtros filtros filtros"
-    "buscador  pokemones-filtrados pokemones-filtrados pokemones-filtrados";
+    "buscador  contenedorPokemon contenedorPokemon contenedorPokemon";
 }
 
 .contenedor .header {
   grid-area: header;
   background-color: greenyellow;
 }
-
+/* Contenedor Busqueda Avanzada */
 .contenedor .buscador {
   grid-area: buscador;
   background-color: blue;
+  padding: 20px;
 }
-.filtros {
-  grid-area: filtros;
-  background-color: rgb(141, 29, 85);
+.buscador-especial{
+    height: 100px;
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+.btn-tipo{
+    height: 30px;
+    width: 90px;
+    border-radius: 20px;
+    border: none;
+    margin: 5px 2px ;
+    background-color: #40D482;
+}
+.btn-tipo:hover{
+    color: #F6F7FB;
+}
+.contenedor .contenedorPokemon{
+    grid-area: contenedorPokemon;
+    display: flex;
+    flex-direction: column;
+    background-color: #F6F7FB;
+    padding: 20px;
+    border-radius: 40px;
+    
+}
+/* Contenedor de los Pokemones Filtrados */
 .contenedor .pokemones-filtrados {
-  grid-area: pokemones-filtrados;
-  background-color: red;
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: 250px;
-  gap: 20px;
+  gap: 25px;
+  row-gap: 25px;
+  height: 100%;
 }
 
+.filtros {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+.filtros select{
+  -webkit-appearance: none;
+  -moz-appearance:none;
+  text-indent: 1px;
+  text-overflow: '';
+    border: 1px solid #ebebeb;
+    border-radius: 20px;
+    font-size: 14px;
+    height: 35px;
+    width: 200px;
+    padding-left: 20px;
+    background-color: #FDFDFD;
+    cursor: pointer;
+
+}
+.filtros select option {
+background-color: white;
+color: gray;
+padding: 20px;
+height: 35px;
+cursor: pointer;
+}
 .item {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
-  border-radius: 4px;
+  border-radius: 26px;
   flex-direction: column;
+  padding: 20px;
+  height: 250px;
 }
+.item h3{
+  font-size: 24px;
+  font-weight: 400;
+}
+.info{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: -50px;
+}
+.item > img{
+    width: 200px;
+}
+.info-left{
 
-.item > h3 {
-  font-size: 30px;
+}
+.info-rigth{
+
 }
 
 .item > h2 {
