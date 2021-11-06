@@ -2,33 +2,51 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   box-sizing: border-box;
   /* background-color: black; */
 }
 
 nav {
   display: flex;
-  background-color: #2c6cb8;
-  justify-content: space-around;
+  /* background-color: #2c6cb8; */
+  justify-content: space-between;
   padding: 20px 0;
-  color: #fff;
+  color: #2f2f2f;
   align-items: center;
-  height: 20px;
+  height: 100%;
+  padding: 20px;
 }
 
+#links {
+  width: 30%;
+  /* background-color: red; */
+}
 nav ul {
   display: flex;
   list-style: none;
   width: 40%;
-  /* background-color: rgb(96, 165, 255); */
   justify-content: space-between;
 }
 
 nav ul li a {
-  color: #fff;
-  font-size: 1em;
+  color: #2f2f2f;
+  /* font-size: 1.2em; */
+  font-size: 22px;
+
   text-decoration: none;
+  /* font-weight: 500; */
+  font-weight: 700;
+  font-style: normal;
+  line-height: initial;
+}
+
+nav ul li a:hover {
+  color: #40d482;
+  text-decoration: none;
+  font-weight: 700;
+  font-style: normal;
+  line-height: initial;
 }
 
 .contenedor {
@@ -36,7 +54,7 @@ nav ul li a {
   height: 800px;
   grid-gap: 20px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 60px 4fr;
+  grid-template-rows: 90px 4fr;
   grid-template-areas:
     "header header header header"
     "buscador  contenedorPokemon contenedorPokemon contenedorPokemon";
@@ -44,41 +62,45 @@ nav ul li a {
 
 .contenedor .header {
   grid-area: header;
-  background-color: greenyellow;
+  color: #2f2f2f;
 }
 /* Contenedor Busqueda Avanzada */
 .contenedor .buscador {
   grid-area: buscador;
-  background-color: blue;
   padding: 20px;
 }
-.buscador-especial{
-    height: 100px;
-    background-color: brown;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.buscador-especial {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -20px;
 }
-.btn-tipo{
-    height: 30px;
-    width: 90px;
-    border-radius: 20px;
-    border: none;
-    margin: 5px 2px ;
-    background-color: #40D482;
+
+/* Botones de tipos de pokemones */
+.btn-tipo {
+  height: 30px;
+  width: 90px;
+  border-radius: 20px;
+  border: none;
+  margin: 5px 2px;
+  background-color: #40d482;
 }
-.btn-tipo:hover{
-    color: #F6F7FB;
+
+.btn-tipo:hover {
+  color: #f6f7fb;
 }
-.contenedor .contenedorPokemon{
-    grid-area: contenedorPokemon;
-    display: flex;
-    flex-direction: column;
-    background-color: #F6F7FB;
-    padding: 20px;
-    border-radius: 40px;
-    
+
+/* Main container */
+.contenedor .contenedorPokemon {
+  grid-area: contenedorPokemon;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f7fb;
+  padding: 20px;
+  border-radius: 40px;
 }
+
 /* Contenedor de los Pokemones Filtrados */
 .contenedor .pokemones-filtrados {
   padding: 20px;
@@ -97,27 +119,27 @@ nav ul li a {
   padding: 20px;
   align-items: center;
 }
-.filtros select{
-  -webkit-appearance: none;
-  -moz-appearance:none;
-  text-indent: 1px;
-  text-overflow: '';
-    border: 1px solid #ebebeb;
-    border-radius: 20px;
-    font-size: 14px;
-    height: 35px;
-    width: 200px;
-    padding-left: 20px;
-    background-color: #FDFDFD;
-    cursor: pointer;
 
+.filtros select {
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: ""; */
+  border: 1px solid #ebebeb;
+  border-radius: 20px;
+  font-size: 14px;
+  height: 35px;
+  width: 200px;
+  padding-left: 20px;
+  background-color: #fdfdfd;
+  cursor: pointer;
 }
 .filtros select option {
-background-color: white;
-color: gray;
-padding: 20px;
-height: 35px;
-cursor: pointer;
+  background-color: white;
+  color: gray;
+  padding: 20px;
+  height: 35px;
+  cursor: pointer;
 }
 .item {
   background-color: white;
@@ -129,27 +151,285 @@ cursor: pointer;
   padding: 20px;
   height: 250px;
 }
-.item h3{
-  font-size: 24px;
+.item h3 {
+  font-size: 20px;
   font-weight: 400;
 }
-.info{
+.info {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: -50px;
+  margin-top: -25px;
 }
-.item > img{
-    width: 200px;
-}
-.info-left{
-
-}
-.info-rigth{
-
+.item > img {
+  width: 200px;
+  margin-top: -45px;
 }
 
 .item > h2 {
   font-size: 30px;
   color: #757575;
+}
+
+.logo {
+  font-size: 30px;
+  weight: 300;
+}
+
+.circle-btn {
+  background-color: #40d482;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-decoration: none;
+}
+
+.circle-btn .icon span {
+  font-size: 20px;
+}
+
+.circle-btn .icon {
+  color: #fff;
+}
+
+.input-btn {
+  background-color: #40d482;
+  width: 50px;
+  height: 50px;
+  border-radius: 0 25px 25px 0;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+}
+
+.input-btn span {
+  color: #fff;
+}
+
+.caracteristicas {
+  /* background-color: blue; */
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.btn-caracteristica {
+  /* background-color: red; */
+  /* width: 200px; */
+  display: flex;
+  /* width: 50%; */
+  height: 50px;
+  border: none;
+  font-size: 24px;
+  background-color: none;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+}
+
+.btn-caracteristica:hover {
+  color: #40d482;
+}
+
+/* ICONS */
+
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?dxjer6");
+  src: url("fonts/icomoon.eot?dxjer6#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?dxjer6") format("truetype"),
+    url("fonts/icomoon.woff?dxjer6") format("woff"),
+    url("fonts/icomoon.svg?dxjer6#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star-svgrepo-com1:before {
+  content: "\e900";
+}
+.icon-search-svgrepo-com:before {
+  content: "\e901";
+}
+.icon-Pokemon .path1:before {
+  content: "\e902";
+  color: rgb(0, 0, 0);
+}
+.icon-Pokemon .path2:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(252, 210, 11);
+}
+.icon-Pokemon .path3:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(237, 28, 36);
+}
+.icon-Pokemon .path4:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Pokemon .path5:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(118, 82, 65);
+}
+.icon-poke-editada-21:before {
+  content: "\e907";
+}
+.icon-pokeball-pokemon-svgrepo-com1 .path1:before {
+  content: "\e908";
+  color: rgb(237, 85, 100);
+}
+.icon-pokeball-pokemon-svgrepo-com1 .path2:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(230, 233, 237);
+}
+.icon-pokeball-pokemon-svgrepo-com1 .path3:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(67, 74, 84);
+}
+.icon-pokeball-pokemon-svgrepo-com1 .path4:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(230, 233, 237);
+}
+.icon-pokeball-pokemon-svgrepo-com1 .path5:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(67, 74, 84);
+}
+.icon-pokeball-pokemon-svgrepo-com1 .path6:before {
+  content: "\e90d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.2;
+}
+.icon-pokeball-pokemon-svgrepo-com1 .path7:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+  opacity: 0.1;
+}
+.icon-male-svgrepo-com:before {
+  content: "\e90f";
+}
+.icon-magic-broom-svgrepo-com-11:before {
+  content: "\e910";
+}
+.icon-hand-pointer-svgrepo-com:before {
+  content: "\e911";
+}
+.icon-filter-svgrepo-com:before {
+  content: "\e912";
+}
+.icon-female-svgrepo-com:before {
+  content: "\e913";
+}
+.icon-down-arrow-svgrepo-com:before {
+  content: "\e914";
+}
+.icon-close-svgrepo-com-1:before {
+  content: "\e915";
+}
+.icon-broom-svgrepo-com:before {
+  content: "\e916";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+
+/* ----------------- */
+
+#debilidades {
+  margin-left: 30px;
+}
+
+.btns-container {
+  margin-top: 30px;
+}
+
+.titulo {
+  margin-bottom: 20px;
+}
+
+.box {
+  position: relative;
+  background-color: red;
+  /* max-width: 300px; */
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 140px;
+}
+
+#input-buscar {
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  border-radius: 25px;
+  border: solid 1px #ebebeb;
+  padding-left: 20px;
+  font-size: 20px;
+  outline: none;
+}
+
+.icons {
+  width: 195px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons .nav-btn {
+  width: 50px;
+  height: 50px;
+  /* background-color: red; */
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #2f2f2f;
+}
+
+.icons .nav-btn .bigger {
+  color: red;
+  height: 200px;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
