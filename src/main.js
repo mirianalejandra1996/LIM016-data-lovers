@@ -13,6 +13,8 @@ btnBuscar.addEventListener('click', ()=>{traerPokemones(inputBuscar)});
 // traerPokemones();
 
 
+// let iconNav = document.get
+
 
 // let pokemon = [{name:"lucero"},{name:"mirian"},{name:"diosito"}];
 // console.log(pokemon[0].name);
