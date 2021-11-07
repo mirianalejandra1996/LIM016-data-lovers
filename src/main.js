@@ -1,7 +1,23 @@
 import { traerPokemones } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-// let contenedorPokemon = document.getElementById(pokemones-filtrados);
+
+const githubMirian = document.getElementById('github-mirian');
+const githubLucero = document.getElementById('github-lucero');
+const pokemonWebsite = document.getElementById('pokemon-website');
+
+githubMirian.addEventListener('click', ()=> {
+    window.open('https://github.com/mirianalejandra1996','_blank')
+});
+
+githubLucero.addEventListener('click', ()=> {
+    window.open('https://github.com/lucerogoga','_blank')
+});
+
+pokemonWebsite.addEventListener('click',()=>{
+    window.open('https://www.pokemon.com/el/','_blank')
+})
+
 
 console.log(traerPokemones,data);
 

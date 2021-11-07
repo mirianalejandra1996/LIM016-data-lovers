@@ -1,0 +1,245 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?cqk2az");
+  src: url("fonts/icomoon.eot?cqk2az#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?cqk2az") format("truetype"),
+    url("fonts/icomoon.woff?cqk2az") format("woff"),
+    url("fonts/icomoon.svg?cqk2az#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-apple-svgrepo-com:before {
+  content: "\e92e";
+}
+.icon-android-svgrepo-com:before {
+  content: "\e92f";
+}
+.icon-logo-google-playstore-svgrepo-com:before {
+  content: "\e930";
+}
+.icon-lonely-pikachu .path1:before {
+  content: "\e900";
+  color: rgb(255, 191, 49);
+}
+.icon-lonely-pikachu .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  color: rgb(255, 191, 49);
+}
+.icon-lonely-pikachu .path3:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(255, 139, 0);
+}
+.icon-lonely-pikachu .path4:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(255, 139, 0);
+}
+.icon-lonely-pikachu .path5:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path6:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path7:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(255, 139, 0);
+}
+.icon-lonely-pikachu .path8:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(255, 139, 0);
+}
+.icon-lonely-pikachu .path9:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path10:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path11:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(255, 191, 49);
+}
+.icon-lonely-pikachu .path12:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(255, 139, 0);
+}
+.icon-lonely-pikachu .path13:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path14:before {
+  content: "\e90d";
+  margin-left: -1em;
+  color: rgb(255, 191, 49);
+}
+.icon-lonely-pikachu .path15:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(255, 139, 0);
+}
+.icon-lonely-pikachu .path16:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path17:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path18:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path19:before {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path20:before {
+  content: "\e913";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path21:before {
+  content: "\e914";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-lonely-pikachu .path22:before {
+  content: "\e915";
+  margin-left: -1em;
+  color: rgb(51, 54, 58);
+}
+.icon-star-svgrepo-com:before {
+  content: "\e916";
+}
+.icon-search-svgrepo-com:before {
+  content: "\e917";
+}
+.icon-Pokemon .path1:before {
+  content: "\e918";
+  color: rgb(0, 0, 0);
+}
+.icon-Pokemon .path2:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: rgb(252, 210, 11);
+}
+.icon-Pokemon .path3:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: rgb(237, 28, 36);
+}
+.icon-Pokemon .path4:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Pokemon .path5:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: rgb(118, 82, 65);
+}
+.icon-pokebola-recta:before {
+  content: "\e91d";
+}
+.icon-pokebola-nueva:before {
+  content: "\e91e";
+}
+.icon-pokeball-pokemon-svgrepo-com .path1:before {
+  content: "\e91f";
+  color: rgb(237, 85, 100);
+}
+.icon-pokeball-pokemon-svgrepo-com .path2:before {
+  content: "\e920";
+  margin-left: -1em;
+  color: rgb(230, 233, 237);
+}
+.icon-pokeball-pokemon-svgrepo-com .path3:before {
+  content: "\e921";
+  margin-left: -1em;
+  color: rgb(67, 74, 84);
+}
+.icon-pokeball-pokemon-svgrepo-com .path4:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(230, 233, 237);
+}
+.icon-pokeball-pokemon-svgrepo-com .path5:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(67, 74, 84);
+}
+.icon-pokeball-pokemon-svgrepo-com .path6:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.2;
+}
+.icon-pokeball-pokemon-svgrepo-com .path7:before {
+  content: "\e925";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+  opacity: 0.1;
+}
+.icon-male-svgrepo-com:before {
+  content: "\e926";
+}
+.icon-magic-broom-svgrepo-com-1:before {
+  content: "\e927";
+}
+.icon-filter-svgrepo-com:before {
+  content: "\e928";
+}
+.icon-female-svgrepo-com:before {
+  content: "\e929";
+}
+.icon-down-arrow-svgrepo-com:before {
+  content: "\e92a";
+}
+.icon-close-svgrepo-com-1:before {
+  content: "\e92b";
+}
+.icon-circle-svgrepo-com:before {
+  content: "\e92c";
+}
+.icon-broom-svgrepo-com:before {
+  content: "\e92d";
+}
+.icon-github:before {
+  content: "\eab0";
+}

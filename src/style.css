@@ -1,15 +1,15 @@
 /* For desktop: */
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   box-sizing: border-box;
-  /* background-color: black; */
 }
 
 nav {
   display: flex;
-  /* background-color: #2c6cb8; */
   justify-content: space-between;
   padding: 20px 0;
   color: #2f2f2f;
@@ -18,38 +18,60 @@ nav {
   padding: 20px;
 }
 
-#links {
-  width: 30%;
-  /* background-color: red; */
-}
 nav ul {
+  width: 25%;
+  /* background-color: red; */
   display: flex;
   list-style: none;
-  width: 40%;
   justify-content: space-between;
 }
 
 nav ul li {
-  background-color: red;
-  width: 10rem;
+  /* width: 10rem; */
+  text-align: center;
+  /* padding: 20px; */
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
 }
 
 nav ul li a {
   color: #2f2f2f;
-  /* font-size: 1.2em; */
   font-size: 22px;
-
+  letter-spacing: 0.2px;
   text-decoration: none;
-  /* font-weight: 500; */
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   line-height: initial;
+  position: relative;
+  padding: 16px 2px;
+  overflow: hidden;
+  transition: color 0.3s ease;
 }
+
+/* Animación del botón */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  background-color: #40d482;
+  height: 4.2px;
+  width: 100%;
+  left: 0;
+  bottom: -1px;
+  border-radius: 25px;
+  transform: translateY(3px);
+}
+
+nav ul li a:hover::after {
+  transform: translateY(0px);
+  transition: transform 0.3s ease;
+}
+/* ----- */
 
 nav ul li a:hover {
   color: #40d482;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   line-height: initial;
 }
@@ -256,243 +278,6 @@ nav ul li a:hover {
 
 /* ICONS */
 
-@font-face {
-  font-family: "icomoon";
-  src: url("fonts/icomoon.eot?8tkbj8");
-  src: url("fonts/icomoon.eot?8tkbj8#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?8tkbj8") format("truetype"),
-    url("fonts/icomoon.woff?8tkbj8") format("woff"),
-    url("fonts/icomoon.svg?8tkbj8#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-[class^="icon-"],
-[class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-lonely-pikachu .path1:before {
-  content: "\e900";
-  color: rgb(255, 191, 49);
-}
-.icon-lonely-pikachu .path2:before {
-  content: "\e901";
-  margin-left: -1em;
-  color: rgb(255, 191, 49);
-}
-.icon-lonely-pikachu .path3:before {
-  content: "\e902";
-  margin-left: -1em;
-  color: rgb(255, 139, 0);
-}
-.icon-lonely-pikachu .path4:before {
-  content: "\e903";
-  margin-left: -1em;
-  color: rgb(255, 139, 0);
-}
-.icon-lonely-pikachu .path5:before {
-  content: "\e904";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path6:before {
-  content: "\e905";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path7:before {
-  content: "\e906";
-  margin-left: -1em;
-  color: rgb(255, 139, 0);
-}
-.icon-lonely-pikachu .path8:before {
-  content: "\e907";
-  margin-left: -1em;
-  color: rgb(255, 139, 0);
-}
-.icon-lonely-pikachu .path9:before {
-  content: "\e908";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path10:before {
-  content: "\e909";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path11:before {
-  content: "\e90a";
-  margin-left: -1em;
-  color: rgb(255, 191, 49);
-}
-.icon-lonely-pikachu .path12:before {
-  content: "\e90b";
-  margin-left: -1em;
-  color: rgb(255, 139, 0);
-}
-.icon-lonely-pikachu .path13:before {
-  content: "\e90c";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path14:before {
-  content: "\e90d";
-  margin-left: -1em;
-  color: rgb(255, 191, 49);
-}
-.icon-lonely-pikachu .path15:before {
-  content: "\e90e";
-  margin-left: -1em;
-  color: rgb(255, 139, 0);
-}
-.icon-lonely-pikachu .path16:before {
-  content: "\e90f";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path17:before {
-  content: "\e910";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path18:before {
-  content: "\e911";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path19:before {
-  content: "\e912";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path20:before {
-  content: "\e913";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path21:before {
-  content: "\e914";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-lonely-pikachu .path22:before {
-  content: "\e915";
-  margin-left: -1em;
-  color: rgb(51, 54, 58);
-}
-.icon-star-svgrepo-com:before {
-  content: "\e916";
-}
-.icon-search-svgrepo-com:before {
-  content: "\e917";
-}
-.icon-Pokemon .path1:before {
-  content: "\e918";
-  color: rgb(0, 0, 0);
-}
-.icon-Pokemon .path2:before {
-  content: "\e919";
-  margin-left: -1em;
-  color: rgb(252, 210, 11);
-}
-.icon-Pokemon .path3:before {
-  content: "\e91a";
-  margin-left: -1em;
-  color: rgb(237, 28, 36);
-}
-.icon-Pokemon .path4:before {
-  content: "\e91b";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-Pokemon .path5:before {
-  content: "\e91c";
-  margin-left: -1em;
-  color: rgb(118, 82, 65);
-}
-.icon-pokebola-recta:before {
-  content: "\e91d";
-}
-.icon-pokebola-nueva:before {
-  content: "\e91e";
-}
-.icon-pokeball-pokemon-svgrepo-com .path1:before {
-  content: "\e91f";
-  color: rgb(237, 85, 100);
-}
-.icon-pokeball-pokemon-svgrepo-com .path2:before {
-  content: "\e920";
-  margin-left: -1em;
-  color: rgb(230, 233, 237);
-}
-.icon-pokeball-pokemon-svgrepo-com .path3:before {
-  content: "\e921";
-  margin-left: -1em;
-  color: rgb(67, 74, 84);
-}
-.icon-pokeball-pokemon-svgrepo-com .path4:before {
-  content: "\e922";
-  margin-left: -1em;
-  color: rgb(230, 233, 237);
-}
-.icon-pokeball-pokemon-svgrepo-com .path5:before {
-  content: "\e923";
-  margin-left: -1em;
-  color: rgb(67, 74, 84);
-}
-.icon-pokeball-pokemon-svgrepo-com .path6:before {
-  content: "\e924";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-  opacity: 0.2;
-}
-.icon-pokeball-pokemon-svgrepo-com .path7:before {
-  content: "\e925";
-  margin-left: -1em;
-  color: rgb(0, 0, 0);
-  opacity: 0.1;
-}
-.icon-male-svgrepo-com:before {
-  content: "\e926";
-}
-.icon-magic-broom-svgrepo-com-1:before {
-  content: "\e927";
-}
-.icon-filter-svgrepo-com:before {
-  content: "\e928";
-}
-.icon-female-svgrepo-com:before {
-  content: "\e929";
-}
-.icon-down-arrow-svgrepo-com:before {
-  content: "\e92a";
-}
-.icon-close-svgrepo-com-1:before {
-  content: "\e92b";
-}
-.icon-circle-svgrepo-com:before {
-  content: "\e92c";
-}
-.icon-broom-svgrepo-com:before {
-  content: "\e92d";
-}
-.icon-github:before {
-  content: "\eab0";
-}
-
 /* ----------------- */
 
 #debilidades {
@@ -543,12 +328,8 @@ nav ul li a:hover {
   align-items: center;
   border: 3px solid #2f2f2f;
   cursor: pointer;
+  transition: 0.3s;
 }
-
-/* .icons .nav-btn:hover,
-.icons .nav-btn .icon:hover {
-  color: #40d482;
-} */
 
 .icons .nav-btn:hover {
   color: #40d482;
