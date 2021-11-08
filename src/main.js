@@ -1,7 +1,6 @@
 import { traerPokemones } from './data.js';
-import data from './data/pokemon/pokemon.js';
 
-
+// Redes sociales (iconos del nav)
 const githubMirian = document.getElementById('github-mirian');
 const githubLucero = document.getElementById('github-lucero');
 const pokemonWebsite = document.getElementById('pokemon-website');
@@ -19,21 +18,77 @@ pokemonWebsite.addEventListener('click',()=>{
 })
 
 
-console.log(traerPokemones,data);
-
+// Input búsqueda
 let inputBuscar = document.getElementById('input-buscar');
 let btnBuscar = document.getElementById('btn-buscar');
 
-btnBuscar.addEventListener('click', ()=>{traerPokemones(inputBuscar)});
-
-// traerPokemones();
-
-
-// let iconNav = document.get
+btnBuscar.addEventListener('click', ()=>{
+    traerPokemones(formatNumber(inputBuscar.value))
+});
 
 
-// let pokemon = [{name:"lucero"},{name:"mirian"},{name:"diosito"}];
-// console.log(pokemon[0].name);
+function formatNumber(num) {
 
-// let prueba = {"pokemon" : [{"num": "001","name": "bulbasaur"},{"num": "002","name": "pikachu"}]};
-// console.log(prueba.pokemon[1].name);
+    if (parseInt(num) < 10){
+        return '00' + num;
+    }
+    else if ( parseInt(num) < 100 ){
+        return '0' + num;
+    }
+    else {
+        return num;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Select Box
+const selectField = document.getElementById('dropdownSelect');
+const selectText = document.getElementById('selectText');
+const options = document.getElementsByClassName('options');
+const list = document.getElementById('list');
+const arrowIcon = document.getElementById('arrowIcon');
+
+selectField.onclick = function(){
+    list.classList.toggle('hidden');
+    arrowIcon.classList.toggle('rotate');
+}
+
+for( let option of options){
+    
+    option.onclick = function (){
+        selectText.innerHTML = this.textContent;
+        list.classList.toggle('hidden');
+        arrowIcon.classList.toggle('rotate');
+    }
+}
+
+
+// Sección de botones
+const tipos = document.getElementById('tipos');
+const debilidades = document.getElementById('debilidades');
+
+const btnsTipo = document.getElementById('btns-tipo');
+const btnsDebilidades = document.getElementById('btns-debilidades');
+
+
+tipos.addEventListener('click', () => {
+
+    tipos.classList.toggle('active');
+    debilidades.classList.toggle('active');
+    btnsDebilidades.classList.toggle('hidden');
+    btnsTipo.classList.toggle('hidden');
+
+})
+

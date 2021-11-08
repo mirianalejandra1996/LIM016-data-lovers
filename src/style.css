@@ -58,6 +58,7 @@ nav ul li a::after {
   width: 100%;
   left: 0;
   bottom: -1px;
+  /* bottom: -0.2rem; */
   border-radius: 25px;
   transform: translateY(3px);
 }
@@ -148,11 +149,7 @@ nav ul li a:hover {
   align-items: center;
 }
 
-.filtros select {
-  /* -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: ""; */
+/* .filtros select {
   border: 1px solid #ebebeb;
   border-radius: 20px;
   font-size: 14px;
@@ -168,7 +165,7 @@ nav ul li a:hover {
   padding: 20px;
   height: 35px;
   cursor: pointer;
-}
+} */
 
 .item {
   background-color: white;
@@ -188,7 +185,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: -25px;
+  /* margin-top: -25px; */
 }
 
 .info .icon span {
@@ -196,8 +193,8 @@ nav ul li a:hover {
   font-size: 13px;
 }
 .item > img {
-  width: 200px;
-  margin-top: -45px;
+  width: 150px;
+  /* margin-top: -45px; */
 }
 
 .item > h2 {
@@ -269,16 +266,32 @@ nav ul li a:hover {
   background-color: none;
   justify-content: flex-start;
   align-items: center;
-  padding: 5px;
+  /* padding: 5px; */
+  position: relative;
+  color: #ebebeb;
+}
+
+.btn-caracteristica::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #40d482;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .btn-caracteristica:hover {
   color: #40d482;
 }
 
-/* ICONS */
+.btn-caracteristica:active::after {
+  background-color: red;
+}
 
-/* ----------------- */
+.hide-bottom-line::after {
+  display: none;
+}
 
 #debilidades {
   margin-left: 30px;
@@ -294,8 +307,6 @@ nav ul li a:hover {
 
 .box {
   position: relative;
-  /* background-color: red; */
-  /* max-width: 300px; */
   max-width: 500px;
   width: 100%;
   margin-bottom: 140px;
@@ -362,4 +373,76 @@ nav ul li a:hover {
 
 .circle-btn .icon {
   color: #fff;
+}
+
+.dropdown {
+  width: 300px;
+  height: 50px;
+  position: relative;
+  /* padding: 20px; */
+}
+
+.dropdown-select {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.dropdown-list {
+  width: 100%;
+  /* border-radius: 0 0 10px 10px; */
+  border-radius: 6px;
+  background-color: #fff;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.options {
+  height: 50px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  /* transition: background-color 0.3s ease; */
+}
+
+.options:hover {
+  background-color: #ebebeb;
+}
+
+.hidden {
+  /* visibility: hidden; */
+  display: none;
+}
+
+#arrowIcon {
+  font-size: 15px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.btns-tipo {
+  position: relative;
+  left: -5px;
+}
+
+.active {
+  color: #000;
+}
+
+.namePokemon {
+  text-transform: capitalize;
 }

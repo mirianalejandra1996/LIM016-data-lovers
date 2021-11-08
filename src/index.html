@@ -62,7 +62,7 @@
           <h2 class="titulo">Nombre o Número</h2>
 
           <div class="box">
-            <input id="input-buscar" type="text" placeholder="Pokemón..." />
+            <input id="input-buscar" type="text" />
             <label id="btn-buscar" class="input-btn" for="">
               <span class="icon-search-svgrepo-com"></span>
             </label>
@@ -70,11 +70,13 @@
         </div>
         <div style="margin-top: 30px">
           <div class="caracteristicas">
-            <a id="tipos" class="btn-caracteristica">Tipos</a>
+            <a id="tipos" class="btn-caracteristica active">Tipos</a>
             <a id="debilidades" class="btn-caracteristica">Debilidades</a>
             <!-- <button class="btn-caracteristica">Debilidades</button> -->
           </div>
-          <div id="btns-container" class="tipo-pokemon">
+
+          <!-- Botones de tipo -->
+          <div id="btns-tipo" class="tipo-pokemon">
             <button class="btn-tipo">Fuego</button>
             <button class="btn-tipo">Agua</button>
             <button class="btn-tipo">Planta</button>
@@ -94,20 +96,64 @@
             <button class="btn-tipo">Volador</button>
             <button class="btn-tipo">Bicho</button>
           </div>
-          <div class="debilidad-pokemon"></div>
+
+          <!-- Botones de debilidades -->
+          <div
+            style="background-color: red"
+            id="btns-debilidades"
+            class="tipo-pokemon hidden"
+          >
+            <button class="btn-tipo">Fuego</button>
+            <button class="btn-tipo">Agua</button>
+            <button class="btn-tipo">Planta</button>
+            <button class="btn-tipo">Acero</button>
+            <button class="btn-tipo">Tierra</button>
+            <button class="btn-tipo">Roca</button>
+            <button class="btn-tipo">Siniestro</button>
+            <button class="btn-tipo">Eléctrico</button>
+            <button class="btn-tipo">Veneno</button>
+            <button class="btn-tipo">Psíquico</button>
+            <button class="btn-tipo">Fantasma</button>
+            <button class="btn-tipo">Normal</button>
+            <button class="btn-tipo">Hielo</button>
+            <button class="btn-tipo">Hada</button>
+            <button class="btn-tipo">Lucha</button>
+            <button class="btn-tipo">Dragón</button>
+            <button class="btn-tipo">Volador</button>
+            <button class="btn-tipo">Bicho</button>
+          </div>
         </div>
       </div>
 
       <div id="contenedorPokemon" class="contenedorPokemon">
         <div class="filtros">
-          <h2>56 Pokemones</h2>
-          <select name="filtros" id="filtros-ordenar">
-            <option>Ordenar por ...</option>
-            <option value="numeroSuperior">Numero Superior</option>
-            <option value="numeroInferior">Numero Inferior</option>
-            <option value="A-Z">A-Z</option>
-            <option value="Z-A">Z-A</option>
-          </select>
+          <h2 id="totalPokemones" >56 Pokemones</h2>
+
+          <!-- Select Box -->
+          <div class="dropdown">
+            <div id="dropdownSelect" class="dropdown-select">
+              <span id="selectText"> Ordenar por...</span>
+              <span id="arrowIcon" class="icon-down-arrow-svgrepo-com"></span>
+            </div>
+
+            <div id="list" class="dropdown-list hidden">
+              <div class="options">
+                <span>Número inferior</span>
+              </div>
+
+              <div class="options">
+                <span>Número superior</span>
+              </div>
+
+              <div class="options">
+                <span>A-Z</span>
+              </div>
+
+              <div class="options">
+                <span>Z-A</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div id="pokemones-filtrados" class="pokemones-filtrados">
@@ -116,11 +162,8 @@
 
             <div class="info">
               <div class="info-left">
-                <h3>Bulbasor</h3>
+                <h3 class="namePokemon">Bulbasor</h3>
                 <h3>CP: 230</h3>
-                <!-- <span
-                  class="pokemon-type little icon-circle-svgrepo-com"
-                ></span> -->
 
                 <div class="icon">
                   <span class="icon-circle-svgrepo-com"></span>
@@ -132,14 +175,15 @@
               </div>
             </div>
           </div>
-          <div class="item">2</div>
+
+          <!-- <div class="item">2</div>
           <div class="item">3</div>
           <div class="item">4</div>
           <div class="item">5</div>
           <div class="item">6</div>
           <div class="item">7</div>
           <div class="item">8</div>
-          <div class="item">9</div>
+          <div class="item">9</div> -->
         </div>
       </div>
     </div>

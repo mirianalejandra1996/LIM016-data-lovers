@@ -1,21 +1,23 @@
-// estas funciones son de ejemplo
-
 let contenedorPokemon = document.getElementById('pokemones-filtrados');
-// let inputBuscar = document.getElementById('input-buscar');
 
+export const traerPokemones = (dataPokemon) => {
 
-export const traerPokemones = (pokemon) => {
-
-  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.value}/`)
+  fetch('./data/pokemon/pokemon.json')
     .then(function (response) {
       return response.json();
     })
     .then(function (data){
-      createPokemon(data);
+      
+      data.pokemon.forEach(pokemon => { 
+        
+        if(pokemon.name === dataPokemon || pokemon.num === dataPokemon){
+
+        // console.log(pokemon.type)  
+        createPokemon(pokemon);
+        contadorPokemones();
+      }});
+
     })
-    // .catch((data){
-    //   notFound()
-    // });
 };
 
 
@@ -23,40 +25,117 @@ function createPokemon (pokemon) {
 
 contenedorPokemon.innerHTML = `
 <div class="item">
-    <h2>N° ${pokemon.id}</h2>
-    <img src="${pokemon.sprites.front_default}" alt="" />
-    <h3>${formatName (pokemon.name)}</h3>
-</div>`
+            <img src="https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png" />
+
+            <div class="info">
+              <div class="info-left">
+                <h3 class="namePokemon">${pokemon.name}</h3>
+                <h3>CP:${pokemon['stats']['base-attack']}</h3>
+
+                <div class="icon">
+                  <span class="icon-circle-svgrepo-com"></span>
+                </div>
+              </div>
+
+              <div class="info-rigth">
+                <h3>#${pokemon.num}</h3>
+              </div>
+            </div>
+          </div>`;
+}
+
+function contadorPokemones (){
+  const items = document.getElementsByClassName('item');
+  const resultadoPokemones = document.getElementById('totalPokemones');
+
+  if (items.length === 1){
+    resultadoPokemones.textContent = `${items.length} Pokemón`;
+  } else {
+    resultadoPokemones.textContent = `${items.length} Pokemones`;
+  }
 }
 
 
-// function notFound (){
-//   contenedorPokemon.innerHTML = `Este pokemón no se encuentra`
-// }
 
-// function createPokemon (pokemon) {
 
-//   const img = document.createElement('img');
-//   img.src = pokemon.sprites.front_default;
 
-//   const tarjeta = document.createElement('div');
-//   tarjeta.classList.add('item');
-//   tarjeta.innerHTML = pokemon.name;
-//   tarjeta.innerHTML = pokemon.id;
 
-//   tarjeta.prepend(img);
+// function filtradoTipos (arrTypes){
+//   fetch('./data/pokemon/pokemon.json')
+//   .then( function (response){
+//     return response.json()
+//   })
+//   .then( function (data) {
+    
+//     // data.pokemon.filter( pokemon => )
+// })}
 
-//   contenedorPokemon.prepend(tarjeta);
+// let prueba = ['ice', 'psychic'];
+// console.log(filtradoTipos(prueba));
 
-//   // document.getElementById('pokemones-filtrados').prepend(tarjeta);
+
+
+
+
+// function pruebaUnTipo () {
   
-//   // document.getElementById('pokemones-filtrados').appendChild(tarjeta)
-// }
+//   let a = ['fuego','agua','tierra'];
+//   const b = a.includes('agua');
 
-function formatName (name) {
-  return name.charAt(0).toUpperCase() + name.slice(1);
-}
+//   return b
 
-// function formatId (id){
-//   return id.toLocaleString()
+//     // return JSON.stringify(a.sort()) === JSON.stringify(b.sort());
+  
+//   }
+
+// console.log(pruebaUnTipo());
+
+
+// function pruebaVariosTipos () {
+  
+//   let a = ['fuego','volador','tierra'];
+
+//   const c = p => p === 'agua' || p === 'tierra'; //true o false
+//   console.log(c)
+
+//   const b = a.some(c);
+
+//   return b
+
+ //   // return JSON.stringify(a.sort()) === JSON.stringify(b.sort());
+  
+  // }
+
+// console.log(pruebaVariosTipos());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function enviarTipo (){
+
+//   const btntipos = document.getElementsByClassName('btn-tipo')
+
+//   for (let btn of btntipos){
+
+//     btn.onclick = filtradoTipos
+
+//   }
+  
 // }
