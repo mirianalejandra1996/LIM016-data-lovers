@@ -138,52 +138,6 @@ filtradoTipos(prueba);
   
 
 
-
-
-
-
-
-
-
-
-
-
-
-  // -----------------------AQUII
-  
-  // function pruebaVariosTiposArray (arrTipos) {
-    
-  //   let pokemonApi = ['fuego','volador','tierra'];
-  //   // let pokemonApi = ['agua','tierra','volador'];
-  
-  //   let resultado = [];
-
-  //   for (let tipo of arrTipos){
-
-  //     let isType = pokemonType => pokemonType === tipo;
-      
-  //     let comprobando = pokemonApi.some(isType);
-
-  //     if (comprobando){
-  //       resultado.push(1);
-  //     }
-  //     else {
-  //       resultado.push(0);
-  //     }
-  //   }
-    
-  //   if (resultado.every(pokemon => pokemon === 1)){
-  //     console.log('pikachu');
-  //   }
-  //   else {
-  //     console.log('no sirve')
-  //   }
-  // }
-  
-  
-  // pruebaVariosTiposArray(['agua','tierra','volador']);
-  
-
 // -------------------------------------------
 
 // function enviarTipos (){
