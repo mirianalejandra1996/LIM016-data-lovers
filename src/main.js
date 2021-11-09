@@ -1,5 +1,8 @@
 import { traerPokemones } from './data.js';
+import { filtradoTipos } from './data.js';
+import { render } from './data.js';
 
+render();
 // Redes sociales (iconos del nav)
 const githubMirian = document.getElementById('github-mirian');
 const githubLucero = document.getElementById('github-lucero');
@@ -39,15 +42,6 @@ function formatNumber(num) {
         return num;
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -116,7 +110,7 @@ for (let boton of botonesTipo) {
 
     // this.classList.toggle('seleccionado');
     this.classList.toggle('tipo-seleccionado');
-
+    enviarTipos();
   }
 }
 
@@ -129,3 +123,14 @@ for (let boton of botonesDebilidad) {
   }
 }
 
+
+//-----------
+function enviarTipos (){
+    const tipoSeleccionados = document.getElementsByClassName('tipo-seleccionado');
+    let array=[];
+    for (let btn of tipoSeleccionados){
+     array.push(btn.value)
+    }
+    filtradoTipos(array)
+  }
+  
