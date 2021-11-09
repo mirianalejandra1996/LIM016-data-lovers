@@ -13,20 +13,108 @@
     />
   </head>
   <body>
-    <div class="contenedor">
-      <header class="header">
-        <nav>
-          <div class="logo">
-            <h4>PokeCompany</h4>
+    <div class="contenedor-landing">
+        <header class="header">
+            <nav>
+              <div class="logo">
+                <h4>PokeCompany</h4>
+              </div>
+    
+              <ul id="links">
+                <li><a id="home" href="landing.html">Home</a></li>
+                <li><a href="pokedex.html">Pokedex</a></li>
+                <li><a href="pokemap.html">PokeMap</a></li>
+              </ul>
+    
+              <div class="icons">
+                <div id="github-mirian" class="nav-btn">
+                  <div class="icon">
+                    <span class="icon-github"></span>
+                  </div>
+                </div>
+                <div id="github-lucero" class="nav-btn">
+                  <div class="icon">
+                    <span class="icon-github"></span>
+                  </div>
+                </div>
+                <div id="pokemon-website" class="nav-btn">
+                  <div class="icon">
+                    <span class="icon-pokebola-recta"></span>
+                    <!-- <span class="icon-down-arrow-svgrepo-com"></span> -->
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </header>
+      <div class="banner">
+          <div class="banner-info">
+                <div class="info-descarga">
+                <h2>AHORA DISPONIBLE</h2>
+                <div class="icons">
+                <span class="icon-logo-google-playstore-svgrepo-com"></span>
+                <span class="icon-android-svgrepo-com"></span>
+                <span class="apple-svgrepo-com"></span>
+                </div>
+              
+                </div>
+                <div class="info-guia">
+                <h1>POKEMON GO</h1>
+                <h2>Los Ultimos Tips y guia de Trucos</h2>
+                <button>Obtenlo Gratis</button>
+                <button>Ver mas</button>
+                 </div>
           </div>
+         
+      </div>
+      <div class="pokemones-destacados">
+        <h2>Pokemones Destacados</h2>
+        <!--  -->
+        <div id="icon-filter" class="circle-btn">
+          <div class="icon">
+            <span class="icon-star-svgrepo-com"></span>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+      <div class="carousel-wrapper">
+        <div id="atras" class="span">
+            <span class="icon-down-arrow-svgrepo-com flechaizquierda"></span>
+        </div>
+        <div id="adelante" class="span"><span class="icon-down-arrow-svgrepo-com flechaderecha"></span></div>
 
-          <ul id="links">
-            <li><a id="home" href="#">Home</a></li>
-            <li><a href="#">Pokedex</a></li>
-            <li><a href="#">PokeMap</a></li>
-          </ul>
-
-          <div class="icons">
+        <div class="carousel">
+          <div class="carousel__photo">
+            <img src="25.png" />
+            <div class="carousel-info">
+              <h2>Pikachu</h2>
+              <p>#25</p>
+            </div>
+            <div class="carousel-tipo">Electrico</div>
+          </div>
+          <div class="carousel__photo"><img src="1.png" /></div>
+          <div class="carousel__photo"><img src="15.png" /></div>
+          <div class="carousel__photo"><img src="17.png" /></div>
+          <div class="carousel__photo"><img src="20.png" /></div>
+          <div class="carousel__photo"><img src="29.png" /></div>
+          <div class="carousel__photo"><img src="32.png" /></div>
+          <div class="carousel__photo"><img src="50.png" /></div>
+          <div class="carousel__photo"><img src="57.png" /></div>
+          <div class="carousel__photo"><img src="70.png" /></div>
+          <div class="carousel__photo"><img src="80.png" /></div>
+          <div class="carousel__photo"><img src="90.png" /></div>
+          <div class="carousel__photo"><img src="100.png" /></div>
+          <div class="carousel__photo"><img src="125.png" /></div>
+          <div class="carousel__photo"><img src="131.png" /></div>
+          <div class="carousel__photo"><img src="132.png" /></div>
+          <div class="carousel__photo"><img src="135.png" /></div>
+          <div class="carousel__photo"><img src="150.png" /></div>
+          <div class="carousel__photo"><img src="170.png" /></div>
+          <div class="carousel__photo"><img src="174.png" /></div>
+        </div>
+      </div>
+      <footer>
+        <p>© 2021 PokeCompany. All rights reserved.</p>
+        <div class="icons-footer">
             <div id="github-mirian" class="nav-btn">
               <div class="icon">
                 <span class="icon-github"></span>
@@ -44,155 +132,9 @@
               </div>
             </div>
           </div>
-        </nav>
-      </header>
-
-      <div class="buscador">
-        <div class="buscador-especial">
-          <h2>Buscador Especial</h2>
-          <!--  -->
-          <div id="icon-filter" class="circle-btn">
-            <div class="icon">
-              <span class="icon-filter-svgrepo-com"></span>
-            </div>
-          </div>
-          <!--  -->
-        </div>
-        <div style="margin-top: 30px">
-          <h2 class="titulo">Nombre o Número</h2>
-
-          <div class="box">
-            <input id="input-buscar" type="text" />
-            <label id="btn-buscar" class="input-btn" for="">
-              <span class="icon-search-svgrepo-com"></span>
-            </label>
-          </div>
-        </div>
-        <div style="margin-top: 30px">
-          <div class="caracteristicas">
-            <a id="tipos" class="btn-caracteristica active show-bottom-line"
-              >Tipos</a
-            >
-            <a
-              id="debilidades"
-              class="btn-caracteristica inactive hide-bottom-line"
-              >Debilidades</a
-            >
-            <!-- <button class="btn-caracteristica">Debilidades</button> -->
-          </div>
-
-          <!-- Botones de tipo -->
-          <div id="btns-tipo" class="tipo-pokemon shown">
-            <button value="fire" class="btn-tipo seleccionado">Fuego</button>
-            <button class="btn-tipo">Agua</button>
-            <button class="btn-tipo">Planta</button>
-            <button class="btn-tipo">Acero</button>
-            <button class="btn-tipo">Tierra</button>
-            <button class="btn-tipo">Roca</button>
-            <button class="btn-tipo">Siniestro</button>
-            <button class="btn-tipo">Eléctrico</button>
-            <button class="btn-tipo">Veneno</button>
-            <button class="btn-tipo">Psíquico</button>
-            <button class="btn-tipo">Fantasma</button>
-            <button class="btn-tipo">Normal</button>
-            <button class="btn-tipo">Hielo</button>
-            <button class="btn-tipo">Hada</button>
-            <button class="btn-tipo">Lucha</button>
-            <button class="btn-tipo">Dragón</button>
-            <button value="flying" class="btn-tipo seleccionado">
-              Volador
-            </button>
-            <button class="btn-tipo">Bicho</button>
-          </div>
-
-          <!-- Botones de debilidades -->
-          <div id="btns-debilidades" class="tipo-pokemon hidden">
-            <button class="btn-debilidad">Fuego</button>
-            <button class="btn-debilidad">Agua</button>
-            <button class="btn-debilidad">Planta</button>
-            <button class="btn-debilidad">Acero</button>
-            <button class="btn-debilidad">Tierra</button>
-            <button class="btn-debilidad">Roca</button>
-            <button class="btn-debilidad">Siniestro</button>
-            <button class="btn-debilidad">Eléctrico</button>
-            <button class="btn-debilidad">Veneno</button>
-            <button class="btn-debilidad">Psíquico</button>
-            <button class="btn-debilidad">Fantasma</button>
-            <button class="btn-debilidad">Normal</button>
-            <button class="btn-debilidad">Hielo</button>
-            <button class="btn-debilidad">Hada</button>
-            <button class="btn-debilidad">Lucha</button>
-            <button class="btn-debilidad">Dragón</button>
-            <button class="btn-debilidad">Volador</button>
-            <button class="btn-debilidad">Bicho</button>
-          </div>
-        </div>
-      </div>
-
-      <div id="contenedorPokemon" class="contenedorPokemon">
-        <div class="filtros">
-          <h2 id="totalPokemones">56 Pokemones</h2>
-
-          <!-- Select Box -->
-          <div class="dropdown">
-            <div id="dropdownSelect" class="dropdown-select">
-              <span id="selectText"> Ordenar por...</span>
-              <span id="arrowIcon" class="icon-down-arrow-svgrepo-com"></span>
-            </div>
-
-            <div id="list" class="dropdown-list hidden">
-              <div class="options">
-                <span>Número inferior</span>
-              </div>
-
-              <div class="options">
-                <span>Número superior</span>
-              </div>
-
-              <div class="options">
-                <span>A-Z</span>
-              </div>
-
-              <div class="options">
-                <span>Z-A</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="pokemones-filtrados" class="pokemones-filtrados">
-          <div class="item">
-            <img src="./134.png" />
-
-            <div class="info">
-              <div class="info-left">
-                <h3 class="namePokemon">Bulbasor</h3>
-                <h3>CP: 230</h3>
-
-                <div class="icon">
-                  <span class="icon-circle-svgrepo-com"></span>
-                </div>
-              </div>
-
-              <div class="info-rigth">
-                <h3>#001</h3>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">2</div>
-          <div class="item">3</div>
-          <div class="item">4</div>
-          <div class="item">5</div>
-          <div class="item">6</div>
-          <div class="item">7</div>
-          <div class="item">8</div>
-          <div class="item">9</div>
-        </div>
-      </div>
+      </footer>
     </div>
-
-    <br />
     <script src="main.js" type="module"></script>
+    <script src="carousel.js" type="module"></script>
   </body>
 </html>

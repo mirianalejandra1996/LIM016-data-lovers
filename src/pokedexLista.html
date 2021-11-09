@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="icons.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="contenedor">
+      <header class="header">
+        <nav>
+          <div class="logo">
+            <h4>PokeCompany</h4>
+          </div>
+
+          <ul id="links">
+            <li><a id="home" href="landing.html">Home</a></li>
+            <li><a href="pokedex.html">Pokedex</a></li>
+            <li><a href="pokemap.html">PokeMap</a></li>
+          </ul>
+
+          <div class="icons">
+            <div id="github-mirian" class="nav-btn">
+              <div class="icon">
+                <span class="icon-github"></span>
+              </div>
+            </div>
+            <div id="github-lucero" class="nav-btn">
+              <div class="icon">
+                <span class="icon-github"></span>
+              </div>
+            </div>
+            <div id="pokemon-website" class="nav-btn">
+              <div class="icon">
+                <span class="icon-pokebola-recta"></span>
+                <!-- <span class="icon-down-arrow-svgrepo-com"></span> -->
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="buscador">
+        <div class="buscador-especial">
+          <h2>Buscador Especial</h2>
+          <!--  -->
+          <div id="icon-filter" class="circle-btn">
+            <div class="icon">
+              <span class="icon-filter-svgrepo-com"></span>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+        <div style="margin-top: 30px">
+          <h2 class="titulo">Nombre o Número</h2>
+
+          <div class="box">
+            <input id="input-buscar" type="text" />
+            <label id="btn-buscar" class="input-btn" for="">
+              <span class="icon-search-svgrepo-com"></span>
+            </label>
+          </div>
+        </div>
+        <div style="margin-top: 30px">
+          <div class="caracteristicas">
+            <a id="tipos" class="btn-caracteristica active show-bottom-line"
+              >Tipos</a
+            >
+            <a
+              id="debilidades"
+              class="btn-caracteristica inactive hide-bottom-line"
+              >Debilidades</a
+            >
+            <!-- <button class="btn-caracteristica">Debilidades</button> -->
+          </div>
+
+          <!-- Botones de tipo -->
+          <div id="btns-tipo" class="tipo-pokemon shown">
+            <button value="fire" class="btn-tipo">Fuego</button>
+            <button value="water" class="btn-tipo">Agua</button>
+            <button value="grass" class="btn-tipo">Planta</button>
+            <button value="steel" class="btn-tipo">Acero</button>
+            <button value="ground" class="btn-tipo">Tierra</button>
+            <button value="rock" class="btn-tipo">Roca</button>
+            <button value="dark" class="btn-tipo">Siniestro</button>
+            <button value="electric" class="btn-tipo">Eléctrico</button>
+            <button value="poison" class="btn-tipo">Veneno</button>
+            <button value="psychic" class="btn-tipo">Psíquico</button>
+            <button value="ghost" class="btn-tipo">Fantasma</button>
+            <button value="normal" class="btn-tipo">Normal</button>
+            <button value="ice" class="btn-tipo">Hielo</button>
+            <button value="fairy" class="btn-tipo">Hada</button>
+            <button value="fighting" class="btn-tipo">Lucha</button>
+            <button value="dragon" class="btn-tipo">Dragón</button>
+            <button value="flying" class="btn-tipo">
+              Volador
+            </button>
+            <button value="bug" class="btn-tipo">Bicho</button>
+          </div>
+
+          <!-- Botones de debilidades -->
+          <div id="btns-debilidades" class="tipo-pokemon hidden">
+            <button class="btn-debilidad">Fuego</button>
+            <button class="btn-debilidad">Agua</button>
+            <button class="btn-debilidad">Planta</button>
+            <button class="btn-debilidad">Acero</button>
+            <button class="btn-debilidad">Tierra</button>
+            <button class="btn-debilidad">Roca</button>
+            <button class="btn-debilidad">Siniestro</button>
+            <button class="btn-debilidad">Eléctrico</button>
+            <button class="btn-debilidad">Veneno</button>
+            <button class="btn-debilidad">Psíquico</button>
+            <button class="btn-debilidad">Fantasma</button>
+            <button class="btn-debilidad">Normal</button>
+            <button class="btn-debilidad">Hielo</button>
+            <button class="btn-debilidad">Hada</button>
+            <button class="btn-debilidad">Lucha</button>
+            <button class="btn-debilidad">Dragón</button>
+            <button class="btn-debilidad">Volador</button>
+            <button class="btn-debilidad">Bicho</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="contenedorPokemon" class="contenedorPokemon">
+        <div class="filtros">
+          <h2 id="totalPokemones">251 Pokemones</h2>
+
+          <!-- Select Box -->
+          <div class="dropdown">
+            <div id="dropdownSelect" class="dropdown-select">
+              <span id="selectText"> Ordenar por...</span>
+              <span id="arrowIcon" class="icon-down-arrow-svgrepo-com"></span>
+            </div>
+
+            <div id="list" class="dropdown-list hidden">
+              <div class="options">
+                <span>Número inferior</span>
+              </div>
+
+              <div class="options">
+                <span>Número superior</span>
+              </div>
+
+              <div class="options">
+                <span>A-Z</span>
+              </div>
+
+              <div class="options">
+                <span>Z-A</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="pokemones-filtrados" class="pokemones-filtrados">
+   
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
