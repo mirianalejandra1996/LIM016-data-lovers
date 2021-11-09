@@ -85,10 +85,47 @@ const btnsDebilidades = document.getElementById('btns-debilidades');
 
 tipos.addEventListener('click', () => {
 
-    tipos.classList.toggle('active');
-    debilidades.classList.toggle('active');
-    btnsDebilidades.classList.toggle('hidden');
-    btnsTipo.classList.toggle('hidden');
-
+    tipos.classList.replace('inactive','active');
+    debilidades.classList.replace('active', 'inactive');
+    btnsTipo.classList.replace('hidden','shown');
+    btnsDebilidades.classList.replace('shown','hidden');
+    tipos.classList.replace('hide-bottom-line','show-bottom-line');
+    debilidades.classList.replace('show-bottom-line', 'hide-bottom-line');
+    
 })
+
+
+debilidades.addEventListener('click', () => {
+    
+    tipos.classList.replace('active','inactive');
+    debilidades.classList.replace('inactive','active');
+    btnsTipo.classList.replace('shown','hidden');
+    btnsDebilidades.classList.replace('hidden','shown');
+    debilidades.classList.replace('hide-bottom-line','show-bottom-line');
+    tipos.classList.replace('show-bottom-line', 'hide-bottom-line');
+    
+})
+
+// --------
+
+let botonesTipo = document.getElementsByClassName('btn-tipo');
+let botonesDebilidad = document.getElementsByClassName('btn-debilidad');
+
+for (let boton of botonesTipo) {
+  boton.onclick = function () {
+
+    // this.classList.toggle('seleccionado');
+    this.classList.toggle('tipo-seleccionado');
+
+  }
+}
+
+for (let boton of botonesDebilidad) {
+  boton.onclick = function () {
+
+    // this.classList.toggle('seleccionado');
+    this.classList.toggle('debilidad-seleccionado');
+
+  }
+}
 

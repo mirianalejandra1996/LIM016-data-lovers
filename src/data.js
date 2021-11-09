@@ -60,18 +60,46 @@ function contadorPokemones (){
 
 
 
-// function filtradoTipos (arrTypes){
-//   fetch('./data/pokemon/pokemon.json')
-//   .then( function (response){
-//     return response.json()
-//   })
-//   .then( function (data) {
+function filtradoTipos (arrTipos){
+  fetch('./data/pokemon/pokemon.json')
+  .then( function (response){
+    return response.json()
+  })
+  .then( function (data) {
     
-//     // data.pokemon.filter( pokemon => )
-// })}
+    data.pokemon.forEach( pokemon => {
 
-// let prueba = ['ice', 'psychic'];
-// console.log(filtradoTipos(prueba));
+      let pokemonApi = pokemon.type;
+      let resultado = [];
+
+      for (let tipo of arrTipos){
+
+        let isType = pokemonType => pokemonType === tipo;
+      
+        let comprobando = pokemonApi.some(isType);
+
+        if (comprobando){
+          resultado.push(1);
+        }
+        else {
+          resultado.push(0);
+        }
+
+      }
+
+      if (resultado.every(pokemon => pokemon === 1)){
+        createPokemon(pokemon);
+        contadorPokemones();
+        console.log('si sirve');
+      }
+      else {
+        console.log('No sirve')
+      }
+    })
+})}
+
+let prueba = ['fire'];
+filtradoTipos(prueba);
 
 
 
@@ -102,40 +130,73 @@ function contadorPokemones (){
 
 //   return b
 
- //   // return JSON.stringify(a.sort()) === JSON.stringify(b.sort());
+//    // return JSON.stringify(a.sort()) === JSON.stringify(b.sort());
   
+//   }
+  
+  // console.log(pruebaVariosTipos());
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // -----------------------AQUII
+  
+  // function pruebaVariosTiposArray (arrTipos) {
+    
+  //   let pokemonApi = ['fuego','volador','tierra'];
+  //   // let pokemonApi = ['agua','tierra','volador'];
+  
+  //   let resultado = [];
+
+  //   for (let tipo of arrTipos){
+
+  //     let isType = pokemonType => pokemonType === tipo;
+      
+  //     let comprobando = pokemonApi.some(isType);
+
+  //     if (comprobando){
+  //       resultado.push(1);
+  //     }
+  //     else {
+  //       resultado.push(0);
+  //     }
+  //   }
+    
+  //   if (resultado.every(pokemon => pokemon === 1)){
+  //     console.log('pikachu');
+  //   }
+  //   else {
+  //     console.log('no sirve')
+  //   }
   // }
+  
+  
+  // pruebaVariosTiposArray(['agua','tierra','volador']);
+  
 
-// console.log(pruebaVariosTipos());
+// -------------------------------------------
 
+// function enviarTipos (){
 
+//   const tipoSeleccionados = document.getElementsByClassName('tipo-seleccionado');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function enviarTipo (){
-
-//   const btntipos = document.getElementsByClassName('btn-tipo')
-
-//   for (let btn of btntipos){
-
+//   for (let btn of tipoSeleccionados){
+    
 //     btn.onclick = filtradoTipos
 
 //   }
   
 // }
+
+
+// enviarTipo();

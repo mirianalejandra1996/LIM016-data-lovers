@@ -20,7 +20,6 @@ nav {
 
 nav ul {
   width: 25%;
-  /* background-color: red; */
   display: flex;
   list-style: none;
   justify-content: space-between;
@@ -106,7 +105,8 @@ nav ul li a:hover {
 }
 
 /* Botones de tipos de pokemones */
-.btn-tipo {
+.btn-tipo,
+.btn-debilidad {
   height: 30px;
   width: 90px;
   border-radius: 20px;
@@ -115,8 +115,9 @@ nav ul li a:hover {
   background-color: #40d482;
 }
 
-.btn-tipo:hover {
-  color: #f6f7fb;
+.btn-tipo:hover,
+.btn-debilidad:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* Main container */
@@ -256,7 +257,6 @@ nav ul li a:hover {
 }
 
 .btn-caracteristica {
-  /* background-color: red; */
   /* width: 200px; */
   display: flex;
   /* width: 50%; */
@@ -285,12 +285,12 @@ nav ul li a:hover {
   color: #40d482;
 }
 
-.btn-caracteristica:active::after {
-  background-color: red;
-}
-
 .hide-bottom-line::after {
   display: none;
+}
+
+.show-bottom-line::after {
+  display: block;
 }
 
 #debilidades {
@@ -421,6 +421,10 @@ nav ul li a:hover {
   background-color: #ebebeb;
 }
 
+.shown {
+  display: block;
+}
+
 .hidden {
   /* visibility: hidden; */
   display: none;
@@ -440,9 +444,27 @@ nav ul li a:hover {
 }
 
 .active {
-  color: #000;
+  color: black;
+}
+
+.inactive {
+  color: gray;
 }
 
 .namePokemon {
   text-transform: capitalize;
+}
+
+.tipo-seleccionado {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border: 1px solid #40d482;
+  color: #40d482;
+}
+
+.debilidad-seleccionado {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  border: 1px solid #40d482;
+  color: #40d482;
 }
