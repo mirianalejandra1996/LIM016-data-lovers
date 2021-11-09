@@ -8,11 +8,10 @@ export const traerPokemones = (dataPokemon) => {
     })
     .then(function (data){
       
+      contenedorPokemon.textContent='';
       data.pokemon.forEach(pokemon => { 
-        
         if(pokemon.name === dataPokemon || pokemon.num === dataPokemon){
 
-        // console.log(pokemon.type)  
         createPokemon(pokemon);
         contadorPokemones();
       }});
@@ -21,7 +20,7 @@ export const traerPokemones = (dataPokemon) => {
 };
 
 
-function createPokemon (pokemon) {
+/* function createPokemon (pokemon) {
 
 contenedorPokemon.innerHTML = `
 <div class="item">
@@ -42,7 +41,7 @@ contenedorPokemon.innerHTML = `
               </div>
             </div>
           </div>`;
-}
+} */
 
 function contadorPokemones (){
   const items = document.getElementsByClassName('item');
@@ -56,17 +55,26 @@ function contadorPokemones (){
 }
 
 
-
-
-
-
-function filtradoTipos (arrTipos){
+export const render=()=>{
   fetch('./data/pokemon/pokemon.json')
   .then( function (response){
     return response.json()
   })
   .then( function (data) {
-    
+    contenedorPokemon.textContent='';
+    data.pokemon.forEach( pokemon => {
+      createPokemon(pokemon);
+    })
+})}
+
+
+export const filtradoTipos =(arrTipos)=>{
+  fetch('./data/pokemon/pokemon.json')
+  .then( function (response){
+    return response.json()
+  })
+  .then( function (data) {
+    contenedorPokemon.textContent='';
     data.pokemon.forEach( pokemon => {
 
       let pokemonApi = pokemon.type;
@@ -84,26 +92,66 @@ function filtradoTipos (arrTipos){
         else {
           resultado.push(0);
         }
-
       }
-
       if (resultado.every(pokemon => pokemon === 1)){
         createPokemon(pokemon);
         contadorPokemones();
-        console.log('si sirve');
+      /*   console.log('si sirve'); */
       }
       else {
-        console.log('No sirve')
+       /*  console.log('No sirve') */
       }
     })
 })}
 
-let prueba = ['fire'];
-filtradoTipos(prueba);
 
+function createPokemon (pokemon){
+  
+  const card=document.createElement('div')
+  card.classList.add("item")
+  const img=document.createElement('img')
+  img.src=`https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png`
+  card.append(img)
+  const info=document.createElement('div')
+  info.classList.add("info")
+  card.append(info)
+  const infoLeft=document.createElement('div')
+  infoLeft.classList.add("info-left")
+  info.append(infoLeft)
+  const nombrepokemon=document.createElement('h3')
+  nombrepokemon.classList.add("namepokemon")
+  nombrepokemon.textContent=`${pokemon.name}`
+  infoLeft.append(nombrepokemon)
+  const cpPokemon=document.createElement('h3')
+  cpPokemon.textContent=`CP: ${pokemon['stats']['base-attack']}`
+  infoLeft.append(cpPokemon)
+  const icon=document.createElement('div')
+  icon.classList.add("icon")
+  infoLeft.append(icon)
+  const span=document.createElement('span')
+  span.classList.add("icon-circle-svgrepo-com")
+  icon.append(span)
+  const infoRigth=document.createElement('div')
+  infoRigth.classList.add("info-rigth")
+  info.append(infoRigth)
+  const numpokemon=document.createElement('h3')
+  numpokemon.textContent=`${pokemon.num}`
+  infoRigth.append(numpokemon)
 
+contenedorPokemon.append(card);
+}
 
+/*  let prueba = ['fire'];
+filtradoTipos(prueba); 
+ */
+ 
 
+/* const tipoSeleccionados = document.getElementsByClassName('tipo-seleccionado');
+    for (let btn of tipoSeleccionados){
+      console.log(btn)
+      btn.onclick = filtradoTipos(btn);
+  
+    }  */
 
 // function pruebaUnTipo () {
   
@@ -140,17 +188,7 @@ filtradoTipos(prueba);
 
 // -------------------------------------------
 
-// function enviarTipos (){
 
-//   const tipoSeleccionados = document.getElementsByClassName('tipo-seleccionado');
-
-//   for (let btn of tipoSeleccionados){
-    
-//     btn.onclick = filtradoTipos
-
-//   }
-  
-// }
 
 
 // enviarTipo();

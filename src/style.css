@@ -56,7 +56,7 @@ nav ul li a::after {
   height: 4.2px;
   width: 100%;
   left: 0;
-  bottom: -1px;
+  bottom: -2px;
   /* bottom: -0.2rem; */
   border-radius: 25px;
   transform: translateY(3px);
@@ -467,4 +467,209 @@ nav ul li a:hover {
   background-color: #fff;
   border: 1px solid #40d482;
   color: #40d482;
+}
+
+/* For Landing: */
+
+
+/* Landing  */
+.contenedor-landing {
+display: grid;
+height: 800px;
+grid-gap: 10px;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: 90px 400px 1fr 1fr;
+grid-template-areas:
+  "header header header header"
+  "banner banner banner banner"
+  "pokemones-destacados pokemones-destacados pokemones-destacados pokemones-destacados"
+  "carousel carousel carousel carousel"
+  "footer footer footer footer";
+}
+.contenedor-landing .header {
+  grid-area: header;
+  color: #2f2f2f;
+}
+
+.btn-tipo:hover {
+  color: #f6f7fb;
+}
+
+/* Banner Pikachu Landing */
+.banner {
+background-image: url("banner.JPG");
+background-repeat: no-repeat;
+background-size: cover;
+color: #fff;
+display: flex;
+align-items: center;
+}
+.contenedor-landing .banner {
+grid-area: banner;
+}
+.banner-info {
+width: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.info-descarga {
+color: #8ee3d7;
+}
+.info-descarga span:hover {
+color: #fff;
+}
+.contenedor-landing .pokemones-destacados {
+grid-area: pokemones-destacados;
+}
+.contenedor-landing .carousel-wrapper {
+grid-area: carousel;
+}
+.contenedor-landing footer {
+grid-area: footer;
+}
+.pokemones-destacados {
+height: 100px;
+display: flex;
+align-items: center;
+margin-left: 20px;
+}
+.pokemones-destacados h2 {
+margin-right: 20px;
+}
+
+/* CARROUSEL */
+.carousel-wrapper {
+/* overflow: hidden; */
+position: relative;
+margin: auto 10px;
+}
+.carousel {
+width: 100%;
+height: 320px;
+background: #f6f7fb;
+margin: 10px auto;
+display: flex;
+justify-content: left;
+align-items: center;
+overflow-x: hidden;
+transition: 0.25s left ease-in-out;
+}
+.carousel-wrapper .span {
+position: absolute;
+top: 40%;
+height: 92px;
+width: 52px;
+font-size: 40px;
+font-weight: bold;
+color: #fff;
+cursor: pointer;
+z-index: 2;
+background-color: #92e4b8;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.carousel-wrapper .span:hover {
+background-color: #40d482;
+}
+.carousel-wrapper .span:nth-of-type(1) {
+left: 0px;
+}
+.flechaizquierda{
+  transform: rotate(90deg);
+
+}
+.flechaderecha{
+
+  transform: rotate(270deg);
+}
+.carousel-wrapper .span:nth-of-type(2) {
+right: 0px;
+}
+.carousel .carousel__photo {
+position: relative;
+min-width: 254px;
+height: 250px;
+background-color: #fdfdfd;
+margin: 10px;
+border-radius: 24px;
+left: 0;
+transition: 0.5s transform ease-in-out, 0.5s left ease-in-out;
+}
+.carousel .carousel__photo:nth-of-type(1) {
+margin-left: 30px;
+}
+.carousel .carousel__photo::-webkit-scrollbar {
+visibility: hidden;
+}
+.carousel__photo img {
+width: 100%;
+margin-top: -20px;
+}
+.carousel-info {
+padding: 0 40px;
+display: flex;
+justify-content: space-between;
+margin-top: -60px;
+align-items: center;
+}
+
+.carousel-tipo {
+display: none;
+font-size: 14px;
+padding: 5px 10px;
+background-color: #fbe043;
+border-radius: 20px;
+width: 30%;
+margin-left: 40px;
+}
+
+.carousel__photo:hover .carousel-tipo {
+display: block;
+}
+
+.carousel__photo:hover {
+transform: scale(1.2);
+z-index: 1;
+border: 1px solid #40d482;
+}
+
+footer {
+display: flex;
+justify-content: space-between;
+padding: 20px 20px;
+margin: 20px;
+align-items: center;
+border-top: 1px solid #40d482;
+}
+
+.icons-footer {
+  width: 195px;
+  display: flex;
+  justify-content: space-between;
+align-items: center;
+}
+
+.icons-footer .nav-btn {
+  width: 50px;
+  height: 50px;
+  /* background-color: red; */
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #2f2f2f;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icons-footer .nav-btn:hover {
+  color: #40d482;
+  border: 3px solid #40d482;
+}
+
+.icons-footer .nav-btn .icon {
+  font-size: 30px;
 }
