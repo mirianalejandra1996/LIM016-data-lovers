@@ -12,11 +12,10 @@
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 0 30px;
   color: #2f2f2f;
   align-items: center;
   height: 100%;
-  padding: 20px;
 }
 
 nav ul {
@@ -517,12 +516,18 @@ nav ul li a:hover {
 
 /* Banner Pikachu Landing */
 .banner {
-  background-image: url("banner.JPG");
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #fff;
+  /* background-image: url("banner.JPG"); */
+  background-image: linear-gradient(to bottom right,#40D482 0%,#8ee3d7 40%,#D0F1DE 60%,#40D482 100%);
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+  background-size: 200% 200%;
+  animation: movingGradient 5s linear infinite alternate;
   display: flex;
   align-items: center;
+}
+@keyframes movingGradient{
+  from{background-position: 0 0;}
+  to{background-position: 100% 100%;}
 }
 .contenedor-landing .banner {
   grid-area: banner;
@@ -534,11 +539,41 @@ nav ul li a:hover {
   align-items: center;
   flex-direction: column;
 }
+.info-descarga h2{
+  color: #2f2f2f;
+}
 .info-descarga {
-  color: #8ee3d7;
+  color: #40d482;
+}
+.icons-descarga{
+  width: 195px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
 }
 .info-descarga span:hover {
-  color: #fff;
+  color: #ebebeb;
+}
+.info-guia{
+  color: #2f2f2f;
+  text-align: center;
+}
+.btnDescarga{
+  padding: 20px;
+  margin: 10px;
+  margin-top: 30px;
+  border-radius: 10px;
+  border:none;
+  background-color: #40D482;
+  color: #ebebeb;
+  width: 140px;
+
+}
+.btnDescarga:hover{
+  background-color: #ebebeb;
+  color: #40D482;
+  /* border: 1px solid #40D482; */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .contenedor-landing .pokemones-destacados {
   grid-area: pokemones-destacados;
