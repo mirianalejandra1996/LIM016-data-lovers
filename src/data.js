@@ -22,7 +22,7 @@ export const traerPokemones = (dataPokemon) => {
 function contadorPokemones (){
   const items = document.getElementsByClassName('item');
   const resultadoPokemones = document.getElementById('totalPokemones');
-
+  
   if (items.length === 1){
     resultadoPokemones.textContent = `${items.length} Pokemón`;
   } else {
@@ -55,34 +55,38 @@ export const filtradoTipos =(arrTipos)=>{
 
       let pokemonApi = pokemon.type;
       let resultado = [];
+      let pokemonesFiltrados = [];
 
       for (let tipo of arrTipos){
 
         let isType = pokemonType => pokemonType === tipo;
-      
         let comprobando = pokemonApi.some(isType);
 
         if (comprobando){
-          resultado.push(1);
+          resultado.push(true);
         }
         else {
-          resultado.push(0);
+          resultado.push(false);
         }
       }
-      if (resultado.every(pokemon => pokemon === 1)){
-        createPokemon(pokemon);
-        console.log(pokemon);
-        contadorPokemones();
-      /*   console.log('si sirve'); */
+
+      if (resultado.every(pokemonCheckTipo => pokemonCheckTipo === true)){
+        // createPokemon(pokemon);
+        // contadorPokemones();
+        pokemonesFiltrados.push(pokemon)
+        console.log(typeof pokemonesFiltrados)
+        return pokemonesFiltrados
       }
       else {
-       /*  console.log('No sirve') */
+      //  contadorPokemones();
+        return false
       }
+
     })
 })}
 
 
-function createPokemon (pokemon){
+export const createPokemon= (pokemon)=>{
   
   const card=document.createElement('div')
   card.classList.add("item")
