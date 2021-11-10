@@ -499,6 +499,7 @@ nav ul li a:hover {
 .contenedor-landing {
   display: grid;
   height: 800px;
+  /* padding: 0 30px; */
   grid-gap: 10px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 90px 400px 1fr 1fr;
