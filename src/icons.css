@@ -28,12 +28,15 @@
 
 .icon-apple-svgrepo-com:before {
   content: "\e92e";
+  font-size: 40px;
 }
 .icon-android-svgrepo-com:before {
   content: "\e92f";
+  font-size: 40px;
 }
 .icon-logo-google-playstore-svgrepo-com:before {
   content: "\e930";
+  font-size: 40px;
 }
 .icon-lonely-pikachu .path1:before {
   content: "\e900";
