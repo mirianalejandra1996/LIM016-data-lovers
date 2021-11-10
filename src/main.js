@@ -1,6 +1,5 @@
-import { traerPokemones } from './data.js';
-import { filtradoTipos } from './data.js';
-import { render } from './data.js';
+import { traerPokemones ,filtradoTipos,render,createPokemon } from './data.js';
+
 
 render();
 // Redes sociales (iconos del nav)
@@ -26,7 +25,7 @@ let inputBuscar = document.getElementById('input-buscar');
 let btnBuscar = document.getElementById('btn-buscar');
 
 btnBuscar.addEventListener('click', ()=>{
-    traerPokemones(formatNumber(inputBuscar.value))
+    traerPokemones(formatNumber(inputBuscar.value.toLowerCase()))
 });
 
 
@@ -65,6 +64,17 @@ for( let option of options){
         selectText.innerHTML = this.textContent;
         list.classList.toggle('hidden');
         arrowIcon.classList.toggle('rotate');
+        sortBy(this.textContent);
+
+    }
+}
+//funcion sort
+function sortBy(ordenSelecconado){
+    if(ordenSelecconado == "Número inferior"){
+       console.log("corrrecto")
+       pokemon.num
+    }else{
+        console.log("error")
     }
 }
 
@@ -131,6 +141,10 @@ function enviarTipos (){
     for (let btn of tipoSeleccionados){
      array.push(btn.value)
     }
-    filtradoTipos(array)
+   const pokemonchecktipo = filtradoTipos(array)
+    console.log(typeof pokemonchecktipo)
+     for(let pokemon of pokemonchecktipo){
+         createPokemon(pokemon)
+    }
   }
   
