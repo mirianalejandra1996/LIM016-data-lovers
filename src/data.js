@@ -19,30 +19,6 @@ export const traerPokemones = (dataPokemon) => {
     })
 };
 
-
-/* function createPokemon (pokemon) {
-
-contenedorPokemon.innerHTML = `
-<div class="item">
-            <img src="https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png" />
-
-            <div class="info">
-              <div class="info-left">
-                <h3 class="namePokemon">${pokemon.name}</h3>
-                <h3>CP:${pokemon['stats']['base-attack']}</h3>
-
-                <div class="icon">
-                  <span class="icon-circle-svgrepo-com"></span>
-                </div>
-              </div>
-
-              <div class="info-rigth">
-                <h3>#${pokemon.num}</h3>
-              </div>
-            </div>
-          </div>`;
-} */
-
 function contadorPokemones (){
   const items = document.getElementsByClassName('item');
   const resultadoPokemones = document.getElementById('totalPokemones');
@@ -95,6 +71,7 @@ export const filtradoTipos =(arrTipos)=>{
       }
       if (resultado.every(pokemon => pokemon === 1)){
         createPokemon(pokemon);
+        console.log(pokemon);
         contadorPokemones();
       /*   console.log('si sirve'); */
       }
@@ -119,7 +96,7 @@ function createPokemon (pokemon){
   infoLeft.classList.add("info-left")
   info.append(infoLeft)
   const nombrepokemon=document.createElement('h3')
-  nombrepokemon.classList.add("namepokemon")
+  nombrepokemon.classList.add("namePokemon")
   nombrepokemon.textContent=`${pokemon.name}`
   infoLeft.append(nombrepokemon)
   const cpPokemon=document.createElement('h3')
@@ -140,55 +117,3 @@ function createPokemon (pokemon){
 
 contenedorPokemon.append(card);
 }
-
-/*  let prueba = ['fire'];
-filtradoTipos(prueba); 
- */
- 
-
-/* const tipoSeleccionados = document.getElementsByClassName('tipo-seleccionado');
-    for (let btn of tipoSeleccionados){
-      console.log(btn)
-      btn.onclick = filtradoTipos(btn);
-  
-    }  */
-
-// function pruebaUnTipo () {
-  
-//   let a = ['fuego','agua','tierra'];
-//   const b = a.includes('agua');
-
-//   return b
-
-//     // return JSON.stringify(a.sort()) === JSON.stringify(b.sort());
-  
-//   }
-
-// console.log(pruebaUnTipo());
-
-
-// function pruebaVariosTipos () {
-  
-//   let a = ['fuego','volador','tierra'];
-
-//   const c = p => p === 'agua' || p === 'tierra'; //true o false
-//   console.log(c)
-
-//   const b = a.some(c);
-
-//   return b
-
-//    // return JSON.stringify(a.sort()) === JSON.stringify(b.sort());
-  
-//   }
-  
-  // console.log(pruebaVariosTipos());
-  
-
-
-// -------------------------------------------
-
-
-
-
-// enviarTipo();
