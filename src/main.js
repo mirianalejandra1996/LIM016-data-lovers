@@ -1,5 +1,5 @@
-import { traerPokemones ,filtradoTipos,render} from './data.js';
-// import { traerPokemones ,filtradoTipos,render, createPokemon } from './data.js';
+// import { traerPokemones ,filtradoTipos,render} from './datgit a.js';
+import { traerPokemones ,filtradoTipos,render, createPokemon } from './data.js';
 // import { filtradoTipos } from '../../src/data.js';
 // import { traerPokemones, render} from './data.js';
 
@@ -133,3 +133,21 @@ for (let boton of botonesDebilidad) {
 
   }
 }
+
+
+//-----------
+async function enviarTipos (){
+    const tipoSeleccionados = document.getElementsByClassName('tipo-seleccionado');
+    let tipoSelecionados=[];
+    for (let btnS of tipoSeleccionados){
+        tipoSelecionados.push(btnS.value)
+    }
+  //  filtradoTipos(tipoSelecionados)
+    const pokemones = await filtradoTipos(tipoSelecionados)
+    console.log(pokemones)
+
+        for(let pokemon of pokemones){
+           createPokemon(pokemon)
+       }
+  }
+  
