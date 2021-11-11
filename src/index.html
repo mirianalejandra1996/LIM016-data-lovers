@@ -4,59 +4,125 @@
     <meta charset="utf-8" />
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="icons.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="contenedor">
+    <div class="contenedor-landing">
       <header class="header">
         <nav>
           <div class="logo">
-            <!-- <h4>PokeCompany</h4> -->
             <h4>PokeCompany</h4>
           </div>
 
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Pokedex</a></li>
-            <li><a href="">Pokeparadas</a></li>
-            <li><a href="">Pokecercanos</a></li>
-            <!-- <li><a href="">Pokeradar</a></li> -->
+          <ul id="links">
+            <li><a id="home" href="index.html">Home</a></li>
+            <li><a href="./pokedexLista.html">Pokedex</a></li>
+            <li><a href="./pokeMap.html">PokeMap</a></li>
           </ul>
 
           <div class="icons">
-            <span>M</span>
-            <span>L</span>
-            <span>P</span>
+            <div id="github-mirian" class="nav-btn">
+              <div class="icon">
+                <span class="icon-github"></span>
+              </div>
+            </div>
+            <div id="github-lucero" class="nav-btn">
+              <div class="icon">
+                <span class="icon-github"></span>
+              </div>
+            </div>
+            <div id="pokemon-website" class="nav-btn">
+              <div class="icon">
+                <span class="icon-pokebola-recta"></span>
+                <!-- <span class="icon-down-arrow-svgrepo-com"></span> -->
+              </div>
+            </div>
           </div>
         </nav>
       </header>
-
-      <div class="buscador">
-        <h2>Buscador Especial</h2>
-        <br />
-        <input id="input-buscar" type="text" placeholder="Pokemon..." />
-        <br />
-        <button id="btn-buscar">Buscar</button>
+      <div class="banner">
+        <div class="banner-info">
+                <div class="info-descarga">
+                <h2>AHORA DISPONIBLE</h2>
+                <div class="icons-descarga">
+                <span class="icon-logo-google-playstore-svgrepo-com"></span>
+                <span class="icon-android-svgrepo-com"></span>
+                <span class="icon-apple-svgrepo-com"></span>
+                </div>
+              
+                </div>
+                <div class="info-guia">
+                <h1>POKECOMPANY</h1>
+                <h2>Los Ultimos Tips y guia de Trucos</h2>
+                <button class="btnDescarga">Obtenlo Gratis</button>
+                <button class="btnDescarga" >Ver mas</button>
+                 </div>
+                
+          </div>
+        <div>
+            <img src="Pikachu-png-0.png" alt="" height="500px">
+        </div>
+          </div>
+      <div class="pokemones-destacados">
+        <h2>Pokemones Destacados</h2>
+        <!--  -->
+        <div id="icon-filter" class="circle-btn">
+          <div class="icon">
+            <span class="icon-star-svgrepo-com"></span>
+          </div>
+        </div>
+        <!--  -->
       </div>
+      <div class="carousel-wrapper">
+        <div id="atras" class="span">
+          <span class="icon-down-arrow-svgrepo-com flechaizquierda"></span>
+        </div>
+        <div id="adelante" class="span">
+          <span class="icon-down-arrow-svgrepo-com flechaderecha"></span>
+        </div>
 
-      <div class="filtros"></div>
-
-      <div id="pokemones-filtrados" class="pokemones-filtrados">
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-        <div class="item">4</div>
-        <div class="item">5</div>
-        <div class="item">6</div>
-        <div class="item">7</div>
-        <div class="item">8</div>
-        <div class="item">9</div>
-        <div class="item">10</div>
-        <div class="item">11</div>
-        <div class="item">12</div>
+        <div class="carousel">
+          <div class="carousel__photo">
+            <img src="25.png" />
+            <div class="carousel-info">
+              <h2>Pikachu</h2>
+              <p>#25</p>
+            </div>
+            <div class="carousel-tipo">Electrico</div>
+          </div>
+          <div class="carousel__photo"><img src="1.png" /></div>
+   
+        </div>
       </div>
+      <footer>
+        <p>© 2021 PokeCompany. All rights reserved.</p>
+        <div class="icons-footer">
+          <div id="github-mirian" class="nav-btn">
+            <div class="icon">
+              <span class="icon-github"></span>
+            </div>
+          </div>
+          <div id="github-lucero" class="nav-btn">
+            <div class="icon">
+              <span class="icon-github"></span>
+            </div>
+          </div>
+          <div id="pokemon-website" class="nav-btn">
+            <div class="icon">
+              <span class="icon-pokebola-recta"></span>
+              <!-- <span class="icon-down-arrow-svgrepo-com"></span> -->
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-
-    <br />
     <script src="main.js" type="module"></script>
+    <script src="carousel.js" type="module"></script>
   </body>
 </html>
