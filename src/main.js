@@ -1,5 +1,4 @@
-// import { traerPokemones ,filtradoTipos,render} from './datgit a.js';
-import { traerPokemones ,filtradoTipos,render, createPokemon } from './data.js';
+import { traerPokemones ,filtradoTipos,render, createPokemon, contadorPokemones } from './data.js';
 // import { filtradoTipos } from '../../src/data.js';
 // import { traerPokemones, render} from './data.js';
 
@@ -63,10 +62,13 @@ selectField.onclick = function(){
 
 for( let option of options){
     
-    option.onclick = function (){
+    option.onclick = async function (){
         selectText.innerHTML = this.textContent;
         list.classList.toggle('hidden');
         arrowIcon.classList.toggle('rotate');
+        let pokemonesFiltrados = await enviarTipos();
+        console.log('probandoooo' + pokemonesFiltrados)
+        sortBy( pokemonesFiltrados , this.textContent)
     }
 }
 
@@ -120,7 +122,7 @@ for (let boton of botonesTipo) {
         seleccionados.push(botonS.value)
     }
 
-    filtradoTipos(seleccionados);
+    enviarTipos(seleccionados);
   }
 }
 
@@ -148,6 +150,61 @@ async function enviarTipos (){
 
         for(let pokemon of pokemones){
            createPokemon(pokemon)
+           contadorPokemones()
        }
+
+    return pokemones
   }
+
+
+
+function sortBy (pokemonesFiltrados, ordenSeleccionado){
+
+    console.log('entramos?')
+    let edades = [];
+    let nombres = [];
+    // console.log(edades);
+
+    for ( let pokemon of pokemonesFiltrados){
+
+        edades.push(pokemon.edad)
+        nombres.push(pokemon.name)
+    }
+
+    let resultado = [];
+
+    switch (ordenSeleccionado){
+
+        case "Número inferior":
+            resultado = edades.sort( (a,b) => {return a - b });
+            break
+        case "Número superior":
+            resultado = edades.sort( (a,b) => {return b - a });
+            break
+        case "A-Z":
+            resultado = nombres.sort();
+            break
+        case "Z-A":
+            resultado = nombres.reverse();
+            break
+            
+    }
+
+    console.log(resultado);
+    return resultado;
+
+}
   
+sortBy([{nombre: "lucero", edad: "25"}, {nombre: "mirian", edad: "30"}],"Número inferior");
+sortBy([{nombre: "lucero", edad: "25"}, {nombre: "mirian", edad: "30"}],"Número superior");
+
+
+
+
+// -------------
+
+// PRUEBA
+
+// function ordenando () {
+
+// }

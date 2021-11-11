@@ -16,7 +16,7 @@ export const traerPokemones = (dataPokemon) => {
     });
 };
 
-function contadorPokemones() {
+export const contadorPokemones = ()  => {
   const items = document.getElementsByClassName("item");
   const resultadoPokemones = document.getElementById("totalPokemones");
 
