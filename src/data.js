@@ -43,8 +43,10 @@ export const render=()=>{
     })
 })}
 
-
+// Filtra los pokemones en un array que cumplan los tipos solicitados
 export const filtradoTipos =(arrTipos)=>{
+
+  console.log(arrTipos)
   fetch('./data/pokemon/pokemon.json')
   .then( function (response){
     return response.json()
@@ -54,8 +56,8 @@ export const filtradoTipos =(arrTipos)=>{
     data.pokemon.forEach( pokemon => {
 
       let pokemonApi = pokemon.type;
+      console.log(pokemonApi);
       let resultado = [];
-      let pokemonesFiltrados = [];
 
       for (let tipo of arrTipos){
 
@@ -71,22 +73,21 @@ export const filtradoTipos =(arrTipos)=>{
       }
 
       if (resultado.every(pokemonCheckTipo => pokemonCheckTipo === true)){
-        // createPokemon(pokemon);
-        // contadorPokemones();
-        pokemonesFiltrados.push(pokemon)
-        console.log(typeof pokemonesFiltrados)
-        return pokemonesFiltrados
+        console.log(pokemon.name)
+        createPokemon(pokemon);
+        contadorPokemones();
+
+        console.log(resultado);
       }
       else {
-      //  contadorPokemones();
-        return false
+       contadorPokemones();
       }
 
     })
 })}
 
 
-export const createPokemon= (pokemon)=>{
+export const createPokemon = (pokemon)=>{
   
   const card=document.createElement('div')
   card.classList.add("item")
@@ -121,3 +122,4 @@ export const createPokemon= (pokemon)=>{
 
 contenedorPokemon.append(card);
 }
+

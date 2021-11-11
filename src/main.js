@@ -1,4 +1,7 @@
-import { traerPokemones ,filtradoTipos,render,createPokemon } from './data.js';
+import { traerPokemones ,filtradoTipos,render} from './data.js';
+// import { traerPokemones ,filtradoTipos,render, createPokemon } from './data.js';
+// import { filtradoTipos } from '../../src/data.js';
+// import { traerPokemones, render} from './data.js';
 
 
 render();
@@ -64,17 +67,6 @@ for( let option of options){
         selectText.innerHTML = this.textContent;
         list.classList.toggle('hidden');
         arrowIcon.classList.toggle('rotate');
-        sortBy(this.textContent);
-
-    }
-}
-//funcion sort
-function sortBy(ordenSelecconado){
-    if(ordenSelecconado == "Número inferior"){
-       console.log("corrrecto")
-       pokemon.num
-    }else{
-        console.log("error")
     }
 }
 
@@ -112,17 +104,26 @@ debilidades.addEventListener('click', () => {
 
 // --------
 
+
 let botonesTipo = document.getElementsByClassName('btn-tipo');
 let botonesDebilidad = document.getElementsByClassName('btn-debilidad');
 
 for (let boton of botonesTipo) {
   boton.onclick = function () {
 
-    // this.classList.toggle('seleccionado');
     this.classList.toggle('tipo-seleccionado');
-    enviarTipos();
+    
+    let btnsSelects = document.getElementsByClassName('tipo-seleccionado');
+    let seleccionados = []
+
+    for (let botonS of btnsSelects){
+        seleccionados.push(botonS.value)
+    }
+
+    filtradoTipos(seleccionados);
   }
 }
+
 
 for (let boton of botonesDebilidad) {
   boton.onclick = function () {
@@ -132,19 +133,3 @@ for (let boton of botonesDebilidad) {
 
   }
 }
-
-
-//-----------
-function enviarTipos (){
-    const tipoSeleccionados = document.getElementsByClassName('tipo-seleccionado');
-    let array=[];
-    for (let btn of tipoSeleccionados){
-     array.push(btn.value)
-    }
-   const pokemonchecktipo = filtradoTipos(array)
-    console.log(typeof pokemonchecktipo)
-     for(let pokemon of pokemonchecktipo){
-         createPokemon(pokemon)
-    }
-  }
-  
