@@ -135,16 +135,18 @@ for (let boton of botonesDebilidad) {
 
 
 //-----------
-function enviarTipos (){
+async function enviarTipos (){
     const tipoSeleccionados = document.getElementsByClassName('tipo-seleccionado');
-    let array=[];
-    for (let btn of tipoSeleccionados){
-     array.push(btn.value)
+    let tipoSelecionados=[];
+    for (let btnS of tipoSeleccionados){
+        tipoSelecionados.push(btnS.value)
     }
-   const pokemonchecktipo = filtradoTipos(array)
-    console.log(typeof pokemonchecktipo)
-     for(let pokemon of pokemonchecktipo){
-         createPokemon(pokemon)
-    }
+  //  filtradoTipos(tipoSelecionados)
+    const pokemones = await filtradoTipos(tipoSelecionados)
+    console.log(pokemones)
+
+        for(let pokemon of pokemones){
+           createPokemon(pokemon)
+       }
   }
   
