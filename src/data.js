@@ -42,13 +42,18 @@ export const render = () => {
 
 export const filtradoTipos = (arrTipos) => {
   
-  const data= fetch("./data/pokemon/pokemon.json")
+  return fetch("./data/pokemon/pokemon.json")
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       contenedorPokemon.textContent = "";
       let pokemonesFiltrados = [];
+
+      if (arrTipos.length === 0){
+        return data.pokemon
+      }
+
       data.pokemon.forEach((pokemon) => {
         let pokemonApi = pokemon.type;
         let resultado = [];
@@ -73,8 +78,17 @@ export const filtradoTipos = (arrTipos) => {
       });
       return pokemonesFiltrados;
     });
-    return data
 };
+
+export const renderPokemon = (pokemones) => {
+
+  contenedorPokemon.textContent = '';
+  for (let pokemon of pokemones){
+    createPokemon(pokemon);
+    contadorPokemones();
+  }
+}
+
 
 export const createPokemon = (pokemon) => {
   const card = document.createElement("div");

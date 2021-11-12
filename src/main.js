@@ -1,4 +1,4 @@
-import { traerPokemones ,filtradoTipos,render, createPokemon, contadorPokemones } from './data.js';
+import { traerPokemones ,filtradoTipos,render, createPokemon, renderPokemon, contadorPokemones } from './data.js';
 // import { filtradoTipos } from '../../src/data.js';
 // import { traerPokemones, render} from './data.js';
 
@@ -66,9 +66,14 @@ for( let option of options){
         selectText.innerHTML = this.textContent;
         list.classList.toggle('hidden');
         arrowIcon.classList.toggle('rotate');
+
         let pokemonesFiltrados = await enviarTipos();
-        console.log('probandoooo' + pokemonesFiltrados)
-        sortBy( pokemonesFiltrados , this.textContent)
+        console.log('pokemones filtrados', {pokemonesFiltrados});
+
+        const pokemonesOrdenados = sortBy( pokemonesFiltrados , this.textContent);
+        console.log('pokemones ordenados',{pokemonesOrdenados});
+        renderPokemon(pokemonesOrdenados);
+        
     }
 }
 
@@ -160,34 +165,29 @@ async function enviarTipos (){
 
 function sortBy (pokemonesFiltrados, ordenSeleccionado){
 
-    console.log('entramos?')
-    let edades = [];
-    let nombres = [];
-    // console.log(edades);
-
-    for ( let pokemon of pokemonesFiltrados){
-
-        edades.push(pokemon.edad)
-        nombres.push(pokemon.name)
-    }
-
+    console.log('orden seleccionado es' + ordenSeleccionado);
+    console.log('entramooos aquiii');
+    // console.log('y mis pokemones? ', {pokemonesFiltrados})
     let resultado = [];
 
     switch (ordenSeleccionado){
 
         case "Número inferior":
-            resultado = edades.sort( (a,b) => {return a - b });
+            resultado = pokemonesFiltrados.sort( (pa , pb) => {return pa.num - pb.num });
+            console.log('Nummmm inferior' , {resultado})
             break
         case "Número superior":
-            resultado = edades.sort( (a,b) => {return b - a });
+            resultado = pokemonesFiltrados.sort( (pa , pb) => {return pb.num - pa.num });
+            console.log('Nummmm superior' , {resultado})
             break
         case "A-Z":
-            resultado = nombres.sort();
+            resultado = pokemonesFiltrados.sort( (pa , pb) => {return pa.name.localeCompare(pb.name)});
+            console.log('a a la z' , {resultado})
             break
         case "Z-A":
-            resultado = nombres.reverse();
+            resultado = pokemonesFiltrados.sort( (pa , pb) => {return pb.name.localeCompare(pa.name)});
+            console.log('z a la a' , {resultado})
             break
-            
     }
 
     console.log(resultado);
@@ -195,16 +195,7 @@ function sortBy (pokemonesFiltrados, ordenSeleccionado){
 
 }
   
-sortBy([{nombre: "lucero", edad: "25"}, {nombre: "mirian", edad: "30"}],"Número inferior");
-sortBy([{nombre: "lucero", edad: "25"}, {nombre: "mirian", edad: "30"}],"Número superior");
+// sortBy([{nombre: "lucero", edad: "25"}, {nombre: "mirian", edad: "30"}],"Número inferior");
+// sortBy([{nombre: "lucero", edad: "25"}, {nombre: "mirian", edad: "30"}],"Número superior");
 
 
-
-
-// -------------
-
-// PRUEBA
-
-// function ordenando () {
-
-// }
