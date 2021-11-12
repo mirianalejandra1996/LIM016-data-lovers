@@ -125,3 +125,4 @@ export const createPokemon = (pokemon) => {
   contenedorPokemon.append(card);
 };
 
+console.log('yanina y ariana :D')
