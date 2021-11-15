@@ -1,22 +1,32 @@
+//mostrar hamburguesa
+const hamburguesa=document.getElementById('hamburguesa')
+const links=document.getElementById('links')
+hamburguesa.addEventListener('click',()=>{
+  hamburguesa.classList.toggle("close")
+  links.classList.toggle('mostrarnav')
+})
 /* Carousel */
-const adelante = document.getElementById("adelante");
-const atras = document.getElementById("atras");
-const carouselPhoto = document.getElementsByClassName("carousel__photo");
+let adelante = document.getElementById("adelante");
+let atras = document.getElementById("atras");
+let carouselPhoto = document.getElementsByClassName("carousel__photo");
 let largo = 0;
+
 adelante.addEventListener("click", function () {
   largo++;
   for (let i = 0; i < carouselPhoto.length; i++) {
     const card = carouselPhoto[i];
     if (largo == 1) {
-      card.style.left = "-1370px";
+      card.style.left = "-1440px";
+      atras.style.opacity=1
     }
     if (largo == 2) {
-      card.style.left = "-2740px";
+      card.style.left = "-2880px";
     }
     if (largo == 3) {
-      card.style.left = "-4110px";
+      card.style.left = "-4320px";
     }
     if (largo > 3) {
+      adelante.style.opacity=0
       largo = 3;
     }
   }
@@ -33,12 +43,43 @@ atras.addEventListener("click", function () {
     }
     if (largo == 2) {
       card.style.left = "-2740px";
+      adelante.style.opacity=1
     }
     if (largo < 0) {
       largo = 0;
+      atras.style.opacity=0
+
     }
   }
 });
+// Carousel Movile
+
+let movile_view = window.matchMedia("(max-width: 768)");
+if (movile_view.matches) {
+  console.log("hola")
+  adelante.addEventListener("click", function () {
+    largo++;
+    for (let i = 0; i < carouselPhoto.length; i++) {
+      const card = carouselPhoto[i];
+      if (largo == 1) {
+        card.style.left = "-40px";
+        atras.style.opacity=1
+      }
+      if (largo == 2) {
+        card.style.left = "-2880px";
+      }
+      if (largo == 3) {
+        card.style.left = "-4320px";
+      }
+      if (largo > 3) {
+        adelante.style.opacity=0
+        largo = 3;
+      }
+    }
+  });
+}
+
+
 
 // Carousel Tarjetas Dinamicas
 let contenedorcarousel = document.getElementById("carousel");
@@ -59,23 +100,22 @@ export function createCarousel(pokemon) {
   id.textContent = `# ${pokemon.num}`;
   info.append(id);
 
-  console.log(pokemon.type)
-  pokemon.type.forEach(type => {
+  console.log(pokemon.type);
+  pokemon.type.forEach((type) => {
     const tipo = document.createElement("div");
     tipo.classList.add("carousel-tipo");
     tipo.textContent = `${type}`;
     card.append(tipo);
-  })
- 
+  });
 
   contenedorcarousel.append(card);
 }
 
-function renderPokemones (pokemones) {
+function renderPokemones(pokemones) {
   contenedorcarousel.textContent = "";
-  pokemones.forEach(pokemon => {
-    createCarousel(pokemon)
-  })
+  pokemones.forEach((pokemon) => {
+    createCarousel(pokemon);
+  });
 }
 
 const traerPokemonesCarusel = (nrosAleatorios) => {
@@ -84,13 +124,12 @@ const traerPokemonesCarusel = (nrosAleatorios) => {
       return response.json();
     })
     .then(function (data) {
-     
-      const pokemonesAleatorios = []
-      nrosAleatorios.forEach(((nroAleatorio) => {
-        pokemonesAleatorios.push(data.pokemon[nroAleatorio])
-      }))
+      const pokemonesAleatorios = [];
+      nrosAleatorios.forEach((nroAleatorio) => {
+        pokemonesAleatorios.push(data.pokemon[nroAleatorio]);
+      });
 
-      return pokemonesAleatorios
+      return pokemonesAleatorios;
     });
 };
 const cantidadPokemons = 250;
@@ -105,16 +144,9 @@ while (myArray.length < 20) {
     }
   }
   if (!existe) {
-    myArray.push(numeroAleatorio)
+    myArray.push(numeroAleatorio);
   }
 }
-console.log("números aleatorios: ", { myArray }); 
+console.log("números aleatorios: ", { myArray });
 
-traerPokemonesCarusel(myArray)
-.then((pokemones) => renderPokemones(pokemones))
-
-
-
-
-
-
+traerPokemonesCarusel(myArray).then((pokemones) => renderPokemones(pokemones));
