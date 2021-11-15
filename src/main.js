@@ -1,51 +1,7 @@
-import { traerPokemones ,filtradoTipos,render, createPokemon, renderPokemon, contadorPokemones } from './data.js';
-// import { filtradoTipos } from '../../src/data.js';
-// import { traerPokemones, render} from './data.js';
+// import { dataPokemones,busquedaInput } from './data.js';
+import { dataPokemones,busquedaInput, filtradoPokemones } from './data.js';
 
-
-render();
-// Redes sociales (iconos del nav)
-const githubMirian = document.getElementById('github-mirian');
-const githubLucero = document.getElementById('github-lucero');
-const pokemonWebsite = document.getElementById('pokemon-website');
-
-githubMirian.addEventListener('click', ()=> {
-    window.open('https://github.com/mirianalejandra1996','_blank')
-});
-
-githubLucero.addEventListener('click', ()=> {
-    window.open('https://github.com/lucerogoga','_blank')
-});
-
-pokemonWebsite.addEventListener('click',()=>{
-    window.open('https://www.pokemon.com/el/','_blank')
-})
-
-
-// Input búsqueda
-let inputBuscar = document.getElementById('input-buscar');
-let btnBuscar = document.getElementById('btn-buscar');
-
-btnBuscar.addEventListener('click', ()=>{
-    traerPokemones(formatNumber(inputBuscar.value.toLowerCase()))
-});
-
-
-function formatNumber(num) {
-
-    if (parseInt(num) < 10){
-        return '00' + num;
-    }
-    else if ( parseInt(num) < 100 ){
-        return '0' + num;
-    }
-    else {
-        return num;
-    }
-}
-
-
-
+let contenedorPokemon = document.getElementById("pokemones-filtrados");
 
 
 // Select Box
@@ -67,16 +23,16 @@ for( let option of options){
         list.classList.toggle('hidden');
         arrowIcon.classList.toggle('rotate');
 
-        let pokemonesFiltrados = await enviarTipos();
+        // funcion filtrosSeleccionados
+        let pokemonesFiltrados = await filtrosSeleccionados();
         console.log('pokemones filtrados', {pokemonesFiltrados});
 
         const pokemonesOrdenados = sortBy( pokemonesFiltrados , this.textContent);
         console.log('pokemones ordenados',{pokemonesOrdenados});
-        renderPokemon(pokemonesOrdenados);
-        
+    
+        renderCards(pokemonesOrdenados);
     }
 }
-
 
 // Sección de botones
 const tipos = document.getElementById('tipos');
@@ -119,55 +75,159 @@ for (let boton of botonesTipo) {
   boton.onclick = function () {
 
     this.classList.toggle('tipo-seleccionado');
+    let pokemonesFiltrados = filtrosSeleccionados()
+    renderCards(pokemonesFiltrados)
     
-    let btnsSelects = document.getElementsByClassName('tipo-seleccionado');
-    let seleccionados = []
-
-    for (let botonS of btnsSelects){
-        seleccionados.push(botonS.value)
-    }
-
-    enviarTipos(seleccionados);
-  }
+    // filtrosSeleccionados();
+}
 }
 
 
 for (let boton of botonesDebilidad) {
-  boton.onclick = function () {
+    boton.onclick = function () {
+        
+        this.classList.toggle('debilidad-seleccionado');
+        let pokemonesFiltrados = filtrosSeleccionados()
+        renderCards(pokemonesFiltrados)
 
-    // this.classList.toggle('seleccionado');
-    this.classList.toggle('debilidad-seleccionado');
+        // filtrosSeleccionados();
 
   }
 }
 
 
+// ------------
+
+
+// Input búsqueda
+let inputBuscar = document.getElementById('input-buscar');
+let btnBuscar = document.getElementById('btn-buscar');
+
+btnBuscar.addEventListener('click', async ()=>{
+    
+    let pokemonFounded = await busquedaInput(formatNumber(inputBuscar.value.toLowerCase()))
+    
+    renderCards(pokemonFounded);
+    
+});
+
+// Carga todos los pokemones en pantalla recién se carga la página por primera vez
+const renderAllCards = async () => {
+    let pokemones = await dataPokemones();
+    renderCards(pokemones)
+  }
+
+renderAllCards();
+
+
+// render es cargar los pokemones en pantalla
+const renderCards = (pokemones) => {
+    
+    const resultadoPokemones = document.getElementById("totalPokemones");
+    
+    resultadoPokemones.textContent = ''
+
+    if (pokemones.length === 1) {
+      resultadoPokemones.textContent = `${pokemones.length} Pokemón`;
+    } else {
+      resultadoPokemones.textContent = `${pokemones.length} Pokemones`;
+    }
+    
+    contenedorPokemon.textContent = '';
+
+    // Cargando pokemones con SetTimeOut ?
+    
+    let arrPokemones = pokemones;
+    console.log(arrPokemones)
+    
+    arrPokemones.forEach((pokemon) => {
+        
+        cardPokemon(pokemon)
+    });
+  };
+
+
+  
+
+// ----------------------
+
+
+// Funcion cardPokemon funcional
+// Esta función crea el formato de las tarjetas de cada pokemón, y se mostrarán en su contenedor
+
+export const cardPokemon = (pokemon) => {
+    
+    const card = document.createElement("div");
+    card.classList.add("item");
+    const img = document.createElement("img");
+    img.src = `https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png`;
+    card.append(img);
+    const info = document.createElement("div");
+    info.classList.add("info");
+    card.append(info);
+    const infoLeft = document.createElement("div");
+    infoLeft.classList.add("info-left");
+    info.append(infoLeft);
+    const nombrepokemon = document.createElement("h3");
+    nombrepokemon.classList.add("namePokemon");
+    nombrepokemon.textContent = `${pokemon.name}`;
+    infoLeft.append(nombrepokemon);
+    const cpPokemon = document.createElement("h3");
+    cpPokemon.textContent = `CP: ${pokemon["stats"]["base-attack"]}`;
+    infoLeft.append(cpPokemon);
+    const icon = document.createElement("div");
+    icon.classList.add("icon");
+    infoLeft.append(icon);
+    const span = document.createElement("span");
+    span.classList.add("icon-circle-svgrepo-com");
+    icon.append(span);
+    const infoRigth = document.createElement("div");
+    infoRigth.classList.add("info-rigth");
+    info.append(infoRigth);
+    const numpokemon = document.createElement("h3");
+    numpokemon.textContent = `${pokemon.num}`;
+    infoRigth.append(numpokemon);
+
+    contenedorPokemon.append(card);
+  };
+
+
+
 //-----------
-async function enviarTipos (){
+const filtrosSeleccionados = async ()=> {
+
+
+    // ARREGLAR LOS NOMBRES DE LAS VARIABLES
+    
+    // inputBuscar.value = '';
     const tipoSeleccionados = document.getElementsByClassName('tipo-seleccionado');
+    const debilidadSeleccionados = document.getElementsByClassName('debilidad-seleccionado');
+
     let tipoSelecionados=[];
     for (let btnS of tipoSeleccionados){
         tipoSelecionados.push(btnS.value)
     }
-  //  filtradoTipos(tipoSelecionados)
-    const pokemones = await filtradoTipos(tipoSelecionados)
-    console.log(pokemones)
 
-        for(let pokemon of pokemones){
-           createPokemon(pokemon)
-           contadorPokemones()
-       }
+    let debilidadSelecionados=[];
+    for (let btnS of debilidadSeleccionados){
+        debilidadSelecionados.push(btnS.value)
+    }
+    
+    const pokemones = await dataPokemones();
 
-    return pokemones
+    console.log('Mirian', pokemones)
+    const pokemonesFiltrados = await filtradoPokemones(pokemones, tipoSelecionados , debilidadSelecionados);
+
+    // ! No sé si esto debería imprimir aquí de una vez
+    renderCards(pokemonesFiltrados);
+
+    return pokemonesFiltrados
   }
 
 
 
 function sortBy (pokemonesFiltrados, ordenSeleccionado){
 
-    console.log('orden seleccionado es' + ordenSeleccionado);
-    console.log('entramooos aquiii');
-    // console.log('y mis pokemones? ', {pokemonesFiltrados})
     let resultado = [];
 
     switch (ordenSeleccionado){
@@ -194,8 +254,17 @@ function sortBy (pokemonesFiltrados, ordenSeleccionado){
     return resultado;
 
 }
-  
-// sortBy([{nombre: "lucero", edad: "25"}, {nombre: "mirian", edad: "30"}],"Número inferior");
-// sortBy([{nombre: "lucero", edad: "25"}, {nombre: "mirian", edad: "30"}],"Número superior");
 
 
+function formatNumber(num) {
+
+    if (parseInt(num) < 10){
+        return '00' + num;
+    }
+    else if ( parseInt(num) < 100 ){
+        return '0' + num;
+    }
+    else {
+        return num;
+    }
+}

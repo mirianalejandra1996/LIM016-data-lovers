@@ -1,128 +1,72 @@
-let contenedorPokemon = document.getElementById("pokemones-filtrados");
+// Primero obtenemos toda la data de los pokemones del json
+export const dataPokemones = () => {
 
-export const traerPokemones = (dataPokemon) => {
-  fetch("./data/pokemon/pokemon.json")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      contenedorPokemon.textContent = "";
-      data.pokemon.forEach((pokemon) => {
-        if (pokemon.name === dataPokemon || pokemon.num === dataPokemon) {
-          createPokemon(pokemon);
-          contadorPokemones();
-        }
-      });
-    });
-};
-
-export const contadorPokemones = ()  => {
-  const items = document.getElementsByClassName("item");
-  const resultadoPokemones = document.getElementById("totalPokemones");
-
-  if (items.length === 1) {
-    resultadoPokemones.textContent = `${items.length} Pokemón`;
-  } else {
-    resultadoPokemones.textContent = `${items.length} Pokemones`;
-  }
-}
-
-export const render = () => {
-  fetch("./data/pokemon/pokemon.json")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      contenedorPokemon.textContent = "";
-      data.pokemon.forEach((pokemon) => {
-        createPokemon(pokemon);
-      });
-    });
-};
-
-export const filtradoTipos = (arrTipos) => {
-  
   return fetch("./data/pokemon/pokemon.json")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      contenedorPokemon.textContent = "";
-      let pokemonesFiltrados = [];
-
-      if (arrTipos.length === 0){
-        return data.pokemon
-      }
-
-      data.pokemon.forEach((pokemon) => {
-        let pokemonApi = pokemon.type;
-        let resultado = [];
-
-        for (let tipo of arrTipos) {
-          let isType = (pokemonType) => pokemonType === tipo;
-          let comprobando = pokemonApi.some(isType);
-
-          if (comprobando) {
-            resultado.push(true);
-          } else {
-            resultado.push(false);
-          }
-        }
-
-        if (resultado.every((pokemonCheckTipo) => pokemonCheckTipo === true)) {
-          pokemonesFiltrados.push(pokemon);
-        } else {
-          contadorPokemones();
-          return []
-        }
-      });
-      return pokemonesFiltrados;
-    });
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    return data.pokemon;
+  })
 };
 
-export const renderPokemon = (pokemones) => {
 
-  contenedorPokemon.textContent = '';
-  for (let pokemon of pokemones){
-    createPokemon(pokemon);
-    contadorPokemones();
-  }
+// ---------------------
+
+
+// Función busqueda Input funcional
+// Podrá conseguir el pokemón deseado ingresando su Nombre o su Número
+// Esta función retornará un array con el pokemon que coincida con la data ingresada en el buscador
+// solo podrá recibir strings como Parámetro
+
+export const busquedaInput = async (inputContent) => {
+
+    const pokemones = await dataPokemones()
+    
+    let resultado = []
+
+    pokemones.forEach((pokemon) => {
+
+        if (pokemon.name === inputContent || pokemon.num === inputContent) {
+          resultado.push(pokemon)
+        }
+    })
+
+    if (resultado.length === 0){
+      return []
+    }
+    return resultado
+  
+};
+
+
+
+// ---------------------
+
+
+// Filtrado de pokemones según tipo seleccionado
+
+// Si no ha seleccionado ningún boton para filtrar, me retorna un array de todos los pokemones
+// Si la búsqueda no coincide según los parametros (botones de tipo seleccionados), retorna array vacios
+// Si hace match con n° cantidad de pokemones, retornan estos en un array
+
+export const filtradoPokemones = (pokemones, types, weakness ) => {
+// export const matchPokemon = (pokemones, types, weakness ) => {
+
+                  // 251
+  let filtered = pokemones.filter((pokemon) => {
+    if(types.length === 1 && weakness.length === 1) {
+      return types.includes(pokemon.type[0]) && weakness.includes(pokemon.weaknesses[0]);
+    }else {
+      return types.every(e => pokemon.type.includes(e)) && weakness.every(e => pokemon.weaknesses.includes(e))
+    }
+  })
+  return filtered
+    
 }
 
 
-export const createPokemon = (pokemon) => {
-  const card = document.createElement("div");
-  card.classList.add("item");
-  const img = document.createElement("img");
-  img.src = `https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png`;
-  card.append(img);
-  const info = document.createElement("div");
-  info.classList.add("info");
-  card.append(info);
-  const infoLeft = document.createElement("div");
-  infoLeft.classList.add("info-left");
-  info.append(infoLeft);
-  const nombrepokemon = document.createElement("h3");
-  nombrepokemon.classList.add("namePokemon");
-  nombrepokemon.textContent = `${pokemon.name}`;
-  infoLeft.append(nombrepokemon);
-  const cpPokemon = document.createElement("h3");
-  cpPokemon.textContent = `CP: ${pokemon["stats"]["base-attack"]}`;
-  infoLeft.append(cpPokemon);
-  const icon = document.createElement("div");
-  icon.classList.add("icon");
-  infoLeft.append(icon);
-  const span = document.createElement("span");
-  span.classList.add("icon-circle-svgrepo-com");
-  icon.append(span);
-  const infoRigth = document.createElement("div");
-  infoRigth.classList.add("info-rigth");
-  info.append(infoRigth);
-  const numpokemon = document.createElement("h3");
-  numpokemon.textContent = `${pokemon.num}`;
-  infoRigth.append(numpokemon);
 
-  contenedorPokemon.append(card);
-};
 
-console.log('yanina y ariana :D')
+
+
