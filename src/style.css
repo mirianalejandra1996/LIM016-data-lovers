@@ -285,7 +285,12 @@ nav ul li a:hover {
   display: flex;
   margin-bottom: 20px;
 }
-
+.caracteristicas-detalle {
+  display: flex;
+  width: 50%;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
 .btn-caracteristica {
   /* width: 200px; */
   display: flex;
@@ -832,4 +837,26 @@ h2 {
 #btn-clean:hover span {
   color: black;
   transition: 0.3 ease all;
+}
+
+.sec-detail {
+  /* background-color: red; */
+}
+
+.descripcion-total {
+  height: 100%;
+  /* background-color: aqua; */
+  display: grid;
+  gap: 20px;
+}
+
+.descripcion-total h1 {
+  color: #161616;
+  font-size: 20px;
+}
+
+.content {
+  /* background-color: #fbe043; */
+  margin-top: 10px;
+  height: calc(100% - 30px);
 }
