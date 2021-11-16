@@ -138,12 +138,14 @@ const renderCards = (pokemones) => {
     // Cargando pokemones con SetTimeOut ?
     
     let arrPokemones = pokemones;
-    console.log(arrPokemones)
+    // console.log('linea 141 ',arrPokemones)
     
     arrPokemones.forEach((pokemon) => {
-        
         cardPokemon(pokemon)
     });
+
+   
+   
   };
 
 
@@ -268,3 +270,39 @@ function formatNumber(num) {
         return num;
     }
 }
+
+const btnClean = document.getElementById('btn-clean');
+btnClean.addEventListener('click', limpiarFiltros)
+
+
+function limpiarFiltros () {
+
+    let filtrosTipos = document.getElementsByClassName('tipo-seleccionado');
+    // let filtrosTipos = document.getElementsByClassName('tipoTest');
+    let filtrosDebilidades = document.getElementsByClassName('debilidad-seleccionado')
+    
+
+    // ! MOSTRAR A LUCERO, TIENE UN COMPORTAMIENTO EXTRAÑO
+    // https://clubmate.fi/remove-a-class-name-from-multiple-elements-with-pure-javascript#recursive-function
+
+    // for (let btn of filtrosTipos){
+    //     btn.classList.remove('tipoTest');
+    // }
+
+
+    while (filtrosTipos[0]) {
+        filtrosTipos[0].classList.remove('tipo-seleccionado')
+    }
+
+    while (filtrosDebilidades[0]) {
+        filtrosDebilidades[0].classList.remove('debilidad-seleccionado')
+    }
+
+    filtrosSeleccionados()
+
+    // filtrosTipos.forEach( btn => btn.classList.remove('tipo-seleccionado'))
+
+    // .btn-tipo.tipo-seleccionado
+    // btn-tipo tipo-seleccionado
+}
+
