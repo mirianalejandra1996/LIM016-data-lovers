@@ -282,7 +282,12 @@ nav ul li a:hover {
   display: flex;
   margin-bottom: 20px;
 }
-
+.caracteristicas-detalle{
+  display: flex;
+  width: 50%;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
 .btn-caracteristica {
   /* width: 200px; */
   display: flex;
@@ -819,3 +824,5 @@ h2 {
     flex-direction: row;
   }
 }
+
+/* POKEMON DETALLE */

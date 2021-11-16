@@ -48,7 +48,7 @@
         </nav>
       </header>
 
-      <div class="buscador">
+      <div class="buscador" >
         <div class="buscador-especial">
           <h2>Buscador Especial</h2>
           <!--  -->
@@ -106,53 +106,67 @@
 
           <!-- Botones de debilidades -->
           <div id="btns-debilidades" class="tipo-pokemon hidden">
-            <button class="btn-debilidad">Fuego</button>
-            <button class="btn-debilidad">Agua</button>
-            <button class="btn-debilidad">Planta</button>
-            <button class="btn-debilidad">Acero</button>
-            <button class="btn-debilidad">Tierra</button>
-            <button class="btn-debilidad">Roca</button>
-            <button class="btn-debilidad">Siniestro</button>
-            <button class="btn-debilidad">Eléctrico</button>
-            <button class="btn-debilidad">Veneno</button>
-            <button class="btn-debilidad">Psíquico</button>
-            <button class="btn-debilidad">Fantasma</button>
-            <button class="btn-debilidad">Normal</button>
-            <button class="btn-debilidad">Hielo</button>
-            <button class="btn-debilidad">Hada</button>
-            <button class="btn-debilidad">Lucha</button>
-            <button class="btn-debilidad">Dragón</button>
-            <button class="btn-debilidad">Volador</button>
-            <button class="btn-debilidad">Bicho</button>
+            <button value="fire" class="btn-debilidad">Fuego</button>
+            <button value="water" class="btn-debilidad">Agua</button>
+            <button value="grass" class="btn-debilidad">Planta</button>
+            <button value="steel" class="btn-debilidad">Acero</button>
+            <button value="ground" class="btn-debilidad">Tierra</button>
+            <button value="rock" class="btn-debilidad">Roca</button>
+            <button value="dark" class="btn-debilidad">Siniestro</button>
+            <button value="electric" class="btn-debilidad">Eléctrico</button>
+            <button value="poison" class="btn-debilidad">Veneno</button>
+            <button value="psychic" class="btn-debilidad">Psíquico</button>
+            <button value="ghost" class="btn-debilidad">Fantasma</button>
+            <button value="normal" class="btn-debilidad">Normal</button>
+            <button value="ice" class="btn-debilidad">Hielo</button>
+            <button value="fairy" class="btn-debilidad">Hada</button>
+            <button value="fighting" class="btn-debilidad">Lucha</button>
+            <button value="dragon" class="btn-debilidad">Dragón</button>
+            <button value="flying" class="btn-debilidad">Volador</button>
+            <button value="bug" class="btn-debilidad">Bicho</button>
           </div>
         </div>
       </div>
 
       <div id="contenedorPokemon" class="contenedorPokemon">
-        <div class="filtros">
-          <h2 id="totalPokemones">251 Pokemones</h2>
-
-          <!-- Select Box -->
-          <div class="dropdown">
-            <div id="dropdownSelect" class="dropdown-select">
-              <span id="selectText"> Ordenar por...</span>
-              <span id="arrowIcon" class="icon-down-arrow-svgrepo-com"></span>
-            </div>
-
-            <div id="list" class="dropdown-list hidden">
-              <div class="options">Número inferior</div>
-
-              <div class="options">Número superior</div>
-
-              <div class="options">A-Z</div>
-
-              <div class="options">Z-A</div>
-            </div>
-          </div>
+      
+        <div class="caracteristicas-detalle">
+          <a id="detalles" class="btn-caracteristica active show-bottom-line"
+            >Detalles</a>
+          <a
+            id="evoluciones"
+            class="btn-caracteristica inactive hide-bottom-line "
+            >Evoluciones</a>
+          <a
+            id="stats"
+            class="btn-caracteristica inactive hide-bottom-line "
+            >Stats</a>
+        </div>
+      <div class="descripcion-total">
+        <div class="about">
+          <div>Descripcion</div>
+          <div></div>
         </div>
 
-        <div id="pokemones-filtrados" class="pokemones-filtrados"></div>
+        <div class="informacion-basica">
+          <div>Informacion Basica</div>
+          <div></div>
+        </div>
+
+        <div class="debilidades">
+          <div>Debilidades</div>
+          <div></div>
+        </div>
       </div>
+
+
+
+
+        
+      </div>
+
+
+
     </div>
 
     <br />
