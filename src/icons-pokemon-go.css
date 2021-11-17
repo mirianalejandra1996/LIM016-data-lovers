@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('icons-pokemon-go/icomoon.eot?mpjc7d');
+    src:  url('icons-pokemon-go/icomoon.eot?mpjc7d#iefix') format('embedded-opentype'),
+      url('icons-pokemon-go/icomoon.ttf?mpjc7d') format('truetype'),
+      url('icons-pokemon-go/icomoon.woff?mpjc7d') format('woff'),
+      url('icons-pokemon-go/icomoon.svg?mpjc7d#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-bug:before {
+    content: "\e900";
+    color: #fff;
+  }
+  .icon-dark:before {
+    content: "\e901";
+    color: #fff;
+  }
+  .icon-dragon:before {
+    content: "\e902";
+    color: #fff;
+  }
+  .icon-electric:before {
+    content: "\e903";
+    color: #fff;
+  }
+  .icon-fairy:before {
+    content: "\e904";
+    color: #fff;
+  }
+  .icon-fighting:before {
+    content: "\e905";
+    color: #fff;
+  }
+  .icon-fire:before {
+    content: "\e906";
+    color: #fff;
+  }
+  .icon-flying:before {
+    content: "\e907";
+    color: #fff;
+  }
+  .icon-ghost:before {
+    content: "\e908";
+    color: #fff;
+  }
+  .icon-grass:before {
+    content: "\e909";
+    color: #fff;
+  }
+  .icon-ground:before {
+    content: "\e90a";
+    color: #fff;
+  }
+  .icon-ice:before {
+    content: "\e90b";
+    color: #fff;
+  }
+  .icon-normal:before {
+    content: "\e90c";
+    color: #fff;
+  }
+  .icon-poison:before {
+    content: "\e90d";
+    color: #fff;
+  }
+  .icon-psychic:before {
+    content: "\e90e";
+    color: #fff;
+  }
+  .icon-rock:before {
+    content: "\e90f";
+    color: #fff;
+  }
+  .icon-steel:before {
+    content: "\e910";
+    color: #fff;
+  }
+  .icon-water:before {
+    content: "\e911";
+    color: #fff;
+  }
+  

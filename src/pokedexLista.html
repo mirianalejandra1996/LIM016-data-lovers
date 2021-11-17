@@ -6,6 +6,7 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="icons.css" />
+    <link rel="stylesheet" href="icons-pokemon-go.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -53,14 +54,17 @@
 
       <div class="buscador">
         <div class="buscador-especial">
-          <h2>Buscador Especial</h2>
+          <h2>Filtros</h2>
+          <!-- <span id="btn-clean">Clean filter</span> -->
+          <div class="clean-container">
+            <span id="btn-clean">Limpiar filtros</span>
+          </div>
           <!--  -->
-          <div id="btn-clean" class="circle-btn">
+          <!-- <div id="btn-clean" class="circle-btn">
             <div class="icon">
-              <!-- <span class="icon-filter-svgrepo-com"></span> -->
               <span class="icon-close-svgrepo-com-1"></span>
             </div>
-          </div>
+          </div> -->
 
           <!-- <div id="btn-clean" class="circle-btn">
             <div class="icon">
@@ -70,23 +74,21 @@
           <!--  -->
         </div>
         <div style="margin-top: 30px">
-          <h2 class="titulo">Nombre o Número</h2>
-
-          <div class="box">
-            <input id="input-buscar" type="text" />
-            <label id="btn-buscar" class="input-btn" for="">
-              <span class="icon-search-svgrepo-com"></span>
-            </label>
+          <div class="inpt-search">
+            <h2 class="titulo">Nombre o Número</h2>
+            <div class="box">
+              <input
+                id="input-buscar"
+                type="text"
+                placeholder="Nombre o número"
+              />
+              <label id="btn-buscar" class="input-btn" for="">
+                <span class="icon-search-svgrepo-com"></span>
+              </label>
+            </div>
           </div>
-
-          <!-- <div class="box">
-            <input id="input-buscar" type="text" />
-            <label id="btn-buscar" class="input-btn" for="">
-              <span class="icon-search-svgrepo-com"></span>
-            </label>
-          </div> -->
         </div>
-        <div style="margin-top: 30px">
+        <div class="properties-container">
           <div class="caracteristicas">
             <a id="tipos" class="btn-caracteristica active show-bottom-line"
               >Tipos</a

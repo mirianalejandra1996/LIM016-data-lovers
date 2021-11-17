@@ -1,6 +1,45 @@
 // import { dataPokemones,busquedaInput } from './data.js';
 import { dataPokemones,busquedaInput, filtradoPokemones } from './data.js';
 
+const colors = {
+
+    fire: '#f9766c',
+    grass: '#2cdbb2',
+    electric: '#fbe043',
+    water: '#2f9afe',
+    ground: '#be875e',
+    fairy: '#ffbbbb',
+    poison: '#8e91fa',
+    bug: '#9abf83',
+    dragon: '#fba96c',
+    psychic: '#fface5',
+    flying: '#ffd19e',
+    fighting: '#e3c1a8',
+    normal: '#e1e2ff',
+    steel: '#a1bebe',
+    rock: '#e5e5e5',
+    dark: '#a1a1a1',
+    ghost: '#aa7ab6',
+    ice: '#a4eaea',
+}
+
+let btnsTypes = document.getElementsByClassName('btn-tipo')
+let btnsWeaknesses = document.getElementsByClassName('btn-debilidad')
+
+// console.log('btnsProperties', btnsTypes.length);
+// console.log('btnsProperties', btnsWeaknesses.length);
+
+let allBtns = [...btnsTypes,...btnsWeaknesses];
+console.log( 'allBtns',allBtns.length)
+
+
+// while (btnsProperties[0]) {
+//     btnsProperties[0].style.backgroundColor = colors[btnsProperties[0].value]
+// }
+
+
+
+
 let contenedorPokemon = document.getElementById("pokemones-filtrados");
 
 
@@ -120,6 +159,11 @@ const renderAllCards = async () => {
 renderAllCards();
 
 
+
+
+console.log(colors);
+
+
 // render es cargar los pokemones en pantalla
 const renderCards = (pokemones) => {
     
@@ -177,21 +221,79 @@ export const cardPokemon = (pokemon) => {
     const cpPokemon = document.createElement("h3");
     cpPokemon.textContent = `CP: ${pokemon["stats"]["base-attack"]}`;
     infoLeft.append(cpPokemon);
-    const icon = document.createElement("div");
-    icon.classList.add("icon");
-    infoLeft.append(icon);
-    const span = document.createElement("span");
-    span.classList.add("icon-circle-svgrepo-com");
-    icon.append(span);
+
+
+    const typesContainer = document.createElement("div");
+    typesContainer.classList.add("icon-container");
+    infoLeft.append(typesContainer);
+
+    pokemon.type.forEach((type) => {
+        const circleColor = document.createElement("div");
+        circleColor.classList.add("circle-type");
+        circleColor.style.backgroundColor = colors[type]
+        const icon = document.createElement('span');
+        icon.classList.add('format-icon');
+        // icon.classList.add('icon-dark');
+        icon.classList.add(`icon-${type}`);
+        circleColor.append(icon);
+        typesContainer.append(circleColor);
+      });
+      
+
+
+
+
     const infoRigth = document.createElement("div");
     infoRigth.classList.add("info-rigth");
     info.append(infoRigth);
     const numpokemon = document.createElement("h3");
-    numpokemon.textContent = `${pokemon.num}`;
+    numpokemon.textContent = `#${pokemon.num}`;
     infoRigth.append(numpokemon);
 
     contenedorPokemon.append(card);
   };
+
+// export const cardPokemon = (pokemon) => {
+    
+//     const card = document.createElement("div");
+//     card.classList.add("item");
+//     const img = document.createElement("img");
+//     img.src = `https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png`;
+//     card.append(img);
+//     const info = document.createElement("div");
+//     info.classList.add("info");
+//     card.append(info);
+//     const infoLeft = document.createElement("div");
+//     infoLeft.classList.add("info-left");
+//     info.append(infoLeft);
+//     const nombrepokemon = document.createElement("h3");
+//     nombrepokemon.classList.add("namePokemon");
+//     nombrepokemon.textContent = `${pokemon.name}`;
+//     infoLeft.append(nombrepokemon);
+//     const cpPokemon = document.createElement("h3");
+//     cpPokemon.textContent = `CP: ${pokemon["stats"]["base-attack"]}`;
+//     infoLeft.append(cpPokemon);
+
+
+//     const icon = document.createElement("div");
+//     icon.classList.add("icon");
+//     infoLeft.append(icon);
+//     const span = document.createElement("span");
+//     span.classList.add("icon-circle-svgrepo-com");
+
+
+
+
+//     icon.append(span);
+//     const infoRigth = document.createElement("div");
+//     infoRigth.classList.add("info-rigth");
+//     info.append(infoRigth);
+//     const numpokemon = document.createElement("h3");
+//     numpokemon.textContent = `${pokemon.num}`;
+//     infoRigth.append(numpokemon);
+
+//     contenedorPokemon.append(card);
+//   };
 
 
 
@@ -277,20 +379,11 @@ btnClean.addEventListener('click', limpiarFiltros)
 
 function limpiarFiltros () {
 
-    let filtrosTipos = document.getElementsByClassName('tipo-seleccionado');
-    // let filtrosTipos = document.getElementsByClassName('tipoTest');
+    inputBuscar.value=''
+    let filtrosTipos = document.getElementsByClassName('tipo-seleccionado'); 
     let filtrosDebilidades = document.getElementsByClassName('debilidad-seleccionado')
     
-
-    // ! MOSTRAR A LUCERO, TIENE UN COMPORTAMIENTO EXTRAÑO
-    // https://clubmate.fi/remove-a-class-name-from-multiple-elements-with-pure-javascript#recursive-function
-
-    // for (let btn of filtrosTipos){
-    //     btn.classList.remove('tipoTest');
-    // }
-
-
-    while (filtrosTipos[0]) {
+    while (filtrosTipos[0]) { ['tierra','agua']
         filtrosTipos[0].classList.remove('tipo-seleccionado')
     }
 
@@ -306,3 +399,27 @@ function limpiarFiltros () {
     // btn-tipo tipo-seleccionado
 }
 
+
+
+const iconsTypes = {
+    fire: '',
+    grass: '',
+    electric: '',
+    water: '',
+    ground: '',
+    fairy: '',
+    poison: '',
+    bug: '',
+    dragon: '',
+    psychic: '',
+    flying: '',
+    fighting: '',
+    normal: '',
+    steel: '',
+    rock: '',
+    dark: '',
+    ghost: '',
+    ice: '',
+}
+
+console.log(iconsTypes)
