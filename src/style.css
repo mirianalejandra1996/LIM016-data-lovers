@@ -92,11 +92,12 @@ nav ul li a:hover {
   padding: 0 30px;
   height: 100%;
   /* grid-template-columns: repeat(4, 1fr); */
-  grid-template-columns: 1.2fr 2.8fr;
-  grid-template-rows: 90px auto;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
   grid-template-areas:
-    "header header header header"
-    "buscador  contenedorPokemon contenedorPokemon contenedorPokemon";
+    "header"
+    "buscador"
+    "contenedorPokemon";
 }
 
 .contenedor .header {
@@ -790,13 +791,93 @@ h2 {
   cursor: pointer;
   position: absolute;
   right: 10px;
-  margin: 5px;
+  margin: 20px;
   font-size: 40px;
+  height: 27px;
+  width: 27px;
+  overflow: visible;
+  z-index: 2;
+}
+.hamburguesa span,
+.hamburguesa span:before,
+.hamburguesa span:after {
+  background: #000;
+  display: block;
+  height: 2px;
+  opacity: 1;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+.hamburguesa span:before,
+.hamburguesa span:after {
+  content: "";
+}
+.hamburguesa span {
+  right: 0px;
+  top: 13px;
+  width: 27px;
+}
+.hamburguesa span:before {
+  right: 0px;
+  top: -10px;
+  width: 27px;
+}
+.hamburguesa span:after {
+  right: 0px;
+  top: 10px;
+  width: 27px;
+}
+.hamburguesa.close span {
+  transform: rotate(-45deg);
+  top: 13px;
+  width: 27px;
+}
+.hamburguesa.close span:before {
+  top: 0px;
+  transform: rotate(90deg);
+  width: 27px;
+}
+.hamburguesa.close span:after {
+  top: 0px;
+  right: 0;
+  transform: rotate(90deg);
+  opacity: 0;
+  width: 0;
+}
+.candy{
+  display: flex;
+  justify-content: space-between;
+}
+.img-candy{
+  padding-right: 5px;
 }
 /* for tablet */
 @media (min-width: 576px) {
   .hamburguesa {
     display: none;
+  }
+  .contenedor {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0 30px;
+    height: 100%;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: 1.2fr 2.8fr;
+    grid-template-rows: 90px auto;
+    grid-template-areas:
+      "header header header header"
+      "buscador  contenedorPokemon contenedorPokemon contenedorPokemon";
+  }
+  .buscador-especial {
+    height: 50px;
+    margin-bottom: 50px;
+  }
+  .box {
+    margin-bottom: 140px;
+  }
+  .btn-tipo,
+  .btn-debilidad {
+    display: inline;
   }
   .contenedor-landing {
     grid-template-rows: 90px 400px auto auto auto;
@@ -824,10 +905,25 @@ h2 {
     display: flex;
   }
 }
-/* fot desktop */
+/* for desktop */
 @media (min-width: 768px) {
   .hamburguesa {
     display: none;
+  }
+  .contenedor {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0 30px;
+    height: 100%;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: 1.2fr 2.8fr;
+    grid-template-rows: 90px auto;
+    grid-template-areas:
+      "header header header header"
+      "buscador  contenedorPokemon contenedorPokemon contenedorPokemon";
+  }
+  .box {
+    margin-bottom: 140px;
   }
   .contenedor-landing {
     grid-template-rows: 90px 400px auto auto auto;
