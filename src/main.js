@@ -42,7 +42,13 @@ console.log( 'allBtns',allBtns.length)
 
 let contenedorPokemon = document.getElementById("pokemones-filtrados");
 
-
+//mostrar hamburguesa
+const hamburguesa = document.getElementById("hamburguesa");
+const links = document.getElementById("links");
+hamburguesa.addEventListener("click", () => {
+  hamburguesa.classList.toggle("close");
+  links.classList.toggle("mostrarnav");
+});
 // Select Box
 const selectField = document.getElementById('dropdownSelect');
 const selectText = document.getElementById('selectText');
