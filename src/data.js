@@ -39,6 +39,30 @@ export const busquedaInput = async (inputContent) => {
   
 };
 
+
+export const busquedaDetalle = async (id) => {
+
+    const pokemones = await dataPokemones()
+    
+    let resultado = []
+
+    pokemones.forEach((pokemon) => {
+
+        if (pokemon.num === id) {
+          resultado.push(pokemon)
+        }
+    })
+
+    if (resultado.length === 0){
+      return []
+    }
+    return resultado
+  
+};
+
+
+
+
 // ---------------------
 
 

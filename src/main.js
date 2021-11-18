@@ -1,5 +1,5 @@
 // import { dataPokemones,busquedaInput } from './data.js';
-import { dataPokemones,busquedaInput, filtradoPokemones } from './data.js';
+import { dataPokemones,busquedaInput, filtradoPokemones, busquedaDetalle } from './data.js';
 
 const colors = {
 
@@ -378,7 +378,7 @@ function limpiarFiltros () {
     filtrosSeleccionados()
 }
 
-const viewDetail = (e) => {
+const viewDetail = async (e) => {
 
     const pokemonClicked = e.currentTarget;
     console.log(pokemonClicked.textContent)
@@ -404,6 +404,135 @@ const viewDetail = (e) => {
     let leftDetalle = document.getElementById('left-detalle')
     leftDetalle.classList.remove('hidden')
 
+
+
+    let prueba = await imprimirDetalle(textArray);
+    console.log(`${prueba}`);
+}
+
+
+
+const imprimirDetalle = async (id) => {
+
+    let pokemonArray = await busquedaDetalle(id)
+    let pokemon = pokemonArray[0]
+    let tiposPokemon = pokemon.type
+
+    let about = document.createElement('div');
+    about.id = "descripcion-total"
+    about.classList.add('descripcion-total','shown')
+
+    // Sección 1
+    let secc1 = document.createElement('div')
+    secc1.classList.add('about','sec-detail')
+    let title1 = document.createElement('h1');
+    title1.textContent = 'Descripción'
+    secc1.append(title1);
+
+    let content1 = document.createElement('div')
+    content1.classList.add('content')
+    content1.textContent = pokemon.about
+    secc1.append(content1);
+
+    about.append(secc1);
+
+    // Sección 2
+    let secc2 = document.createElement('div')
+    secc2.classList.add('informacion-basica','sec-detail')
+    let title2 = document.createElement('h1');
+    title2.textContent = 'Información Básica'
+    secc2.append(title2);
+
+    let content2 = document.createElement('div')
+    content2.classList.add('content')
+
+    let listContent2 = document.createElement('ul');
+
+    // Sec2. tipos
+    let listaTipos = document.createElement('li');
     
+    for (let tipo of tiposPokemon){
+        
+        let button = document.createElement('div');
+        button.classList.add('btn-tipo');
+        button.style.backgroundColor = `${colors[tipo]}`
+        button.textContent = `${tipo}`
+
+        listaTipos.append(button)
+
+
+    }
+
+    listContent2.append(listaTipos);
+    
+    
+    // Sec2. pesos
+
+
+    // tipo.textContent = `Tipo: `
+
+    // for (let )
+    // content2.textContent = pokemon.about
+    // secc2.append(content1);
+
+
+    // <div id="descripcion-total" class="descripcion-total shown">
+    //        
+    //         <div class="informacion-basica sec-detail">
+    //           <h1>Información Básica</h1>
+    //           <div class="content">
+    //             <ul>
+    //               <li>
+    //                 Tipo:
+    //                 <span>
+    //                   <button
+    //                     style="background-color: #fbe043"
+    //                     value="electric"
+    //                     class="btn-tipo"
+    //                   >
+    //                     Eléctrico
+    //                   </button>
+    //                 </span>
+    //               </li>
+    //               <li>Peso: <span>5.0 kg</span></li>
+    //               <li>Alto: <span>4.1 m</span></li>
+    //               <li>CP: <span>230</span></li>
+    //               <li>
+    //                 Sexo: <span class="icon-male-svgrepo-com"></span>
+    //                 <span class="icon-female-svgrepo-com"></span>
+    //               </li>
+
+    //               <li>Caramelos: <span>Pikachu Candy</span></li>
+    //             </ul>
+    //           </div>
+    //         </div>
+
+    //         <div class="debilidades sec-detail">
+    //           <h1>Debilidades</h1>
+    //           <div class="content">
+    //             <button
+    //               style="background-color: #f9766c"
+    //               value="fire"
+    //               class="btn-tipo"
+    //             >
+    //               Fuego
+    //             </button>
+    //             <button
+    //               style="background-color: #2f9afe"
+    //               value="water"
+    //               class="btn-tipo"
+    //             >
+    //               Agua
+    //             </button>
+    //             <button
+    //               style="background-color: #be875e"
+    //               value="ground"
+    //               class="btn-tipo"
+    //             >
+    //               Tierra
+    //             </button>
+    //           </div>
+    //         </div>
+    //       </div>
 
 }
