@@ -367,7 +367,7 @@ function limpiarFiltros () {
     let filtrosTipos = document.getElementsByClassName('tipo-seleccionado'); 
     let filtrosDebilidades = document.getElementsByClassName('debilidad-seleccionado')
     
-    while (filtrosTipos[0]) { ['tierra','agua']
+    while (filtrosTipos[0]) {
         filtrosTipos[0].classList.remove('tipo-seleccionado')
     }
 
@@ -376,62 +376,18 @@ function limpiarFiltros () {
     }
 
     filtrosSeleccionados()
-
-    // filtrosTipos.forEach( btn => btn.classList.remove('tipo-seleccionado'))
-
-    // .btn-tipo.tipo-seleccionado
-    // btn-tipo tipo-seleccionado
 }
-
-
-
-const iconsTypes = {
-    fire: '',
-    grass: '',
-    electric: '',
-    water: '',
-    ground: '',
-    fairy: '',
-    poison: '',
-    bug: '',
-    dragon: '',
-    psychic: '',
-    flying: '',
-    fighting: '',
-    normal: '',
-    steel: '',
-    rock: '',
-    dark: '',
-    ghost: '',
-    ice: '',
-}
-
-console.log(iconsTypes)
-
-
-
-
-
-
 
 const viewDetail = (e) => {
 
-    // console.log(e.target.textContent)
-    // console.log(e.target.textContent)
-
-    // if (!e.target) return;
-
-    // const pokemonClicked = e.target;
     const pokemonClicked = e.currentTarget;
     console.log(pokemonClicked.textContent)
-    // event.currentTarget
 
     // Si el contenido es un string vacio "" es un falsy
     if (!pokemonClicked.textContent) return 
 
-    // const textArray = pokemonClicked.textContent.split('#');
     const textArray = pokemonClicked.textContent.split('#')[1];
-    console.log('hola', textArray);
+    console.log(textArray);
 
     let cabecera = document.getElementById('upperSection')
     cabecera.classList.add('hidden')
@@ -439,52 +395,14 @@ const viewDetail = (e) => {
     let filterContainer = document.getElementById('left-container');
     filterContainer.classList.add('hidden');
 
-    contenedorFiltrados.textContent = '';
+    // Se realiza un forzado para que los pokemones filtrados no estén visibles
+    contenedorFiltrados.style.display = 'none'
 
-    const viewDetail = document.createElement('div');
-    // viewDetail.style.backgroundColor = 'blue';
-    // viewDetail.textContent = 'hola';
-    contenedorDerecho.append(viewDetail);
+    let vistaDetalle = document.getElementById('vista-detalle');
+    vistaDetalle.classList.remove('hidden')
 
-    
-
-
-    viewDetail.innerHTML = `<div id="descripcion-total" class="descripcion-total shown">
-          <div class="about sec-detail">
-            <h1>Descripción</h1>
-            <div class="content">
-              "Whenever Pikachu comes across something new, it blasts it with a
-              jolt of electricity. If you come across a blackened berry, it's
-              evidence that this Pokémon mistook the intensity of its charge
-              evidence that this Pokémon mistook the intensity of its charge."
-            </div>
-          </div>
-
-          <div class="informacion-basica sec-detail">
-            <h1>Información Básica</h1>
-            <div class="content">
-              <ul>
-                <li>
-                  Tipo:
-                  <span>
-                    <button style="background-color: #fbe043" value="electric" class="btn-tipo">
-                      Eléctrico
-                    </button>
-                  </span>
-                </li>
-                <li>Peso: <span>5.0 kg</span></li>
-                <li>Alto: <span>4.1 m</span></li>
-                <li>CP: <span>230</span></li>
-                <li>
-                  Sexo: <span class="icon-male-svgrepo-com"></span>
-                  <span class="icon-female-svgrepo-com"></span>
-                </li>
-
-                <li>Caramelos: <span>Pikachu Candy</span></li>
-              </ul>
-            </div>
-          </div>
-            </div>`
+    let leftDetalle = document.getElementById('left-detalle')
+    leftDetalle.classList.remove('hidden')
 
     
 

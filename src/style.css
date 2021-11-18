@@ -964,7 +964,7 @@ h2 {
 }
 
 .descripcion-total {
-  height: 100%;
+  height: 85%;
   overflow: auto;
 }
 
@@ -1067,4 +1067,8 @@ h2 {
 
 .seccion-stats {
   overflow: auto;
+}
+
+.vista-detalle {
+  height: 100%;
 }

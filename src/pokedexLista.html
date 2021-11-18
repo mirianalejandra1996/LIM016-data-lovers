@@ -240,6 +240,30 @@
             </div>
           </div>
         </div>
+
+        <div id="left-detalle" class="hidden">
+          <div class="large-btn">
+            <span id="more-pokemon">Volver a Pokedex</span>
+            <span id="poke-lgbtn" class="icon-pokebola-recta"></span>
+          </div>
+
+          <div class="left-img">
+            <div class="detail-pokemon">
+              <div id="big-img">
+                <img
+                  src="https://www.serebii.net/pokemongo/pokemon/025.png"
+                  alt=""
+                  style="width: 150px"
+                />
+              </div>
+
+              <div id="identifier">
+                <span id="namePokemon">Pikachu</span>
+                <span id="idPokemon">#025</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="contenedorPokemon" class="contenedorPokemon">
@@ -267,6 +291,153 @@
         </div>
 
         <div id="pokemones-filtrados" class="pokemones-filtrados"></div>
+
+        <!-- VISTA DETALLE -->
+
+        <div id="vista-detalle" class="vista-detalle hidden">
+          <div class="caracteristicas-detalle">
+            <a
+              id="detalles"
+              class="btn-caracteristica active show-bottom-line active"
+              >Detalles</a
+            >
+            <a
+              id="evoluciones"
+              class="btn-caracteristica inactive hide-bottom-line inactive"
+              >Evoluciones</a
+            >
+            <a
+              id="stats"
+              class="btn-caracteristica inactive hide-bottom-line inactive"
+              >Stats</a
+            >
+          </div>
+
+          <div id="descripcion-total" class="descripcion-total shown">
+            <div class="about sec-detail">
+              <h1>Descripción</h1>
+              <div class="content">
+                "Whenever Pikachu comes across something new, it blasts it with
+                a jolt of electricity. If you come across a blackened berry,
+                it's evidence that this Pokémon mistook the intensity of its
+                charge evidence that this Pokémon mistook the intensity of its
+                charge."
+              </div>
+            </div>
+
+            <div class="informacion-basica sec-detail">
+              <h1>Información Básica</h1>
+              <div class="content">
+                <ul>
+                  <li>
+                    Tipo:
+                    <span>
+                      <button
+                        style="background-color: #fbe043"
+                        value="electric"
+                        class="btn-tipo"
+                      >
+                        Eléctrico
+                      </button>
+                    </span>
+                  </li>
+                  <li>Peso: <span>5.0 kg</span></li>
+                  <li>Alto: <span>4.1 m</span></li>
+                  <li>CP: <span>230</span></li>
+                  <li>
+                    Sexo: <span class="icon-male-svgrepo-com"></span>
+                    <span class="icon-female-svgrepo-com"></span>
+                  </li>
+
+                  <li>Caramelos: <span>Pikachu Candy</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="debilidades sec-detail">
+              <h1>Debilidades</h1>
+              <div class="content">
+                <button
+                  style="background-color: #f9766c"
+                  value="fire"
+                  class="btn-tipo"
+                >
+                  Fuego
+                </button>
+                <button
+                  style="background-color: #2f9afe"
+                  value="water"
+                  class="btn-tipo"
+                >
+                  Agua
+                </button>
+                <button
+                  style="background-color: #be875e"
+                  value="ground"
+                  class="btn-tipo"
+                >
+                  Tierra
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="seccion-evoluciones" class="seccion-evoluciones hidden">
+            estas son la evoluciones
+            <div id="pokemones-filtrados" class="pokemones-filtrados">
+              <div class="item">
+                <img src="https://www.serebii.net/pokemongo/pokemon/001.png" />
+                <div class="info">
+                  <div class="info-left">
+                    <h3 class="namePokemon">ivysaur</h3>
+                    <h3>CP: 151</h3>
+                    <div class="icon">
+                      <span class="icon-circle-svgrepo-com"></span>
+                    </div>
+                  </div>
+                  <div class="info-rigth">
+                    <h3>001</h3>
+                    <div class="candy">
+                      <span class="icon-github img-candy"></span>
+                      <h3>25</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <img src="https://www.serebii.net/pokemongo/pokemon/002.png" />
+                <div class="info">
+                  <div class="info-left">
+                    <h3 class="namePokemon">ivysaur</h3>
+                    <h3>CP: 151</h3>
+                    <div class="icon">
+                      <span class="icon-circle-svgrepo-com"></span>
+                    </div>
+                  </div>
+                  <div class="info-rigth"><h3>002</h3></div>
+                </div>
+              </div>
+              <div class="item">
+                <img src="https://www.serebii.net/pokemongo/pokemon/002.png" />
+                <div class="info">
+                  <div class="info-left">
+                    <h3 class="namePokemon">ivysaur</h3>
+                    <h3>CP: 151</h3>
+                    <div class="icon">
+                      <span class="icon-circle-svgrepo-com"></span>
+                    </div>
+                  </div>
+                  <div class="info-rigth"><h3>002</h3></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="seccion-stats" class="seccion-stats hidden">
+            <canvas id="chart" width="10" height="10"></canvas>
+          </div>
+        </div>
+
         <!-- </div> -->
       </div>
     </div>
