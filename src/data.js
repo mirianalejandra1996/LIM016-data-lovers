@@ -39,8 +39,6 @@ export const busquedaInput = async (inputContent) => {
   
 };
 
-
-
 // ---------------------
 
 

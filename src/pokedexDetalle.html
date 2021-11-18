@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="icons.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"
@@ -21,8 +22,8 @@
             <h4>PokeCompany</h4>
           </div>
           <div id="hamburguesa" class="hamburguesa">
-            <span ></span>
-        </div>
+            <span></span>
+          </div>
           <ul id="links">
             <li><a id="home" href="./index.html">Home</a></li>
             <li><a href="./pokedexLista.html">Pokedex</a></li>
@@ -210,14 +211,10 @@
               </div>
             </div>
           </div>
-       
-          
         </div>
 
-
-
         <div id="seccion-stats" class="seccion-stats hidden">
-          estas son la stats
+          <canvas id="chart" width="10" height="10"></canvas>
         </div>
       </div>
     </div>

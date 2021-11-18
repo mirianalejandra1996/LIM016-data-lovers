@@ -113,6 +113,8 @@ nav ul li a:hover {
   padding: 0 20px;
   /* background: #f4faf7; */
   border-radius: 40px;
+  display: flex;
+  flex-direction: column;
 }
 .buscador-especial {
   /* height: 100px; */
@@ -126,7 +128,7 @@ nav ul li a:hover {
 /* Botones de tipos de pokemones */
 
 .properties-container {
-  margin-top: -30px;
+  margin-top: 30px;
 }
 
 .btn-tipo,
@@ -161,7 +163,7 @@ nav ul li a:hover {
 
 /* Contenedor de los Pokemones Filtrados */
 .contenedor .pokemones-filtrados {
-  padding: 20px;
+  padding: 20px 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   /* grid-template-columns: repeat(auto-fill, 220px); */
@@ -228,7 +230,8 @@ nav ul li a:hover {
 
 .info .icon-container .circle-type .format-icon {
   font-size: 15px;
-  color: black;
+  /* color: black; */
+  /* margin-left: 1px; */
 }
 
 .item > img {
@@ -347,20 +350,22 @@ nav ul li a:hover {
 }
 
 .inpt-search {
-  /* background-color: red; */
-  margin-top: 70px;
+  position: relative;
+  min-width: 230px;
+  max-width: 280px;
+  /* margin-top: 70px; */
 }
 
 .box {
   position: relative;
   max-width: 500px;
-  /* width: 100%; */
+  width: 100%;
   width: 85%;
   margin-bottom: 140px;
 }
 
 #input-buscar {
-  position: absolute;
+  /* position: absolute; */
   height: 50px;
   width: 100%;
   border-radius: 25px;
@@ -844,11 +849,11 @@ h2 {
   opacity: 0;
   width: 0;
 }
-.candy{
+.candy {
   display: flex;
   justify-content: space-between;
 }
-.img-candy{
+.img-candy {
   padding-right: 5px;
 }
 /* for tablet */
@@ -955,14 +960,11 @@ h2 {
 }
 
 .sec-detail {
-  /* background-color: red; */
+  margin-bottom: 25px;
 }
 
 .descripcion-total {
   height: 100%;
-  /* background-color: aqua; */
-  display: grid;
-  gap: 20px;
   overflow: auto;
 }
 
@@ -1061,4 +1063,8 @@ h2 {
 #idPokemon {
   font-size: 18px;
   /* color: #40d482; */
+}
+
+.seccion-stats {
+  overflow: auto;
 }

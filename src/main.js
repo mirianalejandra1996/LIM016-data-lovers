@@ -39,8 +39,8 @@ console.log( 'allBtns',allBtns.length)
 
 
 
-
-let contenedorPokemon = document.getElementById("pokemones-filtrados");
+let contenedorDerecho = document.getElementById('contenedorPokemon');
+let contenedorFiltrados = document.getElementById("pokemones-filtrados");
 
 //mostrar hamburguesa
 const hamburguesa = document.getElementById("hamburguesa");
@@ -183,15 +183,14 @@ const renderCards = (pokemones) => {
       resultadoPokemones.textContent = `${pokemones.length} Pokemones`;
     }
     
-    contenedorPokemon.textContent = '';
+    contenedorFiltrados.textContent = '';
 
     // Cargando pokemones con SetTimeOut ?
     
     let arrPokemones = pokemones;
-    // console.log('linea 141 ',arrPokemones)
     
     arrPokemones.forEach((pokemon) => {
-        cardPokemon(pokemon)
+        pokemonClicked(pokemon)
     });
 
    
@@ -204,10 +203,10 @@ const renderCards = (pokemones) => {
 // ----------------------
 
 
-// Funcion cardPokemon funcional
+// Funcion pokemonClicked funcional
 // Esta función crea el formato de las tarjetas de cada pokemón, y se mostrarán en su contenedor
 
-export const cardPokemon = (pokemon) => {
+export const pokemonClicked = (pokemon) => {
     
     const card = document.createElement("div");
     card.classList.add("item");
@@ -239,7 +238,6 @@ export const cardPokemon = (pokemon) => {
         circleColor.style.backgroundColor = colors[type]
         const icon = document.createElement('span');
         icon.classList.add('format-icon');
-        // icon.classList.add('icon-dark');
         icon.classList.add(`icon-${type}`);
         circleColor.append(icon);
         typesContainer.append(circleColor);
@@ -249,59 +247,39 @@ export const cardPokemon = (pokemon) => {
 
 
 
-    const infoRigth = document.createElement("div");
-    infoRigth.classList.add("info-rigth");
-    info.append(infoRigth);
+    const infoRight = document.createElement("div");
+    infoRight.classList.add("info-rigth");
+    info.append(infoRight);
     const numpokemon = document.createElement("h3");
     numpokemon.textContent = `#${pokemon.num}`;
-    infoRigth.append(numpokemon);
+    infoRight.append(numpokemon);
 
-    contenedorPokemon.append(card);
+    // card.addEventListener('click', handleCardItem)
+    card.addEventListener('click', viewDetail)
+
+    contenedorFiltrados.append(card);
   };
 
-// export const cardPokemon = (pokemon) => {
+
+// const handleCardItem = (e) => {
+//     // console.log(e.target.textContent)
+//     // console.log(e.target.textContent)
+
+//     // if (!e.target) return;
+
+//     // const pokemonClicked = e.target;
+//     const pokemonClicked = e.currentTarget;
+//     // console.log(pokemonClicked.textContent)
+//     // event.currentTarget
+
+//     // Si el contenido es un string vacio "" es un falsy
+//     if (!pokemonClicked.textContent) return 
+
+//     const textArray = pokemonClicked.textContent.split('#')[1];
+//     console.log(textArray);
     
-//     const card = document.createElement("div");
-//     card.classList.add("item");
-//     const img = document.createElement("img");
-//     img.src = `https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png`;
-//     card.append(img);
-//     const info = document.createElement("div");
-//     info.classList.add("info");
-//     card.append(info);
-//     const infoLeft = document.createElement("div");
-//     infoLeft.classList.add("info-left");
-//     info.append(infoLeft);
-//     const nombrepokemon = document.createElement("h3");
-//     nombrepokemon.classList.add("namePokemon");
-//     nombrepokemon.textContent = `${pokemon.name}`;
-//     infoLeft.append(nombrepokemon);
-//     const cpPokemon = document.createElement("h3");
-//     cpPokemon.textContent = `CP: ${pokemon["stats"]["base-attack"]}`;
-//     infoLeft.append(cpPokemon);
 
-
-//     const icon = document.createElement("div");
-//     icon.classList.add("icon");
-//     infoLeft.append(icon);
-//     const span = document.createElement("span");
-//     span.classList.add("icon-circle-svgrepo-com");
-
-
-
-
-//     icon.append(span);
-//     const infoRigth = document.createElement("div");
-//     infoRigth.classList.add("info-rigth");
-//     info.append(infoRigth);
-//     const numpokemon = document.createElement("h3");
-//     numpokemon.textContent = `${pokemon.num}`;
-//     infoRigth.append(numpokemon);
-
-//     contenedorPokemon.append(card);
-//   };
-
-
+// }
 
 //-----------
 const filtrosSeleccionados = async ()=> {
@@ -429,3 +407,85 @@ const iconsTypes = {
 }
 
 console.log(iconsTypes)
+
+
+
+
+
+
+
+const viewDetail = (e) => {
+
+    // console.log(e.target.textContent)
+    // console.log(e.target.textContent)
+
+    // if (!e.target) return;
+
+    // const pokemonClicked = e.target;
+    const pokemonClicked = e.currentTarget;
+    console.log(pokemonClicked.textContent)
+    // event.currentTarget
+
+    // Si el contenido es un string vacio "" es un falsy
+    if (!pokemonClicked.textContent) return 
+
+    // const textArray = pokemonClicked.textContent.split('#');
+    const textArray = pokemonClicked.textContent.split('#')[1];
+    console.log('hola', textArray);
+
+    let cabecera = document.getElementById('upperSection')
+    cabecera.classList.add('hidden')
+
+    let filterContainer = document.getElementById('left-container');
+    filterContainer.classList.add('hidden');
+
+    contenedorFiltrados.textContent = '';
+
+    const viewDetail = document.createElement('div');
+    // viewDetail.style.backgroundColor = 'blue';
+    // viewDetail.textContent = 'hola';
+    contenedorDerecho.append(viewDetail);
+
+    
+
+
+    viewDetail.innerHTML = `<div id="descripcion-total" class="descripcion-total shown">
+          <div class="about sec-detail">
+            <h1>Descripción</h1>
+            <div class="content">
+              "Whenever Pikachu comes across something new, it blasts it with a
+              jolt of electricity. If you come across a blackened berry, it's
+              evidence that this Pokémon mistook the intensity of its charge
+              evidence that this Pokémon mistook the intensity of its charge."
+            </div>
+          </div>
+
+          <div class="informacion-basica sec-detail">
+            <h1>Información Básica</h1>
+            <div class="content">
+              <ul>
+                <li>
+                  Tipo:
+                  <span>
+                    <button style="background-color: #fbe043" value="electric" class="btn-tipo">
+                      Eléctrico
+                    </button>
+                  </span>
+                </li>
+                <li>Peso: <span>5.0 kg</span></li>
+                <li>Alto: <span>4.1 m</span></li>
+                <li>CP: <span>230</span></li>
+                <li>
+                  Sexo: <span class="icon-male-svgrepo-com"></span>
+                  <span class="icon-female-svgrepo-com"></span>
+                </li>
+
+                <li>Caramelos: <span>Pikachu Candy</span></li>
+              </ul>
+            </div>
+          </div>
+            </div>`
+
+    
+
+}
