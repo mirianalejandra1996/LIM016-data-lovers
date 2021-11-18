@@ -41,6 +41,7 @@ console.log( 'allBtns',allBtns.length)
 
 let contenedorDerecho = document.getElementById('contenedorPokemon');
 let contenedorFiltrados = document.getElementById("pokemones-filtrados");
+let vistaDetalle = document.getElementById('vista-detalle');
 
 //mostrar hamburguesa
 const hamburguesa = document.getElementById("hamburguesa");
@@ -411,12 +412,12 @@ const viewDetail = async (e) => {
 }
 
 
-
 const imprimirDetalle = async (id) => {
 
     let pokemonArray = await busquedaDetalle(id)
     let pokemon = pokemonArray[0]
     let tiposPokemon = pokemon.type
+    let sexopokemon = pokemon.gender
 
     let about = document.createElement('div');
     about.id = "descripcion-total"
@@ -450,7 +451,8 @@ const imprimirDetalle = async (id) => {
 
     // Sec2. tipos
     let listaTipos = document.createElement('li');
-    
+    listaTipos.textContent="Tipo:"
+
     for (let tipo of tiposPokemon){
         
         let button = document.createElement('div');
@@ -460,15 +462,50 @@ const imprimirDetalle = async (id) => {
 
         listaTipos.append(button)
 
-
     }
 
     listContent2.append(listaTipos);
     
-    
     // Sec2. pesos
+    let listaPeso = document.createElement('li')
+    listaPeso.innerHTML=`Peso: <span>${pokemon["size"]["weight"]}</span>`
+    // let span1=document.createElement('span')
+    // span1.textContent = pokemon.weight
+    // listaPeso.append(span1)
+
+    listContent2.append(listaPeso)
+// Sec2. Alto
+    let listaAlto = document.createElement('li')
+    listaAlto.innerHTML=`Alto: <span>${pokemon["size"]["height"]}</span>`
+
+    listContent2.append(listaAlto)
+// Sec2. CP
+    let listaCP= document.createElement('li')
+    listaCP.innerHTML=`Alto: <span>${pokemon["stats"]["base-attack"]}</span>`
+
+    listContent2.append(listaCP)
+// Sec2. Caramelos
+    let listaCaramelos= document.createElement('li')
+
+    listaCaramelos.innerHTML=`Caramelos: <span>${pokemon["evolution"]["candy"]}</span>`
+
+    listContent2.append(listaCaramelos)
+
+    content2.append(listContent2)
+    secc2.append(content2)
+    // Sección 3
+    let secc3 = document.createElement('div')
+    secc3.classList.add('debilidades','sec-detail')
+    let title3 = document.createElement('h1');
+    title3.textContent = 'Debilidades'
+    secc3.append(title3);
 
 
+    about.append(secc1)
+    about.append(secc2)
+    about.append(secc3)
+
+    vistaDetalle.append(about)
     // tipo.textContent = `Tipo: `
 
     // for (let )
@@ -478,34 +515,7 @@ const imprimirDetalle = async (id) => {
 
     // <div id="descripcion-total" class="descripcion-total shown">
     //        
-    //         <div class="informacion-basica sec-detail">
-    //           <h1>Información Básica</h1>
-    //           <div class="content">
-    //             <ul>
-    //               <li>
-    //                 Tipo:
-    //                 <span>
-    //                   <button
-    //                     style="background-color: #fbe043"
-    //                     value="electric"
-    //                     class="btn-tipo"
-    //                   >
-    //                     Eléctrico
-    //                   </button>
-    //                 </span>
-    //               </li>
-    //               <li>Peso: <span>5.0 kg</span></li>
-    //               <li>Alto: <span>4.1 m</span></li>
-    //               <li>CP: <span>230</span></li>
-    //               <li>
-    //                 Sexo: <span class="icon-male-svgrepo-com"></span>
-    //                 <span class="icon-female-svgrepo-com"></span>
-    //               </li>
-
-    //               <li>Caramelos: <span>Pikachu Candy</span></li>
-    //             </ul>
-    //           </div>
-    //         </div>
+    //        
 
     //         <div class="debilidades sec-detail">
     //           <h1>Debilidades</h1>
