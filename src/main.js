@@ -39,7 +39,7 @@ console.log( 'allBtns',allBtns.length)
 
 
 
-let contenedorDerecho = document.getElementById('contenedorPokemon');
+// let contenedorDerecho = document.getElementById('contenedorPokemon');
 let contenedorFiltrados = document.getElementById("pokemones-filtrados");
 
 //mostrar hamburguesa
