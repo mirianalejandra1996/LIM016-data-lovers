@@ -40,26 +40,34 @@ export const busquedaInput = async (inputContent) => {
 };
 
 
-export const busquedaDetalle = async (id) => {
+export const obtenerPokemon = async (id) => {
 
-    const pokemones = await dataPokemones()
-    
-    let resultado = []
+  const pokemones = await dataPokemones()
 
-    pokemones.forEach((pokemon) => {
+  const pokemon = pokemones.find((p) => {
+    return p.num === id
+  })
 
-        if (pokemon.num === id) {
-          resultado.push(pokemon)
-        }
-    })
+ return pokemon
 
-    if (resultado.length === 0){
-      return []
-    }
-    return resultado
-  
 };
 
+export const obtenerPokemones = async (ids) => {
+
+  const promesas = []
+
+  ids.forEach((id) => {
+    promesas.push(obtenerPokemon(id))
+  })
+  
+  const pokemones = await Promise.all(promesas)
+
+  // En caso de las evoluciones siguiete no se encuentre lo va a filtrar y solo enviaria los que si existen en la data 
+ return pokemones.filter((p) => {
+   return p !== null
+ })
+
+};
 
 
 
@@ -88,7 +96,40 @@ export const filtradoPokemones = (pokemones, types, weakness ) => {
 }
 
 
+export const obtenerEvoluciones = (pokemon) => {
+  const nextEvolutions= []
+  
+  let evolucionesPokemonActual = pokemon.evolution
+console.log(evolucionesPokemonActual)
 
+  while (evolucionesPokemonActual['next-evolution']) {
+    if(evolucionesPokemonActual['next-evolution'].length === 1){
+      nextEvolutions.push(evolucionesPokemonActual['next-evolution'][0].num)
+    } else {
+      evolucionesPokemonActual['next-evolution'].forEach(nextEvolution => {
+        nextEvolutions.push(nextEvolution.num)
+      })
+    }
+    evolucionesPokemonActual = evolucionesPokemonActual['next-evolution'][0]
+  
+  }
+
+  const prevEvolutions = []
+  
+  evolucionesPokemonActual = pokemon.evolution
+
+
+  while (evolucionesPokemonActual['prev-evolution']) {
+    prevEvolutions.unshift(evolucionesPokemonActual['prev-evolution'][0].num)
+    evolucionesPokemonActual = evolucionesPokemonActual['prev-evolution'][0]
+  }
+
+  const evolucionesOrdenadas = prevEvolutions.concat(pokemon.num).concat(nextEvolutions)
+
+  return evolucionesOrdenadas
+  
+
+}
 
 
 

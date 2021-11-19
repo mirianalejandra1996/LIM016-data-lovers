@@ -1,6 +1,6 @@
 // import { dataPokemones,busquedaInput } from './data.js';
 // import { types } from '@babel/core';
-import { dataPokemones,busquedaInput, filtradoPokemones, busquedaDetalle } from './data.js';
+import { dataPokemones,busquedaInput, filtradoPokemones, obtenerPokemon,obtenerPokemones,obtenerEvoluciones } from './data.js';
 
 const colors = {
 
@@ -192,7 +192,9 @@ const renderCards = (pokemones) => {
     let arrPokemones = pokemones;
     
     arrPokemones.forEach((pokemon) => {
-        pokemonClicked(pokemon)
+      const card = crearPokemonCard(pokemon)
+      card.addEventListener('click', viewDetail)
+      contenedorFiltrados.append(card)
     });
 
    
@@ -208,7 +210,7 @@ const renderCards = (pokemones) => {
 // Funcion pokemonClicked funcional
 // Esta función crea el formato de las tarjetas de cada pokemón, y se mostrarán en su contenedor
 
-export const pokemonClicked = (pokemon) => {
+export const crearPokemonCard = (pokemon) => {
     
     const card = document.createElement("div");
     card.classList.add("item");
@@ -245,10 +247,6 @@ export const pokemonClicked = (pokemon) => {
         circleColor.append(icon);
         typesContainer.append(circleColor);
       });
-      
-
-
-
 
     const infoRight = document.createElement("div");
     infoRight.classList.add("info-rigth");
@@ -257,11 +255,9 @@ export const pokemonClicked = (pokemon) => {
     numpokemon.textContent = `#${pokemon.num}`;
     infoRight.append(numpokemon);
 
-    // card.addEventListener('click', handleCardItem)
-    card.addEventListener('click', viewDetail)
-
-    contenedorFiltrados.append(card);
+    return card
   };
+  
 
 
 // const handleCardItem = (e) => {
@@ -413,10 +409,13 @@ const viewDetail = async (e) => {
 
 
 const imprimirDetalle = async (id) => {
-
-    let pokemonArray = await busquedaDetalle(id)
-    let pokemon = pokemonArray[0]
+    
+    let pokemon = await obtenerPokemon(id)
+    if(!pokemon) return
     detailRight(pokemon)
+
+    let tiposPokemon = pokemon.type
+
 
 
     let leftSection = document.getElementById('left-detalle')
@@ -486,6 +485,42 @@ const imprimirDetalle = async (id) => {
 
     leftSection.append(leftImg)
    
+
+
+
+   
+
+
+
+
+//Crear Seccion Evoluciones
+
+let contenedorEvoluciones=document.createElement('div')
+contenedorEvoluciones.id='pokemones-filtrados'
+contenedorEvoluciones.classList.add('pokemones-filtrados')
+
+//obtenemos array de las evoluciones del pokemon
+const evoluciones = obtenerEvoluciones(pokemon) 
+obtenerPokemones(evoluciones) 
+    .then((pokemones) => {
+        for(pokemon of pokemones){
+            //Reutilizamos la funcion crear pokemon card
+            const card = crearPokemonCard(pokemon)
+            contenedorEvoluciones.append(card)
+            
+        }
+    })
+
+
+seccionEvoluciones.append(contenedorEvoluciones)
+vistaDetalle.append(seccionEvoluciones)
+
+
+
+
+
+
+
 }
 
 function detailRight (pokemon) {
@@ -494,10 +529,6 @@ function detailRight (pokemon) {
     let debilidadesPokemon = pokemon.weaknesses
 
     console.log('debilidades', debilidadesPokemon)
-
-    let about = document.createElement('div');
-    about.id = "descripcion-total"
-    about.classList.add('descripcion-total','shown')
 
     // Sección 1
     let secc1 = document.createElement('div')
@@ -510,8 +541,6 @@ function detailRight (pokemon) {
     content1.classList.add('content')
     content1.textContent = pokemon.about
     secc1.append(content1);
-
-    about.append(secc1);
 
     // Sección 2
     let secc2 = document.createElement('div')
@@ -618,10 +647,69 @@ function detailRight (pokemon) {
     
     secc3.append(content3);
 
-    about.append(secc1)
-    about.append(secc2)
-    about.append(secc3)
+    seccionDescripcion.append(secc1)
+    seccionDescripcion.append(secc2)
+    seccionDescripcion.append(secc3)
 
-    vistaDetalle.append(about)
+    vistaDetalle.append(seccionDescripcion)
 }
+
+// Sección de botones detalles  evoluciones y stats
+const btnDetalles = document.getElementById('detalles');
+const btnEvoluciones = document.getElementById('evoluciones');
+const btnStats = document.getElementById('stats');
+const seccionDescripcion = document.getElementById('descripcion-total');
+const seccionEvoluciones = document.getElementById('seccion-evoluciones');
+const seccionStats=document.getElementById('seccion-stats')
+
+//Boton Detalle vista Detalle Pokemon
+btnDetalles.addEventListener('click', () => {
+
+    btnDetalles.classList.replace('inactive','active');
+    btnEvoluciones.classList.replace('active', 'inactive');
+    btnStats.classList.replace('active','inactive')
+    //secciones 
+    seccionDescripcion.classList.replace('hidden','shown');
+    seccionEvoluciones.classList.replace('shown','hidden');
+    seccionStats.classList.replace('shown','hidden');
+     // lineas debajo del nombre
+     btnDetalles.classList.replace('hide-bottom-line','show-bottom-line');
+     btnEvoluciones.classList.replace('show-bottom-line', 'hide-bottom-line');
+     btnStats.classList.replace('show-bottom-line', 'hide-bottom-line');
+    
+})
+
+//Boton Evoluciones vista Detalle Pokemon
+btnEvoluciones.addEventListener('click', () => {
+    
+    btnEvoluciones.classList.replace('inactive','active');
+    btnStats.classList.replace('active','inactive')
+    btnDetalles.classList.replace('active','inactive');
+    //secciones 
+    seccionEvoluciones.classList.replace('hidden','shown');
+    seccionDescripcion.classList.replace('shown','hidden');
+    seccionStats.classList.replace('shown','hidden');
+      // lineas debajo del nombre
+    btnEvoluciones.classList.replace('hide-bottom-line','show-bottom-line');
+    btnDetalles.classList.replace('show-bottom-line', 'hide-bottom-line');
+    btnStats.classList.replace('show-bottom-line', 'hide-bottom-line');
+    
+})
+
+//Boton Stats vista Detalle Pokemon
+btnStats.addEventListener('click', () => {
+    
+    btnStats.classList.replace('inactive','active');
+    btnEvoluciones.classList.replace('active','inactive')
+    btnDetalles.classList.replace('active','inactive');
+     //secciones 
+    seccionStats.classList.replace('hidden','shown');
+    seccionEvoluciones.classList.replace('shown','hidden');
+    seccionDescripcion.classList.replace('shown','hidden');
+    // lineas debajo del nombre
+    btnStats.classList.replace('hide-bottom-line','show-bottom-line');
+    btnEvoluciones.classList.replace('show-bottom-line', 'hide-bottom-line');
+    btnDetalles.classList.replace('show-bottom-line', 'hide-bottom-line');
+    
+})
 
