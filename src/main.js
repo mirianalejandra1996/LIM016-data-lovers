@@ -407,10 +407,8 @@ const viewDetail = async (e) => {
     let leftDetalle = document.getElementById('left-detalle')
     leftDetalle.classList.remove('hidden')
 
-
-
-    let prueba = await imprimirDetalle(textArray);
-    console.log(prueba)
+    imprimirDetalle(textArray);
+   
 }
 
 
@@ -418,6 +416,80 @@ const imprimirDetalle = async (id) => {
 
     let pokemonArray = await busquedaDetalle(id)
     let pokemon = pokemonArray[0]
+    detailRight(pokemon)
+
+
+    let leftSection = document.getElementById('left-detalle')
+    
+    // let leftDetail = document.createElement('div');
+
+    // // creación de botón para volver al pokedex
+    // let backPokedex = document.createElement('div');
+    // backPokedex.classList.add('large-btn')
+    
+    // let btnText = document.createElement('span')
+    // btnText.textContent = 'Volver a Pokedex'
+    // backPokedex.append(btnText)
+    
+    // let btnIcon = document.createElement('span');
+    // btnIcon.classList.add('icon-pokebola-recta')
+    // backPokedex.append(btnIcon)
+    
+    // leftDetail.append(backPokedex);
+    
+    
+    
+    // ---------------------
+
+
+    // Creación de img para el pokemón
+    let leftImg = document.createElement('div')
+    leftImg.classList.add('left-img')
+    leftImg.id = 'left-img'
+    leftSection.append(leftImg)
+
+    let pokemonDetail = document.createElement('div')
+    pokemonDetail.classList.add('detail-pokemon')
+    leftImg.append(pokemonDetail)
+    
+
+
+    let imgCentered = document.createElement('div')
+    imgCentered.id = 'big-img'
+
+    let imgPokemon = document.createElement('img')
+    // imgPokemon.src = 'https://www.serebii.net/pokemongo/pokemon/025.png'
+    imgPokemon.src = `https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png`
+    imgPokemon.style.width = '150px'
+
+    imgCentered.append(imgPokemon)
+    
+
+    // Textos Identificadores de la imagen del pokemon
+    let identifier = document.createElement('div')
+    identifier.id = 'identifier'
+
+    let namePokemon = document.createElement('span')
+    namePokemon.id = 'namePokemon'
+    namePokemon.textContent = `${pokemon.name}`
+
+    let idPokemon = document.createElement('span')
+    idPokemon.id = 'idPokemon'
+    idPokemon.textContent = `#${pokemon.num}`
+
+    identifier.append(namePokemon)
+    identifier.append(idPokemon)
+
+
+    pokemonDetail.append(imgCentered)
+    pokemonDetail.append(identifier)
+
+    leftSection.append(leftImg)
+   
+}
+
+function detailRight (pokemon) {
+
     let tiposPokemon = pokemon.type
     let debilidadesPokemon = pokemon.weaknesses
 
@@ -457,7 +529,7 @@ const imprimirDetalle = async (id) => {
 
     let listaTipos = document.createElement('li');
 
-    // Contenedor interno del li //! AQUI VAMOS A HACER APPEND DEL TITULO Y DEL DIV DE BOTONES
+    // Contenedor interno del li 
     let liContent = document.createElement('div');
 
 
@@ -471,7 +543,7 @@ const imprimirDetalle = async (id) => {
     liContent.append(typeTitle)
 
 
-    // ! AHORA EL DIV DE LOS BOTONES
+    // Contenedor de los botones de tipo
     let typesContainer = document.createElement('div');
     typesContainer.classList.add('horizontal');
 
@@ -479,7 +551,7 @@ const imprimirDetalle = async (id) => {
     for (let tipo of tiposPokemon){
         
         let button = document.createElement('div');
-        button.classList.add('prueba')
+        button.classList.add('btn-detail')
         button.style.backgroundColor = `${colors[tipo]}`
         button.textContent = `${tipo}`
 
@@ -536,7 +608,7 @@ const imprimirDetalle = async (id) => {
 
         
         let button = document.createElement('div');
-        button.classList.add('prueba')
+        button.classList.add('btn-detail')
         button.style.backgroundColor = `${colors[debilidad]}`
         button.textContent = `${debilidad}`
 
@@ -551,43 +623,5 @@ const imprimirDetalle = async (id) => {
     about.append(secc3)
 
     vistaDetalle.append(about)
-    // tipo.textContent = `Tipo: `
-
-    // for (let )
-    // content2.textContent = pokemon.about
-    // secc2.append(content1);
-
-
-    // <div id="descripcion-total" class="descripcion-total shown">
-    //        
-    //        
-
-    //         <div class="debilidades sec-detail">
-    //           <h1>Debilidades</h1>
-    //           <div class="content">
-    //             <button
-    //               style="background-color: #f9766c"
-    //               value="fire"
-    //               class="btn-tipo"
-    //             >
-    //               Fuego
-    //             </button>
-    //             <button
-    //               style="background-color: #2f9afe"
-    //               value="water"
-    //               class="btn-tipo"
-    //             >
-    //               Agua
-    //             </button>
-    //             <button
-    //               style="background-color: #be875e"
-    //               value="ground"
-    //               class="btn-tipo"
-    //             >
-    //               Tierra
-    //             </button>
-    //           </div>
-    //         </div>
-    //       </div>
-
 }
+
