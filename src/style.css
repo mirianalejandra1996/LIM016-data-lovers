@@ -142,6 +142,8 @@ nav ul li a:hover {
   cursor: pointer;
   transition: 0.2s ease box-shadow;
   color: #000;
+  font-size: 13.5px;
+  font-weight: initial;
 }
 
 .btn-tipo:hover,
@@ -1046,6 +1048,7 @@ h2 {
 .content ul li {
   /* color: red; */
   font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .content ul li span {
@@ -1071,4 +1074,33 @@ h2 {
 
 .vista-detalle {
   height: 100%;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* El formato de boton de vista detalles */
+.prueba {
+  height: 30px;
+  width: 90px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease box-shadow;
+  color: #000;
+  font-size: 13.5px;
+  /* display: flex; */
+  justify-content: center;
+  text-align: center;
+  font-weight: initial;
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  /* background-color: red; */
+  /* margin-left: 5px; */
 }

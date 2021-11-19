@@ -1,4 +1,5 @@
 // import { dataPokemones,busquedaInput } from './data.js';
+// import { types } from '@babel/core';
 import { dataPokemones,busquedaInput, filtradoPokemones, busquedaDetalle } from './data.js';
 
 const colors = {
@@ -229,6 +230,7 @@ export const pokemonClicked = (pokemon) => {
     infoLeft.append(cpPokemon);
 
 
+
     const typesContainer = document.createElement("div");
     typesContainer.classList.add("icon-container");
     infoLeft.append(typesContainer);
@@ -408,7 +410,7 @@ const viewDetail = async (e) => {
 
 
     let prueba = await imprimirDetalle(textArray);
-    console.log(`${prueba}`);
+    console.log(prueba)
 }
 
 
@@ -417,7 +419,9 @@ const imprimirDetalle = async (id) => {
     let pokemonArray = await busquedaDetalle(id)
     let pokemon = pokemonArray[0]
     let tiposPokemon = pokemon.type
-    let sexopokemon = pokemon.gender
+    let debilidadesPokemon = pokemon.weaknesses
+
+    console.log('debilidades', debilidadesPokemon)
 
     let about = document.createElement('div');
     about.id = "descripcion-total"
@@ -450,56 +454,97 @@ const imprimirDetalle = async (id) => {
     let listContent2 = document.createElement('ul');
 
     // Sec2. tipos
+
     let listaTipos = document.createElement('li');
-    listaTipos.textContent="Tipo:"
+
+    // Contenedor interno del li //! AQUI VAMOS A HACER APPEND DEL TITULO Y DEL DIV DE BOTONES
+    let liContent = document.createElement('div');
+
+
+    liContent.classList.add('horizontal')
+
+    listaTipos.append(liContent) //ESTÁ BIEN!
+
+    // DIV PARA HACER EL TITULO DE TIPOS
+    let typeTitle = document.createElement('div')
+    typeTitle.textContent = 'Tipo:'
+    liContent.append(typeTitle)
+
+
+    // ! AHORA EL DIV DE LOS BOTONES
+    let typesContainer = document.createElement('div');
+    typesContainer.classList.add('horizontal');
+
 
     for (let tipo of tiposPokemon){
         
         let button = document.createElement('div');
-        button.classList.add('btn-tipo');
+        button.classList.add('prueba')
         button.style.backgroundColor = `${colors[tipo]}`
         button.textContent = `${tipo}`
 
-        listaTipos.append(button)
+        typesContainer.append(button)
 
     }
+
+    liContent.append(typesContainer)
 
     listContent2.append(listaTipos);
     
     // Sec2. pesos
     let listaPeso = document.createElement('li')
     listaPeso.innerHTML=`Peso: <span>${pokemon["size"]["weight"]}</span>`
-    // let span1=document.createElement('span')
-    // span1.textContent = pokemon.weight
-    // listaPeso.append(span1)
 
     listContent2.append(listaPeso)
-// Sec2. Alto
+
+    // Sec2. Alto
     let listaAlto = document.createElement('li')
     listaAlto.innerHTML=`Alto: <span>${pokemon["size"]["height"]}</span>`
 
     listContent2.append(listaAlto)
-// Sec2. CP
+
+    // Sec2. CP
     let listaCP= document.createElement('li')
-    listaCP.innerHTML=`Alto: <span>${pokemon["stats"]["base-attack"]}</span>`
+    listaCP.innerHTML=`CP: <span>${pokemon["stats"]["base-attack"]}</span>`
 
     listContent2.append(listaCP)
-// Sec2. Caramelos
+
+    // Sec2. Caramelos
     let listaCaramelos= document.createElement('li')
 
-    listaCaramelos.innerHTML=`Caramelos: <span>${pokemon["evolution"]["candy"]}</span>`
+    listaCaramelos.innerHTML=`Caramelos: <span class="capitalize">${pokemon["evolution"]["candy"]}</span>`
 
     listContent2.append(listaCaramelos)
 
     content2.append(listContent2)
     secc2.append(content2)
+
+
     // Sección 3
     let secc3 = document.createElement('div')
     secc3.classList.add('debilidades','sec-detail')
     let title3 = document.createElement('h1');
     title3.textContent = 'Debilidades'
     secc3.append(title3);
+    
+    let content3 = document.createElement('div')
+    content3.classList.add('content')
+    content3.classList.add('horizontal')
+    
+    for (let debilidad of debilidadesPokemon) {
+        console.log(debilidad);
 
+        
+        let button = document.createElement('div');
+        button.classList.add('prueba')
+        button.style.backgroundColor = `${colors[debilidad]}`
+        button.textContent = `${debilidad}`
+
+        content3.append(button)
+        
+    }
+    
+    secc3.append(content3);
 
     about.append(secc1)
     about.append(secc2)
