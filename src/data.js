@@ -60,6 +60,7 @@ export const obtenerPokemones = async (ids) => {
     promesas.push(obtenerPokemon(id))
   })
   
+  // eslint-disable-next-line no-undef
   const pokemones = await Promise.all(promesas)
 
   // En caso de las evoluciones siguiete no se encuentre lo va a filtrar y solo enviaria los que si existen en la data 

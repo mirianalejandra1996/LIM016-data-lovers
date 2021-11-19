@@ -27,10 +27,7 @@
           <ul id="links">
             <li><a id="home" href="./index.html">Home</a></li>
             <li><a href="./pokedexLista.html">Pokedex</a></li>
-            <li><a href="./pokedexDetalle.html">PokeMap</a></li>
-
-            <!-- Este lo coloco temporalmente para desplazarme más fácil, ya luego se borra -->
-            <li><a href="./pokedexDetalle.html">PokeDetalles</a></li>
+            <!-- <li><a href="./pokedexDetalle.html">PokeMap</a></li> -->
           </ul>
 
           <div class="icons">
@@ -244,15 +241,15 @@
 
         <!--! VISTA IMG DETALLE POKEMON IZQUIERDA -->
         <div id="left-detalle" class="hidden">
-          <div class="large-btn">
+          <div id="backPokedex" class="large-btn">
             <span id="more-pokemon">Volver a Pokedex</span>
             <span id="poke-lgbtn" class="icon-pokebola-recta"></span>
           </div>
 
           <!-- comentar de aquí para abajo -->
-          <!-- <div class="left-img">
-            <div class="detail-pokemon">
-              <div id="big-img">
+          <div id="left-img" class="left-img">
+            <!-- <div class="detail-pokemon"> -->
+            <!-- <div id="big-img">
                 <img
                   src="https://www.serebii.net/pokemongo/pokemon/025.png"
                   alt=""
@@ -264,8 +261,8 @@
                 <span id="namePokemon">Pikachu</span>
                 <span id="idPokemon">#025</span>
               </div>
-            </div>
-          </div> -->
+            </div> -->
+          </div>
         </div>
       </div>
 
@@ -316,13 +313,12 @@
             >
           </div>
 
-          <div id="descripcion-total" class="descripcion-total shown">
-       
-          </div>
+          <div id="descripcion-total" class="descripcion-total shown"></div>
 
-          <div id="seccion-evoluciones" class="seccion-evoluciones hidden">
-        
-          </div>
+          <div
+            id="seccion-evoluciones"
+            class="seccion-evoluciones hidden"
+          ></div>
 
           <div id="seccion-stats" class="seccion-stats hidden">
             <canvas id="chart" width="10" height="10"></canvas>

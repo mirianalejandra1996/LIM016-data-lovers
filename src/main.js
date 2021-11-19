@@ -414,7 +414,6 @@ const imprimirDetalle = async (id) => {
     if(!pokemon) return
     detailRight(pokemon)
 
-    let tiposPokemon = pokemon.type
 
 
 
@@ -442,15 +441,18 @@ const imprimirDetalle = async (id) => {
 
 
     // Creación de img para el pokemón
-    let leftImg = document.createElement('div')
-    leftImg.classList.add('left-img')
-    leftImg.id = 'left-img'
-    leftSection.append(leftImg)
+    // let leftImg = document.createElement('div')
+    // leftImg.classList.add('left-img')
+    // leftImg.id = 'left-img'
+    // leftSection.append(leftImg)
+    
 
     let pokemonDetail = document.createElement('div')
     pokemonDetail.classList.add('detail-pokemon')
-    leftImg.append(pokemonDetail)
+    // pokemonDetail.id = 'detail-pokemon'
+    // leftImg.append(pokemonDetail)
     
+    leftImg.append(pokemonDetail)
 
 
     let imgCentered = document.createElement('div')
@@ -655,6 +657,8 @@ function detailRight (pokemon) {
 }
 
 // Sección de botones detalles  evoluciones y stats
+const leftImg = document.getElementById('left-img')
+
 const btnDetalles = document.getElementById('detalles');
 const btnEvoluciones = document.getElementById('evoluciones');
 const btnStats = document.getElementById('stats');
@@ -713,3 +717,38 @@ btnStats.addEventListener('click', () => {
     
 })
 
+
+
+// Sección volver a vista lista
+
+const backPokedexBtn = document.getElementById('backPokedex');
+
+backPokedexBtn.addEventListener('click', volverPokedex)
+
+function volverPokedex () {
+
+    // El camino fácil
+    // location.reload()
+
+
+    // El camino rebuscado
+    limpiarFiltros()
+    let cabecera = document.getElementById('upperSection')
+    cabecera.classList.remove('hidden')
+
+    let filterContainer = document.getElementById('left-container');
+    filterContainer.classList.remove('hidden');
+
+    contenedorFiltrados.style.display = ''
+
+    seccionDescripcion.textContent = ''
+    seccionEvoluciones.textContent = ''
+    leftImg.textContent = ''
+
+    let vistaDetalle = document.getElementById('vista-detalle');
+    vistaDetalle.classList.add('hidden')
+
+    let leftDetalle = document.getElementById('left-detalle')
+    leftDetalle.classList.add('hidden')
+
+}

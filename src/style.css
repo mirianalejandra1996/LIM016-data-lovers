@@ -398,11 +398,12 @@ nav ul li a:hover {
 
 .icons .nav-btn:hover {
   color: #40d482;
-  border: 3px solid #40d482;
+  border: 2px solid #40d482;
 }
 
-.icons .nav-btn .icon {
+.icons .nav-btn span {
   font-size: 30px;
+  display: flex;
 }
 
 /* ----------- */
@@ -752,39 +753,10 @@ nav ul li a:hover {
 footer {
   display: flex;
   justify-content: space-between;
-  padding: 20px 20px;
-  margin: 20px;
+  padding: 20px 20px 0;
+  margin: 20px 20px 0;
   align-items: center;
   border-top: 1px solid #40d482;
-}
-
-.icons-footer {
-  width: 195px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.icons-footer .nav-btn {
-  width: 50px;
-  height: 50px;
-  /* background-color: red; */
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid #2f2f2f;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.icons-footer .nav-btn:hover {
-  color: #40d482;
-  border: 3px solid #40d482;
-}
-
-.icons-footer .nav-btn .icon {
-  font-size: 30px;
 }
 
 h2 {
