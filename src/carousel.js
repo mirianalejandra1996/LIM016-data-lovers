@@ -6,15 +6,14 @@ hamburguesa.addEventListener("click", () => {
   links.classList.toggle("mostrarnav");
 });
 
-/* Carousel Desktop*/
+// Carousel Desktop
 let adelante = document.getElementById("adelante");
 let atras = document.getElementById("atras");
 let carouselPhoto = document.getElementsByClassName("carousel__photo");
-let cantidadphoto = Math.ceil(carouselPhoto.length/4);
+let cantidadphoto = Math.ceil(carouselPhoto.length / 4);
 let largo = 0;
 let movePer = 25.34;
 let maxmove = 320;
-
 // Carousel Movile
 let movile_view = window.matchMedia("(max-width: 768px)");
 if (movile_view.matches) {
@@ -33,22 +32,46 @@ let rigthmover = () => {
     i.style.left = "-" + largo + "%";
   }
 };
-let leftmover=()=>{
-  largo=largo-movePer
-  if(largo<=0){largo=0}
+let leftmover = () => {
+  largo = largo - movePer;
+  if (largo <= 0) {
+    largo = 0;
+  }
   for (const i of carouselPhoto) {
     if (cantidadphoto > 1) {
       largo = largo - movePer;
     }
     i.style.left = "-" + largo + "%";
   }
-}
+};
 adelante.onclick = () => {
   rigthmover();
 };
-atras.onclick=()=>{
+atras.onclick = () => {
   leftmover();
-}
+};
+
+// Colores por Tipo
+const colors = {
+  fire: "#f9766c",
+  grass: "#2cdbb2",
+  electric: "#fbe043",
+  water: "#2f9afe",
+  ground: "#be875e",
+  fairy: "#ffbbbb",
+  poison: "#8e91fa",
+  bug: "#9abf83",
+  dragon: "#fba96c",
+  psychic: "#fface5",
+  flying: "#ffd19e",
+  fighting: "#e3c1a8",
+  normal: "#e1e2ff",
+  steel: "#a1bebe",
+  rock: "#e5e5e5",
+  dark: "#a1a1a1",
+  ghost: "#aa7ab6",
+  ice: "#a4eaea",
+};
 
 // Carousel Tarjetas Dinamicas
 let contenedorcarousel = document.getElementById("carousel");
@@ -64,6 +87,7 @@ export function createCarousel(pokemon) {
   card.append(info);
   const nombrepokemon = document.createElement("h2");
   nombrepokemon.textContent = `${pokemon.name}`;
+  nombrepokemon.classList.add("nombre-pokemon")
   info.append(nombrepokemon);
   const id = document.createElement("p");
   id.textContent = `# ${pokemon.num}`;
@@ -72,18 +96,28 @@ export function createCarousel(pokemon) {
   console.log(pokemon.type);
   pokemon.type.forEach((type) => {
     const tipo = document.createElement("div");
+    tipo.style.backgroundColor = colors[type];
     tipo.classList.add("carousel-tipo");
-    tipo.textContent = `${type}`;
+    const icon = document.createElement("span");
+    icon.classList.add("format-icon");
+    icon.classList.add(`icon-${type}`);
+    const nombreTipo=document.createElement("span")
+    nombreTipo.classList.add('nombre-tipo')
+    nombreTipo.innerText = `${type}`;
+    tipo.prepend(icon);
+    tipo.append(nombreTipo);
+
     card.append(tipo);
   });
 
-  contenedorcarousel.append(card);
+  return card
 }
 
 function renderPokemones(pokemones) {
-  contenedorcarousel.textContent = "";
+  contenedorcarousel.textContent = ''
   pokemones.forEach((pokemon) => {
-    createCarousel(pokemon);
+  const card =createCarousel(pokemon)
+  contenedorcarousel.append(card)
   });
 }
 
@@ -101,6 +135,7 @@ const traerPokemonesCarusel = (nrosAleatorios) => {
       return pokemonesAleatorios;
     });
 };
+
 const cantidadPokemons = 250;
 let myArray = [];
 while (myArray.length < 20) {
