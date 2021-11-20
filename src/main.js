@@ -2,6 +2,8 @@
 // import { types } from '@babel/core';
 import { dataPokemones,busquedaInput, filtradoPokemones, obtenerPokemon,obtenerPokemones,obtenerEvoluciones } from './data.js';
 
+// "test": "jest --verbose --coverage",
+
 const colors = {
 
     fire: '#f9766c',
