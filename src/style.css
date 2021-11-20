@@ -173,6 +173,7 @@ nav ul li a:hover {
   gap: 15px;
   row-gap: 15px;
   overflow: auto;
+  height: 85%;
 }
 
 .filtros {
@@ -605,6 +606,7 @@ nav ul li a:hover {
 }
 .info-descarga span:hover {
   color: #ebebeb;
+  transition: 0.3s;
 }
 .info-guia {
   color: #2f2f2f;
@@ -625,6 +627,7 @@ nav ul li a:hover {
   color: #40d482;
   /* border: 1px solid #40D482; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
 }
 .contenedor-landing .pokemones-destacados {
   grid-area: pokemones-destacados;
@@ -639,10 +642,11 @@ nav ul li a:hover {
   height: 100px;
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 .pokemones-destacados h2 {
   margin-right: 20px;
+  font-size: 18px;
 }
 
 /* CARROUSEL */
@@ -725,8 +729,11 @@ nav ul li a:hover {
 
 .carousel-info > p {
   padding-left: 8px;
+  font-size: 16px;
 }
-
+.carousel-info .nombre-pokemon {
+  font-size: 16px;
+}
 .carousel-tipo {
   opacity: 0;
   transition: 0.5s opacity ease-in-out;
@@ -744,6 +751,9 @@ nav ul li a:hover {
   opacity: 1;
 }
 
+.carousel-tipo .nombre-tipo {
+  margin-left: 10px;
+}
 .carousel__photo:hover {
   transform: scale(1.02);
   z-index: 1;
@@ -754,7 +764,7 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 20px 20px 0;
-  margin: 20px 20px 0;
+  margin: 20px 20px 10px;
   align-items: center;
   border-top: 1px solid #40d482;
 }
@@ -1075,4 +1085,12 @@ h2 {
   flex-direction: row;
   /* background-color: red; */
   /* margin-left: 5px; */
+}
+
+.seccion-evoluciones {
+  height: 100%;
+}
+
+.evoluciones-container {
+  height: 100%;
 }

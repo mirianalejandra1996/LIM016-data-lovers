@@ -22,20 +22,12 @@ export const dataPokemones = () => {
 export const busquedaInput = async (inputContent) => {
 
     const pokemones = await dataPokemones()
-    
-    let resultado = []
 
-    pokemones.forEach((pokemon) => {
-
-        if (pokemon.name === inputContent || pokemon.num === inputContent) {
-          resultado.push(pokemon)
-        }
+    const pokemon = pokemones.find((p) =>{
+      return p.num === inputContent || p.name === inputContent
     })
-
-    if (resultado.length === 0){
-      return []
-    }
-    return resultado
+    
+    return pokemon
   
 };
 

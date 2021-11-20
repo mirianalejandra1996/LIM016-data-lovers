@@ -154,9 +154,12 @@ let btnBuscar = document.getElementById('btn-buscar');
 
 btnBuscar.addEventListener('click', async ()=>{
     
+    let arrPokemon = []
     let pokemonFounded = await busquedaInput(formatNumber(inputBuscar.value.toLowerCase()))
-    
-    renderCards(pokemonFounded);
+    arrPokemon.push(pokemonFounded)
+
+    // renderCards(pokemonFounded);
+    renderCards(arrPokemon);
     
 });
 
@@ -490,17 +493,10 @@ const imprimirDetalle = async (id) => {
     leftSection.append(leftImg)
    
 
-
-
-   
-
-
-
-
 //Crear Seccion Evoluciones
 
 let contenedorEvoluciones=document.createElement('div')
-contenedorEvoluciones.id='pokemones-filtrados'
+contenedorEvoluciones.id='container-evoluciones'
 contenedorEvoluciones.classList.add('pokemones-filtrados')
 
 //obtenemos array de las evoluciones del pokemon
