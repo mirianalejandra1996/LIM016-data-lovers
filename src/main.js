@@ -1,6 +1,6 @@
 // import { dataPokemones,busquedaInput } from './data.js';
 // import { types } from '@babel/core';
-import { dataPokemones,busquedaInput, filtradoPokemones, obtenerPokemon,obtenerPokemones,obtenerEvoluciones } from './data.js';
+import { dataPokemones, filtradoPokemones, obtenerPokemon,obtenerPokemones,obtenerEvoluciones } from './data.js';
 
 // "test": "jest --verbose --coverage",
 
@@ -155,7 +155,8 @@ let btnBuscar = document.getElementById('btn-buscar');
 btnBuscar.addEventListener('click', async ()=>{
     
     let arrPokemon = []
-    let pokemonFounded = await busquedaInput(formatNumber(inputBuscar.value.toLowerCase()))
+    // let pokemonFounded = await busquedaInput(formatNumber(inputBuscar.value.toLowerCase()))
+    let pokemonFounded = await obtenerPokemon(formatNumber(inputBuscar.value.toLowerCase()))
     arrPokemon.push(pokemonFounded)
 
     // renderCards(pokemonFounded);
@@ -263,28 +264,6 @@ export const crearPokemonCard = (pokemon) => {
     return card
   };
   
-
-
-// const handleCardItem = (e) => {
-//     // console.log(e.target.textContent)
-//     // console.log(e.target.textContent)
-
-//     // if (!e.target) return;
-
-//     // const pokemonClicked = e.target;
-//     const pokemonClicked = e.currentTarget;
-//     // console.log(pokemonClicked.textContent)
-//     // event.currentTarget
-
-//     // Si el contenido es un string vacio "" es un falsy
-//     if (!pokemonClicked.textContent) return 
-
-//     const textArray = pokemonClicked.textContent.split('#')[1];
-//     console.log(textArray);
-    
-
-// }
-
 //-----------
 const filtrosSeleccionados = async ()=> {
 
@@ -419,44 +398,11 @@ const imprimirDetalle = async (id) => {
     if(!pokemon) return
     detailRight(pokemon)
 
-
-
-
     let leftSection = document.getElementById('left-detalle')
-    
-    // let leftDetail = document.createElement('div');
-
-    // // creación de botón para volver al pokedex
-    // let backPokedex = document.createElement('div');
-    // backPokedex.classList.add('large-btn')
-    
-    // let btnText = document.createElement('span')
-    // btnText.textContent = 'Volver a Pokedex'
-    // backPokedex.append(btnText)
-    
-    // let btnIcon = document.createElement('span');
-    // btnIcon.classList.add('icon-pokebola-recta')
-    // backPokedex.append(btnIcon)
-    
-    // leftDetail.append(backPokedex);
-    
-    
-    
-    // ---------------------
-
-
-    // Creación de img para el pokemón
-    // let leftImg = document.createElement('div')
-    // leftImg.classList.add('left-img')
-    // leftImg.id = 'left-img'
-    // leftSection.append(leftImg)
-    
 
     let pokemonDetail = document.createElement('div')
     pokemonDetail.classList.add('detail-pokemon')
-    // pokemonDetail.id = 'detail-pokemon'
-    // leftImg.append(pokemonDetail)
-    
+  
     leftImg.append(pokemonDetail)
 
 
@@ -464,7 +410,6 @@ const imprimirDetalle = async (id) => {
     imgCentered.id = 'big-img'
 
     let imgPokemon = document.createElement('img')
-    // imgPokemon.src = 'https://www.serebii.net/pokemongo/pokemon/025.png'
     imgPokemon.src = `https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png`
     imgPokemon.style.width = '150px'
 
@@ -511,17 +456,10 @@ obtenerPokemones(evoluciones)
         }
     })
 
-
 seccionEvoluciones.append(contenedorEvoluciones)
 vistaDetalle.append(seccionEvoluciones)
-
-
-
-
-
-
-
 }
+
 
 function detailRight (pokemon) {
 
