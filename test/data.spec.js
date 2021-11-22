@@ -94,7 +94,52 @@ describe('función filtradoPokemones' , () => {
     const weaknesses = ["ground"]
 
     expect(filtradoPokemones(listaPokemon,types,weaknesses).length).toEqual(12)
-  })
+  });
+
+  it('should filter pokemons that match by only types entered', () => {
+    
+    const types = ["fire","dark"]
+    const weaknesses = []
+
+    const pokemonesFiltrados = [listaPokemon[227],listaPokemon[228]]
+    expect(filtradoPokemones(listaPokemon,types,weaknesses)).toEqual(pokemonesFiltrados)
+  });
+
+  it('should filter pokemons that match by only weaknesses entered', () => {
+    
+    const types = []
+    const weaknesses = ["ice","bug","ghost"]
+
+    const pokemonesFiltrados = [listaPokemon[101],listaPokemon[102]]
+    expect(filtradoPokemones(listaPokemon,types,weaknesses)).toEqual(pokemonesFiltrados)
+    
+    const pokemonesFiltrados2 = [listaPokemon[1],listaPokemon[102]]
+    expect(filtradoPokemones(listaPokemon,types,weaknesses)).not.toEqual(pokemonesFiltrados2)
+  });
+
+  it('should filter pokemons that match by types and weaknesses entered', () => {
+    
+    const types = ["fire"]
+    const weaknesses = ["rock"]
+
+    const pokemonesFiltrados = [listaPokemon[249]]
+    expect(filtradoPokemones(listaPokemon,types,weaknesses)).toEqual(pokemonesFiltrados)
+    
+    const pokemonesFiltrados2 = [listaPokemon[1],listaPokemon[24]]
+    expect(filtradoPokemones(listaPokemon,types,weaknesses)).not.toEqual(pokemonesFiltrados2)
+  });
+
+  it('should filter all pokemons without entering any type and weaknesses', () => {
+    
+    const pokemones = listaPokemon.slice(0,4)
+    const types = []
+    const weaknesses = []
+
+    expect(filtradoPokemones(pokemones,types,weaknesses)).toEqual(pokemones)
+    
+  });
+
+  
 })
 
 describe('function sortBy', () => {
