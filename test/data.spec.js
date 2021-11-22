@@ -27,6 +27,15 @@ describe('obtenerPokemones', () => {
   });
 });
 
+// describe('anotherExample', () => {
+//   it('is a function', () => {
+//     expect(typeof anotherExample).toBe('function');
+//   });
+
+//   it('returns `anotherExample`', () => {
+//     expect(anotherExample()).toBe('OMG');
+//   });
+// });
 
 describe('obtenerEvoluciones', () => {
   const listaPokemon = pokemonData.pokemon
@@ -59,3 +68,4 @@ describe('obtenerEvoluciones', () => {
     expect(obtenerEvoluciones(primerPokemon)).toEqual(idsevoluciones);
   });
 });
+

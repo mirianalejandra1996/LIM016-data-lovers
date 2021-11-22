@@ -13,39 +13,12 @@ export const dataPokemones = () => {
 
 // ---------------------
 
-
-// Función busqueda Input funcional
-// Podrá conseguir el pokemón deseado ingresando su Nombre o su Número
-// Esta función retornará un array con el pokemon que coincida con la data ingresada en el buscador
-// solo podrá recibir strings como Parámetro
-
-export const busquedaInput = async (inputContent) => {
-
-    const pokemones = await dataPokemones()
-    
-    let resultado = []
-
-    pokemones.forEach((pokemon) => {
-
-        if (pokemon.name === inputContent || pokemon.num === inputContent) {
-          resultado.push(pokemon)
-        }
-    })
-
-    if (resultado.length === 0){
-      return []
-    }
-    return resultado
-  
-};
-
-
 export const obtenerPokemon = async (id) => {
 
   const pokemones = await dataPokemones()
 
   const pokemon = pokemones.find((p) => {
-    return p.num === id
+    return p.num === id || p.name === id
   })
 
  return pokemon
@@ -82,9 +55,7 @@ export const obtenerPokemones = async (ids) => {
 // Si hace match con n° cantidad de pokemones, retornan estos en un array
 
 export const filtradoPokemones = (pokemones, types, weakness ) => {
-// export const matchPokemon = (pokemones, types, weakness ) => {
 
-                  // 251
   let filtered = pokemones.filter((pokemon) => {
     if(types.length === 1 && weakness.length === 1) {
       return types.includes(pokemon.type[0]) && weakness.includes(pokemon.weaknesses[0]);
@@ -134,3 +105,18 @@ console.log(evolucionesPokemonActual)
 
 
 
+export const calculator = {
+
+  sum(a,b){
+    return a+b
+  },
+  rest(a,b){
+    return a-b
+  },
+  multiply(a,b){
+    return a*b
+  },
+  divide(a,b){
+    return a/b
+  }
+}

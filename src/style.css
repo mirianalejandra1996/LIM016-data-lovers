@@ -173,6 +173,7 @@ nav ul li a:hover {
   gap: 15px;
   row-gap: 15px;
   overflow: auto;
+  height: 85%;
 }
 
 .filtros {
@@ -602,7 +603,6 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   margin: 20px;
-  
 }
 .info-descarga span:hover {
   color: #ebebeb;
@@ -621,7 +621,6 @@ nav ul li a:hover {
   background-color: #40d482;
   color: #ebebeb;
   width: 140px;
-  
 }
 .btnDescarga:hover {
   background-color: #ebebeb;
@@ -732,8 +731,8 @@ nav ul li a:hover {
   padding-left: 8px;
   font-size: 16px;
 }
-.carousel-info .nombre-pokemon{
-font-size: 16px;
+.carousel-info .nombre-pokemon {
+  font-size: 16px;
 }
 .carousel-tipo {
   opacity: 0;
@@ -752,7 +751,7 @@ font-size: 16px;
   opacity: 1;
 }
 
-.carousel-tipo .nombre-tipo{
+.carousel-tipo .nombre-tipo {
   margin-left: 10px;
 }
 .carousel__photo:hover {
@@ -1086,4 +1085,12 @@ h2 {
   flex-direction: row;
   /* background-color: red; */
   /* margin-left: 5px; */
+}
+
+.seccion-evoluciones {
+  height: 100%;
+}
+
+.evoluciones-container {
+  height: 100%;
 }
