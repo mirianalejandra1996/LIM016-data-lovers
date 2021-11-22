@@ -1,6 +1,6 @@
 // import { dataPokemones,busquedaInput } from './data.js';
 // import { types } from '@babel/core';
-import { dataPokemones, filtradoPokemones, obtenerPokemon,obtenerPokemones,obtenerEvoluciones } from './data.js';
+import { dataPokemones, filtradoPokemones, obtenerPokemon,obtenerPokemones,obtenerEvoluciones, sortBy } from './data.js';
 
 // "test": "jest --verbose --coverage",
 
@@ -306,34 +306,7 @@ const filtrosSeleccionados = async ()=> {
 
 
 
-function sortBy (pokemonesFiltrados, ordenSeleccionado){
 
-    let resultado = [];
-
-    switch (ordenSeleccionado){
-
-        case "Número inferior":
-            resultado = pokemonesFiltrados.sort( (pa , pb) => {return pa.num - pb.num });
-            console.log('Nummmm inferior' , {resultado})
-            break
-        case "Número superior":
-            resultado = pokemonesFiltrados.sort( (pa , pb) => {return pb.num - pa.num });
-            console.log('Nummmm superior' , {resultado})
-            break
-        case "A-Z":
-            resultado = pokemonesFiltrados.sort( (pa , pb) => {return pa.name.localeCompare(pb.name)});
-            console.log('a a la z' , {resultado})
-            break
-        case "Z-A":
-            resultado = pokemonesFiltrados.sort( (pa , pb) => {return pb.name.localeCompare(pa.name)});
-            console.log('z a la a' , {resultado})
-            break
-    }
-
-    console.log(resultado);
-    return resultado;
-
-}
 
 
 function formatNumber(num) {
@@ -404,6 +377,7 @@ const viewDetail = async (e) => {
 const imprimirDetalle = async (id) => {
     
     let pokemon = await obtenerPokemon(id)
+    console.log('revisar este pokemon detalle ', pokemon);
     if(!pokemon) return
     detailRight(pokemon)
 

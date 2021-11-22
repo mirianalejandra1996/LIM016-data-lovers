@@ -103,20 +103,31 @@ console.log(evolucionesPokemonActual)
 
 }
 
+export const sortBy = (pokemonesFiltrados, ordenSeleccionado) => {
 
+  let resultado = [];
 
-export const calculator = {
+  switch (ordenSeleccionado){
 
-  sum(a,b){
-    return a+b
-  },
-  rest(a,b){
-    return a-b
-  },
-  multiply(a,b){
-    return a*b
-  },
-  divide(a,b){
-    return a/b
+      case "Número inferior":
+          resultado = pokemonesFiltrados.sort( (pa , pb) => {return pa.num - pb.num });
+          console.log('Nummmm inferior' , {resultado})
+          break
+      case "Número superior":
+          resultado = pokemonesFiltrados.sort( (pa , pb) => {return pb.num - pa.num });
+          console.log('Nummmm superior' , {resultado})
+          break
+      case "A-Z":
+          resultado = pokemonesFiltrados.sort( (pa , pb) => {return pa.name.localeCompare(pb.name)});
+          console.log('a a la z' , {resultado})
+          break
+      case "Z-A":
+          resultado = pokemonesFiltrados.sort( (pa , pb) => {return pb.name.localeCompare(pa.name)});
+          console.log('z a la a' , {resultado})
+          break
   }
+
+  console.log(resultado);
+  return resultado;
+
 }

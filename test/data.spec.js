@@ -1,4 +1,4 @@
-import { obtenerPokemones, obtenerEvoluciones } from '../src/data.js';
+import { obtenerPokemones, obtenerEvoluciones, obtenerPokemon, filtradoPokemones, sortBy} from '../src/data.js';
 import pokemonData from '../src/data/pokemon/pokemon.json'
 
 // si llamo a fetch es una funcion que me devuleve un promesa 
@@ -26,16 +26,6 @@ describe('obtenerPokemones', () => {
     expect(await obtenerPokemones(ids)).toEqual(pokemons);
   });
 });
-
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
-
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });
 
 describe('obtenerEvoluciones', () => {
   const listaPokemon = pokemonData.pokemon
@@ -69,3 +59,69 @@ describe('obtenerEvoluciones', () => {
   });
 });
 
+// -----------Mirian
+
+describe('función obtenerPokemon', () => {
+
+  const listaPokemon = pokemonData.pokemon
+  it('is a function', () => {
+    expect(typeof obtenerPokemon).toBe('function');
+  });
+
+  // const pokemonPrueba = 
+  it('should returns a pokemon object when its id match with the entered value', async () => {
+    const pokemon = listaPokemon[0];
+    expect(await obtenerPokemon('001')).toEqual(pokemon)
+  })
+
+})
+
+describe('función filtradoPokemones' , () => {
+  const listaPokemon = pokemonData.pokemon
+  
+  it('is a function', () => {
+    expect(typeof filtradoPokemones).toBe('function');
+  });
+
+  it('should filter how many pokemons that match by types and weaknesses entered', () => {
+    
+    const types = ["electric"]
+    const weaknesses = ["ground"]
+
+    expect(filtradoPokemones(listaPokemon,types,weaknesses).length).toEqual(12)
+  })
+})
+
+describe(' function sortBy', () => {
+
+  const listaPokemon = pokemonData.pokemon
+  it('is a function', () => {
+    expect(typeof sortBy).toBe('function');
+  });
+
+
+
+
+
+  it('should sort pokemon by A-Z', () => {
+  
+    const pokemons = listaPokemon.slice(0,3)
+
+    // console.log('probando', pokemons.sort)
+    
+    let namesPokemon = sortBy(pokemons,"A-Z")
+    let names = []
+    for (let pokemon of namesPokemon) {
+      names.push(pokemon.name)
+    }
+    
+    console.log('probando', names)
+    
+
+    // expect(pokemons).toStrictEqual(pokemons.sort(sortBy(pokemons,"A-Z")))
+    expect(sortBy(pokemons,"A-Z")).toStrictEqual(pokemons.sort)
+  })
+
+
+
+})
