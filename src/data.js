@@ -72,7 +72,6 @@ export const obtenerEvoluciones = (pokemon) => {
   const nextEvolutions= []
   
   let evolucionesPokemonActual = pokemon.evolution
-console.log(evolucionesPokemonActual)
 
   while (evolucionesPokemonActual['next-evolution']) {
     if(evolucionesPokemonActual['next-evolution'].length === 1){
@@ -111,23 +110,18 @@ export const sortBy = (pokemonesFiltrados, ordenSeleccionado) => {
 
       case "Número inferior":
           resultado = pokemonesFiltrados.sort( (pa , pb) => {return pa.num - pb.num });
-          console.log('Nummmm inferior' , {resultado})
           break
       case "Número superior":
           resultado = pokemonesFiltrados.sort( (pa , pb) => {return pb.num - pa.num });
-          console.log('Nummmm superior' , {resultado})
           break
       case "A-Z":
           resultado = pokemonesFiltrados.sort( (pa , pb) => {return pa.name.localeCompare(pb.name)});
-          console.log('a a la z' , {resultado})
           break
       case "Z-A":
           resultado = pokemonesFiltrados.sort( (pa , pb) => {return pb.name.localeCompare(pa.name)});
-          console.log('z a la a' , {resultado})
           break
   }
 
-  console.log(resultado);
   return resultado;
 
 }
