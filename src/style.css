@@ -89,7 +89,7 @@ nav ul li a:hover {
 .contenedor {
   display: grid;
   grid-gap: 20px;
-  padding: 0 30px;
+  /* padding: 0 30px; */
   height: 100%;
   /* grid-template-columns: repeat(4, 1fr); */
   grid-template-columns: auto;
@@ -250,6 +250,11 @@ nav ul li a:hover {
   font-size: 20px;
   weight: 300;
   margin: 20px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #2f2f2f;
 }
 
 .circle-btn {
@@ -517,18 +522,12 @@ nav ul li a:hover {
   text-transform: capitalize;
 }
 
-.tipo-seleccionado {
+.tipo-seleccionado,
+.debilidad-seleccionado {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: #fff;
   /* border: 1px solid #40d482; */
   border: 2px solid #2f2f2f;
-}
-
-.debilidad-seleccionado {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: #fff;
-  border: 1px solid #40d482;
-  color: #40d482;
 }
 
 /* For Landing: */
@@ -848,7 +847,6 @@ h2 {
   .contenedor {
     display: grid;
     grid-gap: 20px;
-    padding: 0 30px;
     height: 100%;
     /* grid-template-columns: repeat(4, 1fr); */
     grid-template-columns: 1.2fr 2.8fr;
@@ -902,7 +900,6 @@ h2 {
   .contenedor {
     display: grid;
     grid-gap: 20px;
-    padding: 0 30px;
     height: 100%;
     /* grid-template-columns: repeat(4, 1fr); */
     grid-template-columns: 1.2fr 2.8fr;
@@ -1068,11 +1065,9 @@ h2 {
   width: 90px;
   border-radius: 20px;
   border: none;
-  cursor: pointer;
   transition: 0.2s ease box-shadow;
   color: #000;
   font-size: 13.5px;
-  /* display: flex; */
   justify-content: center;
   text-align: center;
   font-weight: initial;
@@ -1093,4 +1088,9 @@ h2 {
 
 .evoluciones-container {
   height: 100%;
+}
+
+#errMsg {
+  color: red;
+  padding-left: 20px;
 }

@@ -133,17 +133,24 @@ for (let boton of botonesDebilidad) {
 // Input búsqueda
 let inputBuscar = document.getElementById("input-buscar");
 let btnBuscar = document.getElementById("btn-buscar");
+let errMsg = document.getElementById("errMsg");
 
 btnBuscar.addEventListener("click", async () => {
-  let arrPokemon = [];
-  // let pokemonFounded = await busquedaInput(formatNumber(inputBuscar.value.toLowerCase()))
-  let pokemonFounded = await obtenerPokemon(
-    formatNumber(inputBuscar.value.toLowerCase())
-  );
-  arrPokemon.push(pokemonFounded);
+  if (inputBuscar.value === "") {
+    errMsg.textContent = "Por favor ingresar dato";
+  } else {
+    errMsg.textContent = "";
 
-  // renderCards(pokemonFounded);
-  renderCards(arrPokemon);
+    let arrPokemon = [];
+    // let pokemonFounded = await busquedaInput(formatNumber(inputBuscar.value.toLowerCase()))
+    let pokemonFounded = await obtenerPokemon(
+      formatNumber(inputBuscar.value.toLowerCase())
+    );
+    arrPokemon.push(pokemonFounded);
+
+    // renderCards(pokemonFounded);
+    renderCards(arrPokemon);
+  }
 });
 
 // Carga todos los pokemones en pantalla recién se carga la página por primera vez
@@ -156,6 +163,7 @@ renderAllCards();
 
 // render es cargar los pokemones en pantalla
 const renderCards = (pokemones) => {
+  console.log("probando", pokemones);
   const resultadoPokemones = document.getElementById("totalPokemones");
 
   resultadoPokemones.textContent = "";
