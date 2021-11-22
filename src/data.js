@@ -38,7 +38,7 @@ export const obtenerPokemones = async (ids) => {
 
   // En caso de las evoluciones siguiete no se encuentre lo va a filtrar y solo enviaria los que si existen en la data 
  return pokemones.filter((p) => {
-   return p !== null
+   return p
  })
 
 };

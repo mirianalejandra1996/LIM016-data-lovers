@@ -3,7 +3,7 @@ import pokemonData from '../src/data/pokemon/pokemon.json'
 
 // si llamo a fetch es una funcion que me devuleve un promesa 
 // que resuelve un objeto que contiene la propiedad json y esta
-// funcion que devuelve una pomesa que resuleve el contenido de
+// funcion que devuelve una promesa que resuleve el contenido de
 // json de la lista de pokemones
 global.fetch = jest.fn(() =>
 Promise.resolve({
@@ -69,10 +69,15 @@ describe('función obtenerPokemon', () => {
   });
 
   // const pokemonPrueba = 
-  it('should returns a pokemon object when its id match with the entered value', async () => {
+  it('should returns a pokemon object when its num match with the entered id', async () => {
     const pokemon = listaPokemon[0];
     expect(await obtenerPokemon('001')).toEqual(pokemon)
-  })
+  });
+
+  it('should returns a pokemon object when its name match with the entered id', async () => {
+    const pokemon = listaPokemon[0];
+    expect(await obtenerPokemon('bulbasaur')).toEqual(pokemon)
+  });
 
 })
 
@@ -92,36 +97,47 @@ describe('función filtradoPokemones' , () => {
   })
 })
 
-describe(' function sortBy', () => {
+describe('function sortBy', () => {
 
   const listaPokemon = pokemonData.pokemon
+
   it('is a function', () => {
     expect(typeof sortBy).toBe('function');
   });
 
-
-
-
-
   it('should sort pokemon by A-Z', () => {
   
-    const pokemons = listaPokemon.slice(0,3)
+    const pokemons = listaPokemon.slice(0,4)
+    // ordenados de la A-Z (bulbasour, chamander, ivysaur, venusaur)
+    let pokemonesOrdenados = [pokemons[0],pokemons[3],pokemons[1],pokemons[2]];
+    
+    expect(sortBy(pokemons,"A-Z")).toStrictEqual(pokemonesOrdenados);
+  });
 
-    // console.log('probando', pokemons.sort)
-    
-    let namesPokemon = sortBy(pokemons,"A-Z")
-    let names = []
-    for (let pokemon of namesPokemon) {
-      names.push(pokemon.name)
-    }
-    
-    console.log('probando', names)
-    
+  it('should sort pokemon by Z-A', () => {
 
-    // expect(pokemons).toStrictEqual(pokemons.sort(sortBy(pokemons,"A-Z")))
-    expect(sortBy(pokemons,"A-Z")).toStrictEqual(pokemons.sort)
+    const pokemons = listaPokemon.slice(0,4)
+    // ordenados de la Z-A (venusaur, ivysaur, chamander, bulbasour)
+    let pokemonesOrdenados = [pokemons[2],pokemons[1],pokemons[3],pokemons[0]];
+    expect(sortBy(pokemons,"Z-A")).toStrictEqual(pokemonesOrdenados);
+  });
+
+  it('should sort pokemon by upperNumber', () => {
+
+    const pokemons = listaPokemon.slice(0,4)
+    // ordenados de la Número Superior ( chamander, venusaur, ivysaur, bulbasour)
+    let pokemonesOrdenados = [pokemons[3],pokemons[2],pokemons[1],pokemons[0]]
+    expect(sortBy(pokemons,"Número superior")).toStrictEqual(pokemonesOrdenados)
   })
 
+  
+  it('should sort pokemon by lowerNumber', () => {
+    
+    const pokemons = listaPokemon.slice(0,4)
+    // ordenados de la Número Superior ( bulbasour, ivysaur, venusaur, chamander)
+    let pokemonesOrdenados = [pokemons[0],pokemons[1],pokemons[2],pokemons[3]]
+    expect(sortBy(pokemons,"Número inferior")).toStrictEqual(pokemonesOrdenados)
+  })
 
 
 })
