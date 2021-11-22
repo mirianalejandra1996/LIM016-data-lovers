@@ -256,8 +256,15 @@ export const crearPokemonCard = (pokemon) => {
     infoRight.append(numpokemon);
 
     return card
-  };
-  
+  }
+
+  export const crearCardSinEvoluciones = () => {
+    const mensaje = document.createElement("h3");
+    mensaje.classList.add("namePokemon");
+    mensaje.textContent = `Este pokemon no tiene evoluciones`;
+
+    return mensaje
+  }
 
 
 // const handleCardItem = (e) => {
@@ -503,15 +510,27 @@ contenedorEvoluciones.classList.add('pokemones-filtrados')
 
 //obtenemos array de las evoluciones del pokemon
 const evoluciones = obtenerEvoluciones(pokemon) 
-obtenerPokemones(evoluciones) 
+if (evoluciones.length == 1){
+    obtenerPokemones(evoluciones) 
     .then((pokemones) => {
         for(pokemon of pokemones){
             //Reutilizamos la funcion crear pokemon card
             const card = crearPokemonCard(pokemon)
             contenedorEvoluciones.append(card)
-            
+            const cardSinEvoluciones=crearCardSinEvoluciones()
+            seccionEvoluciones.prepend(cardSinEvoluciones)
         }
     })
+}else{
+    obtenerPokemones(evoluciones) 
+        .then((pokemones) => {
+            for(pokemon of pokemones){
+                //Reutilizamos la funcion crear pokemon card
+                const card = crearPokemonCard(pokemon)
+                contenedorEvoluciones.append(card)
+            }
+        })
+}
 
 
 seccionEvoluciones.append(contenedorEvoluciones)
