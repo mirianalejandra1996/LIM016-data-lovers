@@ -58,121 +58,120 @@ Se realizó una investigación para conocer al usuario y la problemática que pr
 
 #### Prototipo de baja fidelidad
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
+El prototipo se basó en satisfacer las necesidades del usuario, es por ello que en nuestro prototipo de baja fidelidad se enfoca las siguientes .
+Inspirado en el diseño flat design minimalista, con uso de paleta de colores verdes, y uso de tipografía "Poppins" 
+
+![paleta](https://user-images.githubusercontent.com/91838806/142975255-66aec199-2faa-4149-8d70-7ac203edecda.png)
+
+Vista Desktop
+
+Vista de Landing Page para visualizar a los pokemones destacados
+![data-lovers-primer-prototipo](https://user-images.githubusercontent.com/91838806/142973694-444ae707-4bbb-4734-a513-36c0d213efce.png)
+
+Vista Lista de los pokemones, con sección de buscado especial (filtros según tipo o debilidades, o por número o nombre del pokémon)
+![data-lovers-primer-prototipo2](https://user-images.githubusercontent.com/91838806/142973959-77e86cbb-b050-4cb2-94c5-9db70a544e95.png)
+
+Vista Detalle, en el que visualiza datos básicos del pokemón
+![data-lovers-primer-proto![data-lovers-primer-prototipo3](https://user-images.githubusercontent.com/91838806/142973731-6587723f-b0d7-4579-9c2b-885c94d5f550.png)
+
+Vista Detalle, en el que visualiza la evoluciones
+![data-lovers-primer-prototipo4](https://user-images.githubusercontent.com/91838806/142973745-4acd9c55-2e5f-4814-a2d4-88cfa275de70.png)
+
+Vista Stats, en el que visualizará una gráfica de ciertos datos del pokemón seleccionado.
+![data-lovers-primer-prototipo5](https://user-images.githubusercontent.com/91838806/142973758-63eda3a8-9b08-49b2-b2f7-e803cba50231.png)
 
 #### Prototipo de alta fidelidad
 
-Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
-_User Interface_). Para eso debes aprender a utilizar alguna herramienta de
-diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
-una herramienta que funciona en el navegador y, además, puedes crear una cuenta
-gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, PowerPoint, Keynote, etc.
+Vista Desktop
 
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _visual design_.
+Vista Landing Page
+![data-lovers-definitivo](https://user-images.githubusercontent.com/91838806/142974266-fb7cb5ef-a6e4-4e59-8ae6-50ba4bf8afa4.png)
+
+Visa Lista Pokedex
+![data-lovers-definitivo2](https://user-images.githubusercontent.com/91838806/142974286-2b1c93ae-aec0-4a3c-af12-fef63406aa4c.png)
+
+Visa Lista Pokedex (Tipo)
+![data-lovers-definitivo3](https://user-images.githubusercontent.com/91838806/142974294-e0a6edb5-b0db-4f72-9937-e241696b3bac.png)
+
+Vista Detalle Pokedex (Debilidades y SortBy)
+![data-lovers-definitivo4](https://user-images.githubusercontent.com/91838806/142974307-4b237eec-b988-4476-b255-caa49737e915.png)
+
+Vista Detalle Pokedex (About)
+![data-lovers-definitivo5](https://user-images.githubusercontent.com/91838806/142974320-79236751-bd59-4920-88a5-cce29a85f9a8.png)
+
+Vista Detalle Pokemon (Evoluciones Pikachu)
+![data-lovers-definitivo6](https://user-images.githubusercontent.com/91838806/142974336-9f70f7a0-5f62-41ef-b86b-4013f3fac796.png)
+
+Vista Detalle Pokedex (Stats)
+![data-lovers-definitivo7](https://user-images.githubusercontent.com/91838806/142974346-32956ff2-cc5a-444a-a11a-75367e6d7c8c.png)
+
+Vista Detalle Pokemon (Evoluciones Eevee)
+![data-lovers-definitivo8](https://user-images.githubusercontent.com/91838806/142974354-4790d0b0-72bd-4695-acd2-b5fac7871e49.png)
+
+
+Vista Mobile
+
+Vista Landing
+![WhatsApp Image 2021-11-23 at 00 06 07](https://user-images.githubusercontent.com/91838806/142974834-c73d39c2-da25-4bd8-a650-9b5cbd2b4da1.jpeg)
+
+Vista Landing con navegador responsive
+![WhatsApp Image 2021-11-23 at 00 06 23](https://user-images.githubusercontent.com/91838806/142974837-7f049021-809c-4140-9971-1e3fbfd7a53d.jpeg)
+
+Vista Lista Pokedex
+![WhatsApp Image 2021-11-23 at 00 06 33](https://user-images.githubusercontent.com/91838806/142974842-0cf4f36d-ca48-4185-8307-0ccfef7930f2.jpeg)
+
+Vista Lista con Sección de Filtros desplegable
+![WhatsApp Image 2021-11-23 at 00 06 44](https://user-images.githubusercontent.com/91838806/142974855-9510d23c-78b9-4dc3-8e51-4ce0b4b59530.jpeg)
+
+Vista Detalle (descripción)
+![WhatsApp Image 2021-11-23 at 00 06 55](https://user-images.githubusercontent.com/91838806/142974864-91300c31-c4bb-4dd6-b53c-a327120caf71.jpeg)
+
+Vista Detalle (Evoluciones)
+![WhatsApp Image 2021-11-23 at 00 07 07](https://user-images.githubusercontent.com/91838806/142974872-0fea8f40-b734-48d2-a8d0-5e03d81ddc42.jpeg)
+
 
 #### Testeos de usabilidad
 
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
+Mediante las presentaciones anteriores, recibimos feedbacks que nos permitió mejorar la experiencia al usuario, entre ellas destacaron:
+
+-Los botones de tipo y Debilidades deben tener un reborde al momento de ser seleccionado.
+-Los pokemones evolucionados pueden ser visualizados directamente en la misma vista
+- Alineación de elementos para mantener la armonia visual.
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
-Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
-**No** es necesario que construyas la interfaz exactamente como la diseñaste.
-Tu tiempo de hacking es escaso, así que deberás priorizar
+
 
 Como mínimo, tu implementación debe:
 
 1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
    etc.
+   ![WhatsApp Image 2021-11-23 at 00 30 45](https://user-images.githubusercontent.com/91838806/142975567-b4aaa48f-7bf3-4f52-9443-57a110b28b37.jpeg)
+
+   
 2. Permitir al usuario interactuar para obtener la infomación que necesita.
+![WhatsApp Image 2021-11-23 at 00 09 27 (1)](https://user-images.githubusercontent.com/91838806/142975542-2fd77978-6abd-4e77-b331-296043ba3063.jpeg)
+
+
 3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
    tamaños de pantallas: móviles, tablets y desktops.
+   ![WhatsApp Image 2021-11-23 at 00 31 58](https://user-images.githubusercontent.com/91838806/142975657-ac3db791-6aef-4895-aae4-924f3632d80d.jpeg)
+
 4. Que la interfaz siga los fundamentos de _visual design_.
+  Nuestro sistema cumple con los fundamentos de visual design, ya que mantenemos el contraste, la proximidad, la alineación, espaciado, entre otros para mantener un balance en el diseño.
 
-### Pruebas unitarias
+## Herramientas aplicadas
 
-El _boilerplate_ de este proyecto no incluye Pruebas Unitarias (_tests_), así es
-que  tendrás que escribirlas tú para las funciones encargadas de  _procesar_,
-_filtrar_ y _ordenar_ la data, así como _calcular_ estadísticas.
+-Javascript ES6 Vanilla
+-HTML5
+-CSS3
+-Jest
 
-Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
-(_sentencias_), _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
-(_ramas_) del archivo `src/data.js` que contenga tus funciones y está detallado
-en la sección de [Consideraciones técnicas](#srcdatajs).
-
-## 6. Hacker edition
-
-Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
-con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás
-profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
-
-Features/características extra sugeridas:
-
-* En lugar de consumir la data estática brindada en este repositorio, puedes
-  consumir la data de forma dinámica, cargando un archivo JSON por medio de
-  `fetch`. La carpeta `src/data` contiene una versión `.js` y una `.json` de
-  de cada set datos.
-* Agregarle a tu interfaz de usuario implementada visualizaciones gráficas. Para
-  ello te recomendamos explorar librerías de gráficas como
-  [Chart.js](https://www.chartjs.org/)
-  o [Google Charts](https://developers.google.com/chart/).
-* 100% Coverage
-
-## 7. Consideraciones técnicas
-
-
-## 8. Pistas, tips y lecturas complementarias
-
-### Primeros pasos
-
-Antes de empezar a escribir código, debes definir qué deberá hacer el producto
-en base al conocimiento que puedas obtener de tu usuario. Estas preguntas te
-pueden ayudar:
-
-* ¿Quiénes son los principales usuarios de producto?
-* ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
-* ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
-* ¿Cuándo utilizan o utilizarían el producto?
-* Toda tu investigación previa debe tener como resultado todas las Historias
-  de Usuario de tu proyecto.
-* No hagas los prototipos de alta fidelidad de todas tus Historias. Comienza
-  solamente por los que se necesiten para tu Sprint 1 (semana 1 de trabajo). Más
-  pistas en la guía de organización para el proyecto.
-
-
-#### Herramientas
+#### Deploy
 
 * [Git](https://git-scm.com/)
 * [GitHub](https://github.com/)
 * [GitHub Pages](https://pages.github.com/)
 * [Node.js](https://nodejs.org/)
 * [Jest](https://jestjs.io/)
-
-
-## 9. Checklist
-
-
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
-  `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
-  en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
-  usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
-
 
