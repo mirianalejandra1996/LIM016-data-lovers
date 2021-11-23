@@ -44,7 +44,6 @@ export const obtenerPokemones = async (ids) => {
 // Si no ha seleccionado ningún boton para filtrar, me retorna un array de todos los pokemones
 // Si la búsqueda no coincide según los parametros (botones de tipo seleccionados), retorna array vacios
 // Si hace match con n° cantidad de pokemones, retornan estos en un array
-
 export const filtradoPokemones = (pokemones, types, weakness) => {
   let filtered = pokemones.filter((pokemon) => {
     if (types.length === 1 && weakness.length === 1) {
@@ -62,6 +61,7 @@ export const filtradoPokemones = (pokemones, types, weakness) => {
   return filtered;
 };
 
+// Función que retorna un array con los ids de los pokemones evolucionados de X pokemon.
 export const obtenerEvoluciones = (pokemon) => {
   const nextEvolutions = [];
 
@@ -94,6 +94,8 @@ export const obtenerEvoluciones = (pokemon) => {
   return evolucionesOrdenadas;
 };
 
+
+// función que ordenará a los pokemones según el dato seleccionao en el select box
 export const sortBy = (pokemonesFiltrados, ordenSeleccionado) => {
   let resultado = [];
 

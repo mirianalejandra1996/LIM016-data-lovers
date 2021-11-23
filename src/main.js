@@ -189,9 +189,7 @@ const renderCards = (pokemones) => {
 
 // ----------------------
 
-// Funcion pokemonClicked funcional
-// Esta función crea el formato de las tarjetas de cada pokemón, y se mostrarán en su contenedor
-
+// Esta función crearPokemonCard crea el formato de las tarjetas de cada pokemón, y se mostrarán en su contenedor
 export const crearPokemonCard = (pokemon) => {
   const card = document.createElement("div");
   card.classList.add("item");
@@ -216,6 +214,7 @@ export const crearPokemonCard = (pokemon) => {
   typesContainer.classList.add("icon-container");
   infoLeft.append(typesContainer);
 
+  // Impresión de las bolitas de tipos del pokemon
   pokemon.type.forEach((type) => {
     const circleColor = document.createElement("div");
     circleColor.classList.add("circle-type");
@@ -237,10 +236,11 @@ export const crearPokemonCard = (pokemon) => {
   return card;
 };
 
+// En caso de que el pokemón no tenga evoluciones relacionadas, imprimirá en pantalla que no evoluciona
 export const crearCardSinEvoluciones = () => {
   const mensaje = document.createElement("h3");
   mensaje.classList.add("namePokemon");
-  mensaje.textContent = `Este pokemon no tiene evoluciones`;
+  mensaje.textContent = `Este pokémon no evoluciona.`;
 
   return mensaje;
 };
@@ -276,6 +276,8 @@ const filtrosSeleccionados = async () => {
   return pokemonesFiltrados;
 };
 
+
+// Función para obtener un formato al ingresar algún número (ejemplo: 1 retorna 001)
 function formatNumber(num) {
   if (parseInt(num) < 10) {
     return "00" + num;
@@ -288,6 +290,7 @@ function formatNumber(num) {
 
 const btnClean = document.getElementById("btn-clean");
 btnClean.addEventListener("click", limpiarFiltros);
+
 
 function limpiarFiltros() {
   inputBuscar.value = "";
@@ -333,77 +336,14 @@ const viewDetail = async (e) => {
   imprimirDetalle(textArray);
 };
 
+
+// Esta función imprimirá en pantalla los detalles del pokemón que haya sido seleccionado
 const imprimirDetalle = async (id) => {
   let pokemon = await obtenerPokemon(id);
   if (!pokemon) return;
   detailRight(pokemon);
-
-  let leftSection = document.getElementById("left-detalle");
-
-  let pokemonDetail = document.createElement("div");
-  pokemonDetail.classList.add("detail-pokemon");
-
-  leftImg.append(pokemonDetail);
-
-  let imgCentered = document.createElement("div");
-  imgCentered.id = "big-img";
-
-  let imgPokemon = document.createElement("img");
-  imgPokemon.src = `https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png`;
-  imgPokemon.style.width = "150px";
-
-  imgCentered.append(imgPokemon);
-
-  // Textos Identificadores de la imagen del pokemon
-  let identifier = document.createElement("div");
-  identifier.id = "identifier";
-
-  let namePokemon = document.createElement("span");
-  namePokemon.id = "namePokemon";
-  namePokemon.textContent = `${pokemon.name}`;
-
-  let idPokemon = document.createElement("span");
-  idPokemon.id = "idPokemon";
-  idPokemon.textContent = `#${pokemon.num}`;
-
-  identifier.append(namePokemon);
-  identifier.append(idPokemon);
-
-  pokemonDetail.append(imgCentered);
-  pokemonDetail.append(identifier);
-
-  leftSection.append(leftImg);
-
-  //Crear Seccion Evoluciones
-
-  let contenedorEvoluciones = document.createElement("div");
-  contenedorEvoluciones.id = "container-evoluciones";
-  contenedorEvoluciones.classList.add("pokemones-filtrados");
-
-  //obtenemos array de las evoluciones del pokemon
-  const evoluciones = obtenerEvoluciones(pokemon);
-  if (evoluciones.length == 1) {
-    obtenerPokemones(evoluciones).then((pokemones) => {
-      for (pokemon of pokemones) {
-        //Reutilizamos la funcion crear pokemon card
-        const card = crearPokemonCard(pokemon);
-        contenedorEvoluciones.append(card);
-        const cardSinEvoluciones = crearCardSinEvoluciones();
-        seccionEvoluciones.prepend(cardSinEvoluciones);
-      }
-    });
-  } else {
-    obtenerPokemones(evoluciones).then((pokemones) => {
-      for (pokemon of pokemones) {
-        //Reutilizamos la funcion crear pokemon card
-        const card = crearPokemonCard(pokemon);
-        contenedorEvoluciones.append(card);
-      }
-    });
-  }
-
-  seccionEvoluciones.append(contenedorEvoluciones);
-  vistaDetalle.append(seccionEvoluciones);
+  detailLeft(pokemon);
+  evolutions(pokemon);
 };
 
 function detailRight(pokemon) {
@@ -522,6 +462,77 @@ function detailRight(pokemon) {
   seccionDescripcion.append(secc3);
 
   vistaDetalle.append(seccionDescripcion);
+}
+
+function detailLeft(pokemon) {
+  let leftSection = document.getElementById("left-detalle");
+
+  let pokemonDetail = document.createElement("div");
+  pokemonDetail.classList.add("detail-pokemon");
+
+  leftImg.append(pokemonDetail);
+
+  let imgCentered = document.createElement("div");
+  imgCentered.id = "big-img";
+
+  let imgPokemon = document.createElement("img");
+  imgPokemon.src = `https://www.serebii.net/pokemongo/pokemon/${pokemon.num}.png`;
+  imgPokemon.style.width = "150px";
+
+  imgCentered.append(imgPokemon);
+
+  // Textos Identificadores de la imagen del pokemon
+  let identifier = document.createElement("div");
+  identifier.id = "identifier";
+
+  let namePokemon = document.createElement("span");
+  namePokemon.id = "namePokemon";
+  namePokemon.textContent = `${pokemon.name}`;
+
+  let idPokemon = document.createElement("span");
+  idPokemon.id = "idPokemon";
+  idPokemon.textContent = `#${pokemon.num}`;
+
+  identifier.append(namePokemon);
+  identifier.append(idPokemon);
+
+  pokemonDetail.append(imgCentered);
+  pokemonDetail.append(identifier);
+
+  leftSection.append(leftImg);
+}
+
+function evolutions(pokemon) {
+  //Crear Seccion Evoluciones
+
+  let contenedorEvoluciones = document.createElement("div");
+  contenedorEvoluciones.id = "container-evoluciones";
+  contenedorEvoluciones.classList.add("pokemones-filtrados");
+
+  //obtenemos array de las evoluciones del pokemon
+  const evoluciones = obtenerEvoluciones(pokemon);
+  if (evoluciones.length == 1) {
+    obtenerPokemones(evoluciones).then((pokemones) => {
+      for (pokemon of pokemones) {
+        //Reutilizamos la funcion crear pokemon card
+        const card = crearPokemonCard(pokemon);
+        contenedorEvoluciones.append(card);
+        const cardSinEvoluciones = crearCardSinEvoluciones();
+        seccionEvoluciones.prepend(cardSinEvoluciones);
+      }
+    });
+  } else {
+    obtenerPokemones(evoluciones).then((pokemones) => {
+      for (pokemon of pokemones) {
+        //Reutilizamos la funcion crear pokemon card
+        const card = crearPokemonCard(pokemon);
+        contenedorEvoluciones.append(card);
+      }
+    });
+  }
+
+  seccionEvoluciones.append(contenedorEvoluciones);
+  vistaDetalle.append(seccionEvoluciones);
 }
 
 // Sección de botones detalles  evoluciones y stats
