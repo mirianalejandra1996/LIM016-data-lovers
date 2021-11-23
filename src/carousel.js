@@ -93,7 +93,6 @@ export function createCarousel(pokemon) {
   id.textContent = `# ${pokemon.num}`;
   info.append(id);
 
-  console.log(pokemon.type);
   pokemon.type.forEach((type) => {
     const tipo = document.createElement("div");
     tipo.style.backgroundColor = colors[type];
@@ -151,6 +150,5 @@ while (myArray.length < 20) {
     myArray.push(numeroAleatorio);
   }
 }
-console.log("números aleatorios: ", { myArray });
 
 traerPokemonesCarusel(myArray).then((pokemones) => renderPokemones(pokemones));

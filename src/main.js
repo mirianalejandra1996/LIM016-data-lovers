@@ -163,7 +163,6 @@ renderAllCards();
 
 // render es cargar los pokemones en pantalla
 const renderCards = (pokemones) => {
-  console.log("probando", pokemones);
   const resultadoPokemones = document.getElementById("totalPokemones");
 
   resultadoPokemones.textContent = "";
