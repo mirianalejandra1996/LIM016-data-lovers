@@ -319,6 +319,9 @@ const viewDetail = async (e) => {
   let cabecera = document.getElementById("upperSection");
   cabecera.classList.add("hidden");
 
+  let secFilter = document.getElementById("sect-btn-filter");
+  secFilter.classList.add("hidden");
+  mostrarContenedorBuscador();
   let filterContainer = document.getElementById("left-container");
   filterContainer.classList.add("hidden");
 
@@ -612,11 +615,13 @@ function volverPokedex() {
 // -------------
 
 const btnShowFilter = document.getElementById("btn-filter");
-btnShowFilter.addEventListener("click", () => {
-  const sectionFilter = document.getElementById("buscador");
+btnShowFilter.addEventListener("click", mostrarContenedorBuscador);
 
+function mostrarContenedorBuscador () {
+  const sectionFilter = document.getElementById("buscador");
   sectionFilter.classList.toggle("shown");
-});
+}
+
 
 // Para poder visualizar los detalles del pokemon seleccionado en la sección de evoluciones
 // de X pokemón
