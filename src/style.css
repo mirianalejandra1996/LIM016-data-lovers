@@ -84,7 +84,7 @@ nav ul li a:hover {
 .contenedor {
   display: grid;
   /* grid-gap: 20px; */
-  height: 100%;
+  /* height: 100%; */
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
   grid-template-areas:
@@ -511,6 +511,10 @@ nav ul li a:hover {
   display: block;
 }
 
+.buscador.hidden {
+  display: none;
+}
+
 .hidden {
   display: none;
 }
@@ -893,7 +897,8 @@ h2 {
   justify-content: space-between;
   padding: 10px;
   align-items: center;
-  transition: 0.3s ease;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
 .large-btn:hover {
@@ -1077,7 +1082,7 @@ h2 {
   }
 
   .contenedor .contenedorPokemon {
-    margin: 0;
+    margin-lef: 20px;
   }
 
   .buscador-especial {
@@ -1105,5 +1110,9 @@ h2 {
     width: 50%;
     margin-bottom: 20px;
     justify-content: space-between;
+  }
+
+  .large-btn {
+    margin-top: 0;
   }
 }

@@ -322,11 +322,16 @@ const viewDetail = async (e) => {
   let secFilter = document.getElementById("sect-btn-filter");
   secFilter.classList.add("hidden");
   mostrarContenedorBuscador();
+
   let filterContainer = document.getElementById("left-container");
   filterContainer.classList.add("hidden");
 
   // Se realiza un forzado para que los pokemones filtrados no estén visibles
   contenedorFiltrados.style.display = "none";
+
+  // Nuevo
+  let buscador = document.getElementById("buscador");
+  buscador.style.display = "block";
 
   let vistaDetalle = document.getElementById("vista-detalle");
   vistaDetalle.classList.remove("hidden");
@@ -610,18 +615,35 @@ function volverPokedex() {
 
   let leftDetalle = document.getElementById("left-detalle");
   leftDetalle.classList.add("hidden");
+
+  let sectBtnFilter = document.getElementById("sect-btn-filter");
+  sectBtnFilter.classList.remove("hidden");
+
+  let buscador = document.getElementById("buscador");
+  buscador.classList.remove("hidden");
+  buscador.classList.add("shown");
+
+  // No funciona
+  // if (buscador.style.display === "block") {
+  //   buscador.style.display === "none";
+  // } else {
+  //   buscador.style.display === "block";
+  // }
 }
+
+// }
 
 // -------------
 
 const btnShowFilter = document.getElementById("btn-filter");
 btnShowFilter.addEventListener("click", mostrarContenedorBuscador);
 
-function mostrarContenedorBuscador () {
+function mostrarContenedorBuscador() {
+  // ERES TU
   const sectionFilter = document.getElementById("buscador");
+  // sectionFilter.classList.add("shown");
   sectionFilter.classList.toggle("shown");
 }
-
 
 // Para poder visualizar los detalles del pokemon seleccionado en la sección de evoluciones
 // de X pokemón
