@@ -56,7 +56,6 @@ Se realizó una investigación para conocer al usuario y la problemática que pr
 
 ### Diseño de la Interfaz de Usuario
 
-
 #### Prototipo de baja fidelidad
 
 Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
