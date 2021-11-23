@@ -7,6 +7,7 @@ import {
   obtenerPokemones,
   obtenerEvoluciones,
   sortBy,
+  buscarPokemones,
 } from "./data.js";
 
 const colors = {
@@ -141,15 +142,15 @@ btnBuscar.addEventListener("click", async () => {
   } else {
     errMsg.textContent = "";
 
-    let arrPokemon = [];
+   // let arrPokemon = [];
     // let pokemonFounded = await busquedaInput(formatNumber(inputBuscar.value.toLowerCase()))
-    let pokemonFounded = await obtenerPokemon(
+    let pokemonsFounded = await buscarPokemones(
       formatNumber(inputBuscar.value.toLowerCase())
     );
-    arrPokemon.push(pokemonFounded);
+   // arrPokemon.push(pokemonFounded);
 
     // renderCards(pokemonFounded);
-    renderCards(arrPokemon);
+    renderCards(pokemonsFounded);
   }
 });
 
@@ -525,6 +526,7 @@ function evolutions(pokemon) {
       for (pokemon of pokemones) {
         //Reutilizamos la funcion crear pokemon card
         const card = crearPokemonCard(pokemon);
+        card.addEventListener("click", refreshViewDetail);
         contenedorEvoluciones.append(card);
       }
     });
@@ -546,17 +548,7 @@ const seccionStats = document.getElementById("seccion-stats");
 
 //Boton Detalle vista Detalle Pokemon
 btnDetalles.addEventListener("click", () => {
-  btnDetalles.classList.replace("inactive", "active");
-  btnEvoluciones.classList.replace("active", "inactive");
-  btnStats.classList.replace("active", "inactive");
-  //secciones
-  seccionDescripcion.classList.replace("hidden", "shown");
-  seccionEvoluciones.classList.replace("shown", "hidden");
-  seccionStats.classList.replace("shown", "hidden");
-  // lineas debajo del nombre
-  btnDetalles.classList.replace("hide-bottom-line", "show-bottom-line");
-  btnEvoluciones.classList.replace("show-bottom-line", "hide-bottom-line");
-  btnStats.classList.replace("show-bottom-line", "hide-bottom-line");
+ irADetalle()
 });
 
 //Boton Evoluciones vista Detalle Pokemon
@@ -612,10 +604,30 @@ function volverPokedex() {
   seccionDescripcion.textContent = "";
   seccionEvoluciones.textContent = "";
   leftImg.textContent = "";
-
+  irADetalle()
   let vistaDetalle = document.getElementById("vista-detalle");
   vistaDetalle.classList.add("hidden");
 
   let leftDetalle = document.getElementById("left-detalle");
   leftDetalle.classList.add("hidden");
+}
+function refreshViewDetail(e) {
+  seccionDescripcion.textContent = "";
+  seccionEvoluciones.textContent = "";
+  leftImg.textContent = "";
+  irADetalle()
+  viewDetail(e)
+}
+function irADetalle () {
+  btnDetalles.classList.replace("inactive", "active");
+  btnEvoluciones.classList.replace("active", "inactive");
+  btnStats.classList.replace("active", "inactive");
+  //secciones
+  seccionDescripcion.classList.replace("hidden", "shown");
+  seccionEvoluciones.classList.replace("shown", "hidden");
+  seccionStats.classList.replace("shown", "hidden");
+  // lineas debajo del nombre
+  btnDetalles.classList.replace("hide-bottom-line", "show-bottom-line");
+  btnEvoluciones.classList.replace("show-bottom-line", "hide-bottom-line");
+  btnStats.classList.replace("show-bottom-line", "hide-bottom-line");
 }
