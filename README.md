@@ -169,9 +169,5 @@ Como mínimo, tu implementación debe:
 
 #### Deploy
 
-* [Git](https://git-scm.com/)
-* [GitHub](https://github.com/)
-* [GitHub Pages](https://pages.github.com/)
-* [Node.js](https://nodejs.org/)
-* [Jest](https://jestjs.io/)
+https://mirianalejandra1996.github.io/LIM016-data-lovers/src/index.html
 
