@@ -16,47 +16,43 @@
 
 ## 1. Preámbulo
 
+PokéCompany es una aplicación que muestra la data de los pokémones de manera interactiva. Esta aplicación está disponible en vista Desktop y en vista Mobile. 
+
+Los usuarios se convierten en investigadores de Pokémon" y pueden:
+
+-Visualizar las características únicas que determinan las decisiones que toma el usuario (tipo, debilidad, altura, CP, etc.)
+
+-Los Pokémon tienen distintos tipos y debilidades de combate. Estas características son importantes
+cuando el usuario elige al Pokémon más adecuado para su batalla. Hay veces que tiene que elegir a los que tienen menos cantidad de debilidades y saber de que tipo son. 
+
+-El usuario puede ordenarlos por estas 2 características (tipo, debilidad), y puede personalizar 
+la lista de pokemones del pokedex en orden alfabético (A-Z o de Z-A) o según número (superior o inferior)
+
+-Los Pokémon evolucionan y es importante para un maestro Pokémon saber cuántas y cuáles son las evoluciones que tienen antes y después.
+
+-Los Pokémon se alimentan de caramelos y un maestro Pokémon necesita saber qué tipo de caramelo necesita un Pokémon para evolucionar.
 
 ## 2. Resumen del proyecto
 
-
-Estos son datos que te proponemos:
-
-* [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
-  y Johto, junto con sus respectivas estadísticas usadas en el juego
-  [Pokémon GO](http://pokemongolive.com).
-  - [Investigación con jugadores de Pokémon Go](src/data/pokemon/README.md)
-
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
-
-
-### UX (User eXperience)
-
-## 5. Criterios de aceptación mínimos del proyecto
-
-Los criterios para considerar que has completado este proyecto son:
+Aplicación de escritorio y móvil que permite al usuario visualizar y manipular la data de los pokemones, en una interfaz intuitiva que proporcione una agradable experiencia.
 
 ### Definición del producto
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
+Se realizó una investigación para conocer al usuario y la problemática que presenta al momento de querer escoger algún, ya que se le complica y se vuelve tedioso la búsqueda del pokemón en un listado muy extenso, es por ello que la implementación de este sistema busca facilitar la búsqueda mediante filtros especiales, y selectores que permitirá organizar la data de pokemones de una manera más sencilla y efectiva.
 
 ### Historias de usuario
 
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
+* HU01 - CARACTERÍSTICA (TIPO DE POKEMON) - Como: Entrenador Pokemón. Quiero: Saber de qué tipo es mi pokemón. Para: Poder Saber las características de mi pokemón (fuego, agua, electrico, etc)
 
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
+* HU02 - DEBILIDAD DEL POKEMÓN - Cómo: Entrenador Pokemón. Quiero: Conocer las debilidades de mi pokemón. Para: poder definir una estrategia de pelea más efectiva (qué pokemón me conviene elegir para pelear)
 
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
+* HU03 - CARACTERÍSTICAS (PESO Y TAMAÑO DEL POKEMÓN) - Como: Entrenador Pokemón. Quiero visualizar el peso y tamaño de mi pokemón. Para:  Obtener mayor detalles de su contextura.
+
+* HU04 - EVOLUCIONES DE CADA POKEMON - Como: Entrenador Pokemón. Quiero visualizar la evoluciones pasadas y futuras de mi pokemón. Para: saber con qué pokemón cuento en el futuro.
+
+* HU05 - ORDENAMIENTO DE 2 CARACTERÍSTICAS. Como: Entrenador Pokemón. Quiero: Filtrar a los pokemones que tienen menos cantidad de características (debilidades) y tipo. Para: Elegir el mejor pokemón para mis batallas.
+
+* HU06 - Vista Móvil. Como: Entrenador Pokemón. Quiero visualizar en mi teléfono la aplicación. Para tener acceso en cualquier momento sin mi computador
 
 ### Diseño de la Interfaz de Usuario
 
@@ -178,4 +174,5 @@ pueden ayudar:
 * [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
 * [ ] UI: Permite filtrar data en base a una condición.
 * [ ] UI: Es _responsive_.
+
 
