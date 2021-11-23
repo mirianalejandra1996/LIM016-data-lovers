@@ -1,5 +1,3 @@
-// import { dataPokemones,busquedaInput } from './data.js';
-// import { types } from '@babel/core';
 import {
   dataPokemones,
   filtradoPokemones,
@@ -7,6 +5,7 @@ import {
   obtenerPokemones,
   obtenerEvoluciones,
   sortBy,
+  buscarPokemones,
 } from "./data.js";
 
 const colors = {
@@ -141,15 +140,15 @@ btnBuscar.addEventListener("click", async () => {
   } else {
     errMsg.textContent = "";
 
-    let arrPokemon = [];
+    // let arrPokemon = [];
     // let pokemonFounded = await busquedaInput(formatNumber(inputBuscar.value.toLowerCase()))
-    let pokemonFounded = await obtenerPokemon(
+    let pokemonsFounded = await buscarPokemones(
       formatNumber(inputBuscar.value.toLowerCase())
     );
-    arrPokemon.push(pokemonFounded);
+    // arrPokemon.push(pokemonFounded);
 
     // renderCards(pokemonFounded);
-    renderCards(arrPokemon);
+    renderCards(pokemonsFounded);
   }
 });
 
@@ -286,8 +285,10 @@ function formatNumber(num) {
   }
 }
 
-const btnClean = document.getElementById("btn-clean");
-btnClean.addEventListener("click", limpiarFiltros);
+const btnCleanMobile = document.getElementById("btn-clean-mobile");
+const btnCleanDesktop = document.getElementById("btn-clean-desktop");
+btnCleanMobile.addEventListener("click", limpiarFiltros);
+btnCleanDesktop.addEventListener("click", limpiarFiltros);
 
 function limpiarFiltros() {
   inputBuscar.value = "";
@@ -522,6 +523,7 @@ function evolutions(pokemon) {
       for (pokemon of pokemones) {
         //Reutilizamos la funcion crear pokemon card
         const card = crearPokemonCard(pokemon);
+        card.addEventListener("click", refreshViewDetail);
         contenedorEvoluciones.append(card);
       }
     });
@@ -543,17 +545,7 @@ const seccionStats = document.getElementById("seccion-stats");
 
 //Boton Detalle vista Detalle Pokemon
 btnDetalles.addEventListener("click", () => {
-  btnDetalles.classList.replace("inactive", "active");
-  btnEvoluciones.classList.replace("active", "inactive");
-  btnStats.classList.replace("active", "inactive");
-  //secciones
-  seccionDescripcion.classList.replace("hidden", "shown");
-  seccionEvoluciones.classList.replace("shown", "hidden");
-  seccionStats.classList.replace("shown", "hidden");
-  // lineas debajo del nombre
-  btnDetalles.classList.replace("hide-bottom-line", "show-bottom-line");
-  btnEvoluciones.classList.replace("show-bottom-line", "hide-bottom-line");
-  btnStats.classList.replace("show-bottom-line", "hide-bottom-line");
+  irADetalle();
 });
 
 //Boton Evoluciones vista Detalle Pokemon
@@ -609,7 +601,7 @@ function volverPokedex() {
   seccionDescripcion.textContent = "";
   seccionEvoluciones.textContent = "";
   leftImg.textContent = "";
-
+  irADetalle();
   let vistaDetalle = document.getElementById("vista-detalle");
   vistaDetalle.classList.add("hidden");
 
@@ -621,12 +613,31 @@ function volverPokedex() {
 
 const btnShowFilter = document.getElementById("btn-filter");
 btnShowFilter.addEventListener("click", () => {
-  console.log("si");
   const sectionFilter = document.getElementById("buscador");
 
-  // if(sectionFilter.classList.contains(class)){
-
-  // }
-  // element.classList.contains(class)
   sectionFilter.classList.toggle("shown");
 });
+
+// Para poder visualizar los detalles del pokemon seleccionado en la sección de evoluciones
+// de X pokemón
+function refreshViewDetail(e) {
+  seccionDescripcion.textContent = "";
+  seccionEvoluciones.textContent = "";
+  leftImg.textContent = "";
+  irADetalle();
+  viewDetail(e);
+}
+
+function irADetalle() {
+  btnDetalles.classList.replace("inactive", "active");
+  btnEvoluciones.classList.replace("active", "inactive");
+  btnStats.classList.replace("active", "inactive");
+  //secciones
+  seccionDescripcion.classList.replace("hidden", "shown");
+  seccionEvoluciones.classList.replace("shown", "hidden");
+  seccionStats.classList.replace("shown", "hidden");
+  // lineas debajo del nombre
+  btnDetalles.classList.replace("hide-bottom-line", "show-bottom-line");
+  btnEvoluciones.classList.replace("show-bottom-line", "hide-bottom-line");
+  btnStats.classList.replace("show-bottom-line", "hide-bottom-line");
+}

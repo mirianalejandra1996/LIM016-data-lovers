@@ -124,3 +124,13 @@ export const sortBy = (pokemonesFiltrados, ordenSeleccionado) => {
 
   return resultado;
 };
+
+export const buscarPokemones = async(word) =>{
+  const pokemones = await dataPokemones();
+
+  const pokemonesFiltrados = pokemones.filter((p) => {
+    return p.num === word || p.name.includes(word);
+  });
+
+  return pokemonesFiltrados;
+}
