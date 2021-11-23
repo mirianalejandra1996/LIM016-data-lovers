@@ -50,7 +50,16 @@
         </nav>
       </header>
 
-      <div class="buscador">
+      <!-- Seccion de botones para vista movil-->
+      <div id="sect-btn-filter" class="nav-filter">
+        <div id="btn-filter"><span>Filtrar</span></div>
+        <div class="clean-container">
+          <span id="btn-clean">Limpiar filtros</span>
+        </div>
+      </div>
+
+      <!-- Seccion de botones para vista escritorio -->
+      <div id="buscador" class="buscador">
         <!-- Sección de filtrado -->
         <div id="left-container">
           <div class="buscador-especial">
@@ -71,7 +80,7 @@
             </label>
           </div>
 
-          <label id="errMsg"></label>
+          <label id="errMsg" class="errMsg"></label>
 
           <div class="properties-container">
             <div class="caracteristicas">

@@ -275,7 +275,6 @@ const filtrosSeleccionados = async () => {
   return pokemonesFiltrados;
 };
 
-
 // Función para obtener un formato al ingresar algún número (ejemplo: 1 retorna 001)
 function formatNumber(num) {
   if (parseInt(num) < 10) {
@@ -289,7 +288,6 @@ function formatNumber(num) {
 
 const btnClean = document.getElementById("btn-clean");
 btnClean.addEventListener("click", limpiarFiltros);
-
 
 function limpiarFiltros() {
   inputBuscar.value = "";
@@ -334,7 +332,6 @@ const viewDetail = async (e) => {
 
   imprimirDetalle(textArray);
 };
-
 
 // Esta función imprimirá en pantalla los detalles del pokemón que haya sido seleccionado
 const imprimirDetalle = async (id) => {
@@ -619,3 +616,17 @@ function volverPokedex() {
   let leftDetalle = document.getElementById("left-detalle");
   leftDetalle.classList.add("hidden");
 }
+
+// -------------
+
+const btnShowFilter = document.getElementById("btn-filter");
+btnShowFilter.addEventListener("click", () => {
+  console.log("si");
+  const sectionFilter = document.getElementById("buscador");
+
+  // if(sectionFilter.classList.contains(class)){
+
+  // }
+  // element.classList.contains(class)
+  sectionFilter.classList.toggle("shown");
+});
