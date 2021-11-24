@@ -350,6 +350,7 @@ const imprimirDetalle = async (id) => {
   detailRight(pokemon);
   detailLeft(pokemon);
   evolutions(pokemon);
+  crearChart(pokemon);
 };
 
 function detailRight(pokemon) {
@@ -551,7 +552,7 @@ const btnStats = document.getElementById("stats");
 const seccionDescripcion = document.getElementById("descripcion-total");
 const seccionEvoluciones = document.getElementById("seccion-evoluciones");
 const seccionStats = document.getElementById("seccion-stats");
-
+const canvas = document.getElementById("chart")
 //Boton Detalle vista Detalle Pokemon
 btnDetalles.addEventListener("click", () => {
   irADetalle();
@@ -669,3 +670,46 @@ function irADetalle() {
   btnEvoluciones.classList.replace("show-bottom-line", "hide-bottom-line");
   btnStats.classList.replace("show-bottom-line", "hide-bottom-line");
 }
+
+//Implementando Chart js
+function crearChart(pokemon){
+  const ctx = document.getElementById('chart').getContext('2d');
+  if (window.grafica) {
+    window.grafica.clear();
+    window.grafica.destroy();
+}
+  window.grafica = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ['ataque', 'defensa', 'estamina', 'maximo-cp', 'maximo-hp'],
+          datasets: [{
+              label: ' ESTADISTICAS POKEMON',
+              data: [`${pokemon.stats['base-attack']}`, `${pokemon.stats['base-defense']}`, `${pokemon.stats['base-stamina']}`, `${pokemon.stats['max-cp']}`, `${pokemon.stats['max-hp']}`],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+
+}
+
