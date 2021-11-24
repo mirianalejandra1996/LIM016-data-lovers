@@ -678,36 +678,80 @@ function crearChart(pokemon){
     window.grafica.clear();
     window.grafica.destroy();
 }
+
+var barStroke = ctx.createLinearGradient(700, 0, 120, 0);
+barStroke.addColorStop(0, 'rgba(0, 255, 188, 0.6)');
+barStroke.addColorStop(1, 'rgba(0, 205, 194, 0.6)');
+
+var barFill = ctx.createLinearGradient(700, 0, 120, 0);
+barFill.addColorStop(0, "rgba(0, 255, 188, 0.6)");
+barFill.addColorStop(1, "rgba(0, 205, 194, 0.6)");
+
+var barFillHover = ctx.createLinearGradient(700, 0, 120, 0);
+barFillHover.addColorStop(0, "rgba(0, 255, 188, 0.8)");
+barFillHover.addColorStop(1, "rgba(0, 205, 194, 0.6)");
+
+
+
   window.grafica = new Chart(ctx, {
       type: 'bar',
       data: {
+          type: 'horizontalBar',
           labels: ['ataque', 'defensa', 'estamina', 'maximo-cp', 'maximo-hp'],
           datasets: [{
               label: ' ESTADISTICAS POKEMON',
               data: [`${pokemon.stats['base-attack']}`, `${pokemon.stats['base-defense']}`, `${pokemon.stats['base-stamina']}`, `${pokemon.stats['max-cp']}`, `${pokemon.stats['max-hp']}`],
               backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)'
+                barFill
               ],
               borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)'
+                barStroke
               ],
-              borderWidth: 1
+              borderWidth: 1,
+              fill: true,
+              hoverBackgroundColor: barFillHover,
           }]
       },
       options: {
+          animation: {
+              easing: "easeOutQuart"
+          },
+          legend: {
+              position: "bottom",
+              display: false
+          },
           scales: {
-              y: {
-                  beginAtZero: true
-              }
-          }
+            yAxes: [{
+                ticks: {
+                    fontColor: "#fafafa",
+                    fontStyle: "bold",
+                    beginAtZero: true,
+                    padding: 15,
+					//display: false - remove this and commenting to display: false
+                },
+                gridLines: {
+                    drawTicks: false,
+                    display: false,
+					color: "transparent",
+					zeroLineColor: "transparent"
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+					display: false,
+					color: "transparent",
+					zeroLineColor: "transparent"
+                },
+                ticks: {
+                    padding: 15,
+					beginAtZero: true,
+                    fontColor: "#fafafa",
+                    fontStyle: "bold",
+					maxTicksLimit: 20,
+					//display: false - remove this and commenting to display: false
+                }
+            }]
+        }
       }
   });
 
