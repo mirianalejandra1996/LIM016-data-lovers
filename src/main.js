@@ -350,6 +350,7 @@ const imprimirDetalle = async (id) => {
   detailRight(pokemon);
   detailLeft(pokemon);
   evolutions(pokemon);
+  crearChart(pokemon);
 };
 
 function detailRight(pokemon) {
@@ -551,7 +552,7 @@ const btnStats = document.getElementById("stats");
 const seccionDescripcion = document.getElementById("descripcion-total");
 const seccionEvoluciones = document.getElementById("seccion-evoluciones");
 const seccionStats = document.getElementById("seccion-stats");
-
+const canvas = document.getElementById("chart")
 //Boton Detalle vista Detalle Pokemon
 btnDetalles.addEventListener("click", () => {
   irADetalle();
@@ -669,3 +670,90 @@ function irADetalle() {
   btnEvoluciones.classList.replace("show-bottom-line", "hide-bottom-line");
   btnStats.classList.replace("show-bottom-line", "hide-bottom-line");
 }
+
+//Implementando Chart js
+function crearChart(pokemon){
+  const ctx = document.getElementById('chart').getContext('2d');
+  if (window.grafica) {
+    window.grafica.clear();
+    window.grafica.destroy();
+}
+
+var barStroke = ctx.createLinearGradient(700, 0, 120, 0);
+barStroke.addColorStop(0, 'rgba(0, 255, 188, 0.6)');
+barStroke.addColorStop(1, 'rgba(0, 205, 194, 0.6)');
+
+var barFill = ctx.createLinearGradient(700, 0, 120, 0);
+barFill.addColorStop(0, "rgba(0, 255, 188, 0.6)");
+barFill.addColorStop(1, "rgba(0, 205, 194, 0.6)");
+
+var barFillHover = ctx.createLinearGradient(700, 0, 120, 0);
+barFillHover.addColorStop(0, "rgba(0, 255, 188, 0.8)");
+barFillHover.addColorStop(1, "rgba(0, 205, 194, 0.6)");
+
+
+
+  window.grafica = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          type: 'horizontalBar',
+          labels: ['ataque', 'defensa', 'estamina', 'maximo-cp', 'maximo-hp'],
+          datasets: [{
+              label: ' ESTADISTICAS POKEMON',
+              data: [`${pokemon.stats['base-attack']}`, `${pokemon.stats['base-defense']}`, `${pokemon.stats['base-stamina']}`, `${pokemon.stats['max-cp']}`, `${pokemon.stats['max-hp']}`],
+              backgroundColor: [
+                barFill
+              ],
+              borderColor: [
+                barStroke
+              ],
+              borderWidth: 1,
+              fill: true,
+              hoverBackgroundColor: barFillHover,
+          }]
+      },
+      options: {
+          animation: {
+              easing: "easeOutQuart"
+          },
+          legend: {
+              position: "bottom",
+              display: false
+          },
+          scales: {
+            yAxes: [{
+                ticks: {
+                    fontColor: "#fafafa",
+                    fontStyle: "bold",
+                    beginAtZero: true,
+                    padding: 15,
+					//display: false - remove this and commenting to display: false
+                },
+                gridLines: {
+                    drawTicks: false,
+                    display: false,
+					color: "transparent",
+					zeroLineColor: "transparent"
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+					display: false,
+					color: "transparent",
+					zeroLineColor: "transparent"
+                },
+                ticks: {
+                    padding: 15,
+					beginAtZero: true,
+                    fontColor: "#fafafa",
+                    fontStyle: "bold",
+					maxTicksLimit: 20,
+					//display: false - remove this and commenting to display: false
+                }
+            }]
+        }
+      }
+  });
+
+}
+

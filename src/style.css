@@ -1129,3 +1129,17 @@ h2 {
     width: 230px;
   }
 }
+
+.screen {
+	/* position: relative; */
+	width: 100%;
+	height: 100%;
+	border: 0;
+	padding: 60px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	color: #fafafa;
+	overflow: hidden;
+}
