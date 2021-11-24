@@ -331,10 +331,11 @@ const viewDetail = async (e) => {
 
   // Nuevo
   let buscador = document.getElementById("buscador");
-  buscador.style.display = "block";
+  //buscador.style.display = "block";
+  buscador.classList.add('shown')
 
   let vistaDetalle = document.getElementById("vista-detalle");
-  vistaDetalle.classList.remove("hidden");
+  vistaDetalle.classList.remove('hidden');
 
   let leftDetalle = document.getElementById("left-detalle");
   leftDetalle.classList.remove("hidden");
@@ -620,8 +621,8 @@ function volverPokedex() {
   sectBtnFilter.classList.remove("hidden");
 
   let buscador = document.getElementById("buscador");
-  buscador.classList.remove("hidden");
-  buscador.classList.add("shown");
+  buscador.classList.remove("shown");
+  //buscador.classList.add("shown");
 
   // No funciona
   // if (buscador.style.display === "block") {
