@@ -209,8 +209,8 @@ nav ul li a:hover {
   height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 0 20px 20px;
   align-items: center;
+  padding: 0;
 }
 
 .item {
@@ -458,7 +458,7 @@ nav ul li a:hover {
 }
 
 .dropdown {
-  width: 230px;
+  width: 180px;
   height: 50px;
   position: relative;
 }
@@ -784,7 +784,7 @@ footer {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -1082,7 +1082,7 @@ h2 {
   }
 
   .contenedor .contenedorPokemon {
-    margin-lef: 20px;
+    margin-left: 20px;
   }
 
   .buscador-especial {
@@ -1114,5 +1114,18 @@ h2 {
 
   .large-btn {
     margin-top: 0;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .filtros {
+    padding: 0 20px 20px;
+  }
+
+  .dropdown {
+    width: 230px;
   }
 }
