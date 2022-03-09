@@ -65,23 +65,35 @@ Inspirado en el diseño flat design minimalista, con uso de paleta de colores ve
 
 Vista Desktop
 
-Vista de Landing Page para visualizar a los pokemones destacados
+🖼️ Vista de Landing Page para visualizar a los pokemones destacados
 
 <p align="center">
   <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973694-444ae707-4bbb-4734-a513-36c0d213efce.png">
 </p>
 
-Vista Lista de los pokemones, con sección de buscado especial (filtros según tipo o debilidades, o por número o nombre del pokémon)
-![data-lovers-primer-prototipo2](https://user-images.githubusercontent.com/91838806/142973959-77e86cbb-b050-4cb2-94c5-9db70a544e95.png)
+🖼️ Vista Lista de los pokemones, con sección de buscado especial (filtros según tipo o debilidades, o por número o nombre del pokémon)
 
-Vista Detalle, en el que visualiza datos básicos del pokemón
-![data-lovers-primer-proto![data-lovers-primer-prototipo3](https://user-images.githubusercontent.com/91838806/142973731-6587723f-b0d7-4579-9c2b-885c94d5f550.png)
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973959-77e86cbb-b050-4cb2-94c5-9db70a544e95.png">
+</p>
 
-Vista Detalle, en el que visualiza la evoluciones
-![data-lovers-primer-prototipo4](https://user-images.githubusercontent.com/91838806/142973745-4acd9c55-2e5f-4814-a2d4-88cfa275de70.png)
+🖼️ Vista Detalle, en el que visualiza datos básicos del pokemón
 
-Vista Stats, en el que visualizará una gráfica de ciertos datos del pokemón seleccionado.
-![data-lovers-primer-prototipo5](https://user-images.githubusercontent.com/91838806/142973758-63eda3a8-9b08-49b2-b2f7-e803cba50231.png)
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973731-6587723f-b0d7-4579-9c2b-885c94d5f550.png">
+</p>
+
+🖼️ Vista Detalle, en el que visualiza la evoluciones
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973745-4acd9c55-2e5f-4814-a2d4-88cfa275de70.png">
+</p>
+
+🖼️ Vista Stats, en el que visualizará una gráfica de ciertos datos del pokemón seleccionado.
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973758-63eda3a8-9b08-49b2-b2f7-e803cba50231.png">
+</p>
 
 #### Prototipo de alta fidelidad
 
@@ -133,10 +145,10 @@ Vista Detalle (Evoluciones)
 
 ## 6 Tecnologias empleadas
 
--Javascript ES6 Vanilla
--HTML5
--CSS3
--Jest
+🎯JavaScript ES6 Vanilla
+🎯HTML5
+🎯CSS3
+🎯Jest
 
 #### Testeos de usabilidad
 
