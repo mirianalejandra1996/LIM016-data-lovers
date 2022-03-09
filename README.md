@@ -56,141 +56,23 @@ Se realizó una investigación para conocer al usuario y la problemática que pr
 
 📝 HU06 - Vista Móvil. Como: Entrenador Pokemón. Quiero visualizar en mi teléfono la aplicación. Para tener acceso en cualquier momento sin mi computador
 
-## 5 Diseño de la Interfaz de Usuario
+## 5. Diseño de la Interfaz de Usuario
 
 El prototipo se basó en satisfacer las necesidades del usuario, es por ello que en nuestro prototipo de baja fidelidad se enfoca las siguientes .
 Inspirado en el diseño flat design minimalista, con uso de paleta de colores verdes, y uso de tipografía "Poppins"
 
 #### PROTOTIPOS DE BAJA FIDELIDAD [AQUÍ](https://github.com/lucerogoga/Data-lovers-POKECOMPANY/blob/main/READMeImages/LowFidelityWireframes.pdf)
 
-Vista Desktop
-
-🖼️ Vista de Landing Page para visualizar a los pokemones destacados
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973694-444ae707-4bbb-4734-a513-36c0d213efce.png">
-</p>
-
-🖼️ Vista Lista de los pokemones, con sección de buscado especial (filtros según tipo o debilidades, o por número o nombre del pokémon)
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973959-77e86cbb-b050-4cb2-94c5-9db70a544e95.png">
-</p>
-
-🖼️ Vista Detalle, en el que visualiza datos básicos del pokemón
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973731-6587723f-b0d7-4579-9c2b-885c94d5f550.png">
-</p>
-
-🖼️ Vista Detalle, en el que visualiza la evoluciones
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973745-4acd9c55-2e5f-4814-a2d4-88cfa275de70.png">
-</p>
-
-🖼️ Vista Stats, en el que visualizará una gráfica de ciertos datos del pokemón seleccionado.
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973758-63eda3a8-9b08-49b2-b2f7-e803cba50231.png">
-</p>
-
 #### PROTOTIPO DE ALTA FIDELIDAD [AQUÍ](https://github.com/lucerogoga/Data-lovers-POKECOMPANY/blob/main/READMeImages/HightFidelityWireframes.pdf)
 
-Vista Desktop
-
-🖼️ Vista Landing Page
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974266-fb7cb5ef-a6e4-4e59-8ae6-50ba4bf8afa4.png">
-</p>
-
-🖼️ Vista Lista Pokedex
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974286-2b1c93ae-aec0-4a3c-af12-fef63406aa4c.png">
-</p>
-
-🖼️ Vitsa Lista Pokedex (Tipo)
-
-<p align="center">
-  <img width="460" height="300" src="(https://user-images.githubusercontent.com/91838806/142974294-e0a6edb5-b0db-4f72-9937-e241696b3bac.png">
-</p>
-
-🖼️ Vista Detalle Pokedex (Debilidades y SortBy)
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974307-4b237eec-b988-4476-b255-caa49737e915.png">
-</p>
-
-🖼️ Vista Detalle Pokedex (About)
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974320-79236751-bd59-4920-88a5-cce29a85f9a8.png">
-</p>
-
-🖼️ Vista Detalle Pokemon (Evoluciones Pikachu)
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974336-9f70f7a0-5f62-41ef-b86b-4013f3fac796.png">
-</p>
-
-🖼️ Vista Detalle Pokedex (Stats)
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974346-32956ff2-cc5a-444a-a11a-75367e6d7c8c.png">
-</p>
-
-🖼️ Vista Detalle Pokemon (Evoluciones Eevee)
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974354-4790d0b0-72bd-4695-acd2-b5fac7871e49.png">
-</p>
-
-VISTA MOVILE
-
-🖼️ Vista Landing
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974834-c73d39c2-da25-4bd8-a650-9b5cbd2b4da1.jpeg">
-</p>
-
-🖼️ Vista Landing con navegador responsive
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974837-7f049021-809c-4140-9971-1e3fbfd7a53d.jpeg">
-</p>
-
-🖼️ Vista Lista Pokedex
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974842-0cf4f36d-ca48-4185-8307-0ccfef7930f2.jpeg">
-</p>
-
-🖼️ Vista Lista con Sección de Filtros desplegable
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974855-9510d23c-78b9-4dc3-8e51-4ce0b4b59530.jpeg">
-</p>
-🖼️ Vista Detalle (descripción)
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974864-91300c31-c4bb-4dd6-b53c-a327120caf71.jpeg">
-</p>
-🖼️ Vista Detalle (Evoluciones)
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974872-0fea8f40-b734-48d2-a8d0-5e03d81ddc42.jpeg">
-</p>
-
-## 6 Tecnologias empleadas
+## 6. Tecnologias empleadas
 
 - 🎯JavaScript ES6 Vanilla
 - 🎯HTML5
 - 🎯CSS3
 - 🎯Jest
 
-## 7 Implementación de la Interfaz de Usuario (HTML/CSS/JS)
+## 7. Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
 Como mínimo, tu implementación debe:
 
@@ -207,11 +89,11 @@ Como mínimo, tu implementación debe:
 4. Que la interfaz siga los fundamentos de _visual design_.
    Nuestro sistema cumple con los fundamentos de visual design, ya que mantenemos el contraste, la proximidad, la alineación, espaciado, entre otros para mantener un balance en el diseño.
 
-## 8 Deploy Link
+## 8. Deploy Link
 
 https://mirianalejandra1996.github.io/LIM016-data-lovers/src/index.html
 
-## 9 Authors
+## 9. Authors
 
 - 🙎‍♀️ [Lucero Gonzales](https://github.com/lucerogoga)
 - 🙎‍♀️ [Mirian Arevalo](https://github.com/mirianalejandra1996)
