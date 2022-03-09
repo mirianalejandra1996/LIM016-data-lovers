@@ -61,7 +61,7 @@ Se realizó una investigación para conocer al usuario y la problemática que pr
 El prototipo se basó en satisfacer las necesidades del usuario, es por ello que en nuestro prototipo de baja fidelidad se enfoca las siguientes .
 Inspirado en el diseño flat design minimalista, con uso de paleta de colores verdes, y uso de tipografía "Poppins"
 
-#### PROTOTIPOS DE BAJA FIDELIDAD
+#### PROTOTIPOS DE BAJA FIDELIDAD [AQUÍ](https://github.com/lucerogoga/Data-lovers-POKECOMPANY/blob/main/READMeImages/LowFidelityWireframes.pdf)
 
 Vista Desktop
 
@@ -95,7 +95,7 @@ Vista Desktop
   <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973758-63eda3a8-9b08-49b2-b2f7-e803cba50231.png">
 </p>
 
-#### PROTOTIPO DE ALTA FIDELIDAD
+#### PROTOTIPO DE ALTA FIDELIDAD [AQUÍ](https://github.com/lucerogoga/Data-lovers-POKECOMPANY/blob/main/READMeImages/HightFidelityWireframes.pdf)
 
 Vista Desktop
 
