@@ -1,6 +1,6 @@
 ## ÍNDICE
 
-- [1. PokeCompanyn](#1-pokeCompany)
+- [1. PokeCompany](#1-pokeCompany)
 - [2. Preámbulo](#2-preámbulo)
 - [3. Resumen del proyecto](#3-resumen-del-proyecto)
 - [4. Historias de Usuario](#4-historias-de-usuario)
@@ -8,27 +8,31 @@
 - [6. Tecnologias empleadas](#6-hacker-edition)
 - [7. Checklist](#7-checklist)
 
+---
+
 ## 1 POKECOMPANY
 
-![POKECOMPANY](https://github.com/lucerogoga/Data-lovers-POKECOMPANY/blob/main/READMeImages/POKECOMPANY.png)
+<p align="center">
+  <img width="460" height="300" src="https://github.com/lucerogoga/Data-lovers-POKECOMPANY/blob/main/READMeImages/POKECOMPANY.svg">
+</p>
 
 ## 2. Preámbulo
 
 PokéCompany es una aplicación que muestra la data de los pokémones de manera interactiva. Esta aplicación está disponible en vista Desktop y en vista Mobile.
 
-Los usuarios se convierten en investigadores de Pokémon" y pueden:
+Los usuarios se convierten en** "investigadores de Pokémon"** y pueden:
 
--Visualizar las características únicas que determinan las decisiones que toma el usuario (tipo, debilidad, altura, CP, etc.)
+📌 Visualizar las características únicas que determinan las decisiones que toma el usuario (tipo, debilidad, altura, CP, etc.)
 
--Los Pokémon tienen distintos tipos y debilidades de combate. Estas características son importantes
+📌 Los Pokémon tienen distintos tipos y debilidades de combate. Estas características son importantes
 cuando el usuario elige al Pokémon más adecuado para su batalla. Hay veces que tiene que elegir a los que tienen menos cantidad de debilidades y saber de que tipo son.
 
--El usuario puede ordenarlos por estas 2 características (tipo, debilidad), y puede personalizar
+📌 El usuario puede ordenarlos por estas 2 características (tipo, debilidad), y puede personalizar
 la lista de pokemones del pokedex en orden alfabético (A-Z o de Z-A) o según número (superior o inferior)
 
--Los Pokémon evolucionan y es importante para un maestro Pokémon saber cuántas y cuáles son las evoluciones que tienen antes y después.
+📌 Los Pokémon evolucionan y es importante para un maestro Pokémon saber cuántas y cuáles son las evoluciones que tienen antes y después.
 
--Los Pokémon se alimentan de caramelos y un maestro Pokémon necesita saber qué tipo de caramelo necesita un Pokémon para evolucionar.
+📌 Los Pokémon se alimentan de caramelos y un maestro Pokémon necesita saber qué tipo de caramelo necesita un Pokémon para evolucionar.
 
 ## 3. Resumen del proyecto
 
@@ -57,12 +61,15 @@ Se realizó una investigación para conocer al usuario y la problemática que pr
 El prototipo se basó en satisfacer las necesidades del usuario, es por ello que en nuestro prototipo de baja fidelidad se enfoca las siguientes .
 Inspirado en el diseño flat design minimalista, con uso de paleta de colores verdes, y uso de tipografía "Poppins"
 
-![paleta](https://user-images.githubusercontent.com/91838806/142975255-66aec199-2faa-4149-8d70-7ac203edecda.png)
+![paleta](https://user-images.githubusercontent.com/91838806/142975255-66aec199-2faa-4149-8d70-7ac203edecda.png)>
 
 Vista Desktop
 
 Vista de Landing Page para visualizar a los pokemones destacados
-![data-lovers-primer-prototipo](https://user-images.githubusercontent.com/91838806/142973694-444ae707-4bbb-4734-a513-36c0d213efce.png)
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973694-444ae707-4bbb-4734-a513-36c0d213efce.png">
+</p>
 
 Vista Lista de los pokemones, con sección de buscado especial (filtros según tipo o debilidades, o por número o nombre del pokémon)
 ![data-lovers-primer-prototipo2](https://user-images.githubusercontent.com/91838806/142973959-77e86cbb-b050-4cb2-94c5-9db70a544e95.png)
