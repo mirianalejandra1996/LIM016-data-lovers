@@ -187,10 +187,10 @@ VISTA MOVILE
 
 ## 6 Tecnologias empleadas
 
-🎯JavaScript ES6 Vanilla
-🎯HTML5
-🎯CSS3
-🎯Jest
+- 🎯JavaScript ES6 Vanilla
+- 🎯HTML5
+- 🎯CSS3
+- 🎯Jest
 
 ## 7 Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
@@ -215,5 +215,5 @@ https://mirianalejandra1996.github.io/LIM016-data-lovers/src/index.html
 
 ## 9 Authors
 
-🙎‍♀️ ![Lucero Gonzales](https://github.com/lucerogoga)
-🙎‍♀️ ![Mirian Arevalo](https://github.com/mirianalejandra1996)
+🙎‍♀️ [Lucero Gonzales](https://github.com/lucerogoga)
+🙎‍♀️ [Mirian Arevalo](https://github.com/mirianalejandra1996)
