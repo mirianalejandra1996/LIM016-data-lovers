@@ -67,24 +67,45 @@ Inspirado en el diseño flat design minimalista, con uso de paleta de colores ve
 
 ## 6. Tecnologias empleadas
 
-- 🎯JavaScript ES6 Vanilla
-- 🎯HTML5
-- 🎯CSS3
-- 🎯Jest
+- Para la estructura y diseño:
+
+🎯HTML5: Siguiendo las reglas del HTML semántico se estructuró con un header que contiene una barra de navegación, el main para englobar el contenido principal y en el footer se detalla los derechos de autor.
+
+- 🎯CSS: Usada para definir el estilo visual del proyecto.
+- 🎯Figma: Plataforma para crear las estructuras del prototipo (Wireframe, prototipo de alta fidelidad, mockups).
+
+- Para el Testing:
+
+- 🎯Jest: Framework para realizar los testing unitarios.
+- 🎯Eslint: Herramienta de linting para analizar el código en busca de errores.
+
+- Para la funcionalidad:
+
+🎯JavaScript: Para dar la funcionalidad a la plataforma.
+
+-Librerías:
+
+- 🎯Chart.js: Para la creación de gráficos estadísticos.
 
 ## 7. Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
-Como mínimo, tu implementación debe:
-
 1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
-   etc.
-   ![WhatsApp Image 2021-11-23 at 00 30 45](https://user-images.githubusercontent.com/91838806/142975567-b4aaa48f-7bf3-4f52-9443-57a110b28b37.jpeg)
-2. Permitir al usuario interactuar para obtener la infomación que necesita.
-   ![WhatsApp Image 2021-11-23 at 00 09 27 (1)](https://user-images.githubusercontent.com/91838806/142975542-2fd77978-6abd-4e77-b331-296043ba3063.jpeg)
+etc.
 
+   <p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142975567-b4aaa48f-7bf3-4f52-9443-57a110b28b37.jpeg">
+</p>
+
+2. Permitir al usuario interactuar para obtener la infomación que necesita.
+   <p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142975542-2fd77978-6abd-4e77-b331-296043ba3063.jpeg">
+</p>
 3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
-   tamaños de pantallas: móviles, tablets y desktops.
-   ![WhatsApp Image 2021-11-23 at 00 31 58](https://user-images.githubusercontent.com/91838806/142975657-ac3db791-6aef-4895-aae4-924f3632d80d.jpeg)
+tamaños de pantallas: móviles, tablets y desktops.
+
+   <p align="center">
+  <img width="460" height="600" src="Https://user-images.githubusercontent.com/91838806/142975657-ac3db791-6aef-4895-aae4-924f3632d80d.jpeg">
+</p>
 
 4. Que la interfaz siga los fundamentos de _visual design_.
    Nuestro sistema cumple con los fundamentos de visual design, ya que mantenemos el contraste, la proximidad, la alineación, espaciado, entre otros para mantener un balance en el diseño.
