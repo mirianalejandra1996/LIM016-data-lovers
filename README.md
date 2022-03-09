@@ -104,7 +104,7 @@ etc.
 tamaños de pantallas: móviles, tablets y desktops.
 
    <p align="center">
-  <img width="460" height="600" src="Https://user-images.githubusercontent.com/91838806/142975657-ac3db791-6aef-4895-aae4-924f3632d80d.jpeg">
+  <img width="460" height="600" src="https://user-images.githubusercontent.com/91838806/142975657-ac3db791-6aef-4895-aae4-924f3632d80d.jpeg">
 </p>
 
 4. Que la interfaz siga los fundamentos de _visual design_.
