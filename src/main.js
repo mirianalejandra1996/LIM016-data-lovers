@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
   dataPokemones,
   filtradoPokemones,
@@ -552,7 +553,6 @@ const btnStats = document.getElementById("stats");
 const seccionDescripcion = document.getElementById("descripcion-total");
 const seccionEvoluciones = document.getElementById("seccion-evoluciones");
 const seccionStats = document.getElementById("seccion-stats");
-const canvas = document.getElementById("chart")
 //Boton Detalle vista Detalle Pokemon
 btnDetalles.addEventListener("click", () => {
   irADetalle();
@@ -671,12 +671,13 @@ function irADetalle() {
   btnStats.classList.replace("show-bottom-line", "hide-bottom-line");
 }
 
+
 //Implementando Chart js
 function crearChart(pokemon){
   const ctx = document.getElementById('chart').getContext('2d');
-  if (window.grafica) {
-    window.grafica.clear();
-    window.grafica.destroy();
+  if (grafica) {
+    grafica.clear();
+    grafica.destroy();
 }
 
 var barStroke = ctx.createLinearGradient(700, 0, 120, 0);
@@ -693,7 +694,7 @@ barFillHover.addColorStop(1, "rgba(0, 205, 194, 0.6)");
 
 
 
-  window.grafica = new Chart(ctx, {
+ const grafica = new Chart(ctx, {
       type: 'bar',
       data: {
           type: 'horizontalBar',
