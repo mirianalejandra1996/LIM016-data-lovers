@@ -61,12 +61,6 @@ Se realizó una investigación para conocer al usuario y la problemática que pr
 El prototipo se basó en satisfacer las necesidades del usuario, es por ello que en nuestro prototipo de baja fidelidad se enfoca las siguientes .
 Inspirado en el diseño flat design minimalista, con uso de paleta de colores verdes, y uso de tipografía "Poppins"
 
-PALETTE
-
-<p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142975255-66aec199-2faa-4149-8d70-7ac203edecda.png">
-</p>
-
 #### PROTOTIPOS DE BAJA FIDELIDAD
 
 Vista Desktop
