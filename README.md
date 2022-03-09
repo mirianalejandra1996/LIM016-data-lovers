@@ -93,18 +93,18 @@ Inspirado en el diseño flat design minimalista, con uso de paleta de colores ve
 etc.
 
    <p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142975567-b4aaa48f-7bf3-4f52-9443-57a110b28b37.jpeg">
+  <img width="460" height="460" src="https://user-images.githubusercontent.com/91838806/142975567-b4aaa48f-7bf3-4f52-9443-57a110b28b37.jpeg">
 </p>
 
 2. Permitir al usuario interactuar para obtener la infomación que necesita.
    <p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142975542-2fd77978-6abd-4e77-b331-296043ba3063.jpeg">
+  <img width="460" height="460" src="https://user-images.githubusercontent.com/91838806/142975542-2fd77978-6abd-4e77-b331-296043ba3063.jpeg">
 </p>
 3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
 tamaños de pantallas: móviles, tablets y desktops.
 
    <p align="center">
-  <img width="460" height="600" src="https://user-images.githubusercontent.com/91838806/142975657-ac3db791-6aef-4895-aae4-924f3632d80d.jpeg">
+  <img width="260" height="600" src="https://user-images.githubusercontent.com/91838806/142975657-ac3db791-6aef-4895-aae4-924f3632d80d.jpeg">
 </p>
 
 4. Que la interfaz siga los fundamentos de _visual design_.
