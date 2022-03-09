@@ -15,7 +15,7 @@
 ## 1 POKECOMPANY
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/lucerogoga/Data-lovers-POKECOMPANY/blob/main/READMeImages/POKECOMPANY.svg">
+  <img width="300" height="auto" src="https://github.com/lucerogoga/Data-lovers-POKECOMPANY/blob/main/READMeImages/POKECOMPANY.png">
 </p>
 
 ## 2. Preámbulo
