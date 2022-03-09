@@ -6,7 +6,9 @@
 - [4. Historias de Usuario](#4-historias-de-usuario)
 - [5. Diseño de la Interfaz de Usuario](#5-consideraciones-generales)
 - [6. Tecnologias empleadas](#6-hacker-edition)
-- [7. Checklist](#7-checklist)
+- [7. Implementación de la Interfaz de Usuario (HTML/CSS/JS)](<#7-Implementación-Interfaz-Usuario-(HTML/CSS/JS)>)
+- [8. Deploy Link](#8-deploy-link)
+- [9. Authors](#9-authors)
 
 ---
 
@@ -56,7 +58,7 @@ Se realizó una investigación para conocer al usuario y la problemática que pr
 
 ## 5 Diseño de la Interfaz de Usuario
 
-#### Prototipo de baja fidelidad
+#### PROTOTIPOS DE BAJA FIDELIDAD
 
 El prototipo se basó en satisfacer las necesidades del usuario, es por ello que en nuestro prototipo de baja fidelidad se enfoca las siguientes .
 Inspirado en el diseño flat design minimalista, con uso de paleta de colores verdes, y uso de tipografía "Poppins"
@@ -95,53 +97,93 @@ Vista Desktop
   <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142973758-63eda3a8-9b08-49b2-b2f7-e803cba50231.png">
 </p>
 
-#### Prototipo de alta fidelidad
+#### PROTOTIPO DE ALTA FIDELIDAD
 
 Vista Desktop
 
-Vista Landing Page
-![data-lovers-definitivo](https://user-images.githubusercontent.com/91838806/142974266-fb7cb5ef-a6e4-4e59-8ae6-50ba4bf8afa4.png)
+🖼️ Vista Landing Page
 
-Visa Lista Pokedex
-![data-lovers-definitivo2](https://user-images.githubusercontent.com/91838806/142974286-2b1c93ae-aec0-4a3c-af12-fef63406aa4c.png)
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974266-fb7cb5ef-a6e4-4e59-8ae6-50ba4bf8afa4.png">
+</p>
 
-Visa Lista Pokedex (Tipo)
-![data-lovers-definitivo3](https://user-images.githubusercontent.com/91838806/142974294-e0a6edb5-b0db-4f72-9937-e241696b3bac.png)
+🖼️ Vista Lista Pokedex
 
-Vista Detalle Pokedex (Debilidades y SortBy)
-![data-lovers-definitivo4](https://user-images.githubusercontent.com/91838806/142974307-4b237eec-b988-4476-b255-caa49737e915.png)
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974286-2b1c93ae-aec0-4a3c-af12-fef63406aa4c.png">
+</p>
 
-Vista Detalle Pokedex (About)
-![data-lovers-definitivo5](https://user-images.githubusercontent.com/91838806/142974320-79236751-bd59-4920-88a5-cce29a85f9a8.png)
+🖼️ Vitsa Lista Pokedex (Tipo)
 
-Vista Detalle Pokemon (Evoluciones Pikachu)
-![data-lovers-definitivo6](https://user-images.githubusercontent.com/91838806/142974336-9f70f7a0-5f62-41ef-b86b-4013f3fac796.png)
+<p align="center">
+  <img width="460" height="300" src="(https://user-images.githubusercontent.com/91838806/142974294-e0a6edb5-b0db-4f72-9937-e241696b3bac.png">
+</p>
 
-Vista Detalle Pokedex (Stats)
-![data-lovers-definitivo7](https://user-images.githubusercontent.com/91838806/142974346-32956ff2-cc5a-444a-a11a-75367e6d7c8c.png)
+🖼️ Vista Detalle Pokedex (Debilidades y SortBy)
 
-Vista Detalle Pokemon (Evoluciones Eevee)
-![data-lovers-definitivo8](https://user-images.githubusercontent.com/91838806/142974354-4790d0b0-72bd-4695-acd2-b5fac7871e49.png)
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974307-4b237eec-b988-4476-b255-caa49737e915.png">
+</p>
 
-Vista Mobile
+🖼️ Vista Detalle Pokedex (About)
 
-Vista Landing
-![WhatsApp Image 2021-11-23 at 00 06 07](https://user-images.githubusercontent.com/91838806/142974834-c73d39c2-da25-4bd8-a650-9b5cbd2b4da1.jpeg)
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974320-79236751-bd59-4920-88a5-cce29a85f9a8.png">
+</p>
 
-Vista Landing con navegador responsive
-![WhatsApp Image 2021-11-23 at 00 06 23](https://user-images.githubusercontent.com/91838806/142974837-7f049021-809c-4140-9971-1e3fbfd7a53d.jpeg)
+🖼️ Vista Detalle Pokemon (Evoluciones Pikachu)
 
-Vista Lista Pokedex
-![WhatsApp Image 2021-11-23 at 00 06 33](https://user-images.githubusercontent.com/91838806/142974842-0cf4f36d-ca48-4185-8307-0ccfef7930f2.jpeg)
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974336-9f70f7a0-5f62-41ef-b86b-4013f3fac796.png">
+</p>
 
-Vista Lista con Sección de Filtros desplegable
-![WhatsApp Image 2021-11-23 at 00 06 44](https://user-images.githubusercontent.com/91838806/142974855-9510d23c-78b9-4dc3-8e51-4ce0b4b59530.jpeg)
+🖼️ Vista Detalle Pokedex (Stats)
 
-Vista Detalle (descripción)
-![WhatsApp Image 2021-11-23 at 00 06 55](https://user-images.githubusercontent.com/91838806/142974864-91300c31-c4bb-4dd6-b53c-a327120caf71.jpeg)
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974346-32956ff2-cc5a-444a-a11a-75367e6d7c8c.png">
+</p>
 
-Vista Detalle (Evoluciones)
-![WhatsApp Image 2021-11-23 at 00 07 07](https://user-images.githubusercontent.com/91838806/142974872-0fea8f40-b734-48d2-a8d0-5e03d81ddc42.jpeg)
+🖼️ Vista Detalle Pokemon (Evoluciones Eevee)
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974354-4790d0b0-72bd-4695-acd2-b5fac7871e49.png">
+</p>
+
+VISTA MOVILE
+
+🖼️ Vista Landing
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974834-c73d39c2-da25-4bd8-a650-9b5cbd2b4da1.jpeg">
+</p>
+
+🖼️ Vista Landing con navegador responsive
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974837-7f049021-809c-4140-9971-1e3fbfd7a53d.jpeg">
+</p>
+
+🖼️ Vista Lista Pokedex
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974842-0cf4f36d-ca48-4185-8307-0ccfef7930f2.jpeg">
+</p>
+
+🖼️ Vista Lista con Sección de Filtros desplegable
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974855-9510d23c-78b9-4dc3-8e51-4ce0b4b59530.jpeg">
+</p>
+🖼️ Vista Detalle (descripción)
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974864-91300c31-c4bb-4dd6-b53c-a327120caf71.jpeg">
+</p>
+🖼️ Vista Detalle (Evoluciones)
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142974872-0fea8f40-b734-48d2-a8d0-5e03d81ddc42.jpeg">
+</p>
 
 ## 6 Tecnologias empleadas
 
@@ -150,16 +192,7 @@ Vista Detalle (Evoluciones)
 🎯CSS3
 🎯Jest
 
-#### Testeos de usabilidad
-
-Mediante las presentaciones anteriores, recibimos feedbacks que nos permitió mejorar la experiencia al usuario, entre ellas destacaron:
-
--Los botones de tipo y Debilidades deben tener un reborde al momento de ser seleccionado.
--Los pokemones evolucionados pueden ser visualizados directamente en la misma vista
-
-- Alineación de elementos para mantener la armonia visual.
-
-### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
+## 7 Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
 Como mínimo, tu implementación debe:
 
@@ -176,6 +209,11 @@ Como mínimo, tu implementación debe:
 4. Que la interfaz siga los fundamentos de _visual design_.
    Nuestro sistema cumple con los fundamentos de visual design, ya que mantenemos el contraste, la proximidad, la alineación, espaciado, entre otros para mantener un balance en el diseño.
 
-## Deploy Link
+## 8 Deploy Link
 
 https://mirianalejandra1996.github.io/LIM016-data-lovers/src/index.html
+
+## 9 Authors
+
+🙎‍♀️ ![Lucero Gonzales](https://github.com/lucerogoga)
+🙎‍♀️ ![Mirian Arevalo](https://github.com/mirianalejandra1996)
