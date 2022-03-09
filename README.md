@@ -69,19 +69,19 @@ Inspirado en el diseño flat design minimalista, con uso de paleta de colores ve
 
 - Para la estructura y diseño:
 
-🎯HTML5: Siguiendo las reglas del HTML semántico se estructuró con un header que contiene una barra de navegación, el main para englobar el contenido principal y en el footer se detalla los derechos de autor.
+* 🎯HTML5: Siguiendo las reglas del HTML semántico se estructuró con un header que contiene una barra de navegación, el main para englobar el contenido principal y en el footer se detalla los derechos de autor.
 
-- 🎯CSS: Usada para definir el estilo visual del proyecto.
-- 🎯Figma: Plataforma para crear las estructuras del prototipo (Wireframe, prototipo de alta fidelidad, mockups).
+* 🎯CSS: Usada para definir el estilo visual del proyecto.
+* 🎯Figma: Plataforma para crear las estructuras del prototipo (Wireframe, prototipo de alta fidelidad, mockups).
 
 - Para el Testing:
 
-- 🎯Jest: Framework para realizar los testing unitarios.
-- 🎯Eslint: Herramienta de linting para analizar el código en busca de errores.
+* 🎯Jest: Framework para realizar los testing unitarios.
+* 🎯Eslint: Herramienta de linting para analizar el código en busca de errores.
 
 - Para la funcionalidad:
 
-🎯JavaScript: Para dar la funcionalidad a la plataforma.
+* 🎯JavaScript: Para dar la funcionalidad a la plataforma.
 
 -Librerías:
 
