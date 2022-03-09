@@ -58,12 +58,16 @@ Se realizó una investigación para conocer al usuario y la problemática que pr
 
 ## 5 Diseño de la Interfaz de Usuario
 
-#### PROTOTIPOS DE BAJA FIDELIDAD
-
 El prototipo se basó en satisfacer las necesidades del usuario, es por ello que en nuestro prototipo de baja fidelidad se enfoca las siguientes .
 Inspirado en el diseño flat design minimalista, con uso de paleta de colores verdes, y uso de tipografía "Poppins"
 
-![paleta](https://user-images.githubusercontent.com/91838806/142975255-66aec199-2faa-4149-8d70-7ac203edecda.png)>
+PALETTE
+
+<p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/91838806/142975255-66aec199-2faa-4149-8d70-7ac203edecda.png">
+</p>
+
+#### PROTOTIPOS DE BAJA FIDELIDAD
 
 Vista Desktop
 
@@ -215,5 +219,5 @@ https://mirianalejandra1996.github.io/LIM016-data-lovers/src/index.html
 
 ## 9 Authors
 
-🙎‍♀️ [Lucero Gonzales](https://github.com/lucerogoga)
-🙎‍♀️ [Mirian Arevalo](https://github.com/mirianalejandra1996)
+- 🙎‍♀️ [Lucero Gonzales](https://github.com/lucerogoga)
+- 🙎‍♀️ [Mirian Arevalo](https://github.com/mirianalejandra1996)
